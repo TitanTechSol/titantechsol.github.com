@@ -6,6 +6,10 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url('images/office-sitting-room-executive-sitting.jpg'); /* Adjust the path as needed */
+    background-size: cover; /* Adjust the size of the background image */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
 
 body {
@@ -16,11 +20,13 @@ body {
 }
 
 h1 {
+    text-align: center;
     color: #333;
     margin: 10px 0; /* Adjust the margin as needed */
 }
 
 p {
+    text-align: center;
     color: #666;
     margin: 10px 0; /* Adjust the margin as needed */
 }
@@ -32,4 +38,22 @@ footer {
     padding: 10px 0; /* Adjust the padding as needed */
     background-color: #f0f0f0; /* Optional: to match the background color */
     text-align: center;
+}
+
+.email-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.email-link:hover::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background-color: rgba(37, 130, 236, 0.712); /* Light blue with slight transparency */
+    z-index: -1;
+    border-radius: 5px; /* Optional: to add rounded corners */
 }
