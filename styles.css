@@ -2,26 +2,34 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 h1 {
     color: #333;
+    margin: 10px 0; /* Adjust the margin as needed */
 }
 
 p {
     color: #666;
+    margin: 10px 0; /* Adjust the margin as needed */
 }
 
 footer {
-    margin-top: 20px;
+    margin-top: auto;
     font-size: 0.9em;
     color: #333;
+    padding: 10px 0; /* Adjust the padding as needed */
+    background-color: #f0f0f0; /* Optional: to match the background color */
+    text-align: center;
 }
