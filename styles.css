@@ -40,20 +40,47 @@ footer {
     text-align: center;
 }
 
-.email-link {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.email-link:hover::after {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
-    background-color: rgba(37, 130, 236, 0.712); /* Light blue with slight transparency */
-    z-index: -1;
-    border-radius: 5px; /* Optional: to add rounded corners */
+form {
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    min-width: 360;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
 }
