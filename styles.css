@@ -10,6 +10,7 @@ html, body {
     background-size: cover; /* Adjust the size of the background image */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
+    text-align: center;
 }
 
 body {
@@ -17,6 +18,45 @@ body {
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+}
+
+header {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.one-liner {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.consultation-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.consultation-button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.services {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.service {
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -36,7 +76,7 @@ footer {
     font-size: 0.9em;
     color: #333;
     padding: 10px 0; /* Adjust the padding as needed */
-    background-color: #f0f0f0; /* Optional: to match the background color */
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
 }
 
