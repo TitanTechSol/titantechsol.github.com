@@ -9,18 +9,70 @@
 </head>
 <body>
     <header>
-        <h1>TitanTech Solutions</h1>
-        <p class="one-liner">Turning your tech headaches into success stories</p>
+        <div class="header-content">
+            <h1 class="triangle-text">TitanTech Solutions</h1>
+            <nav class="nav-bar">
+                <button class="nav-button" type="button" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="one-liner">Turning your tech headaches into success stories.</p>
     </header>
     <main>
-        <p>Welcome to the TitanTech Solutions Page.</p>
+        <section class="welcome">
+            <h2>Welcome to TitanTech Solutions</h2>
+            <p>We are a technology solutions company dedicated to turning your tech headaches into success stories. Our team of experts is here to help you with AI, automation, modernization, and mentorship.</p>
+        </section>
         <section class="about-us">
             <h2>About Us</h2>
-            <p>We are a technology solutions company dedicated to turning your tech headaches into success stories. <a href="about.html">Learn more about us</a>.</p>
+            <p>At TitanTech Solutions, we empower businesses with innovative, scalable, and reliable technology solutions. <a href="about.html">Learn more about us</a>.</p>
         </section>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>Mechanization</h3>
+                <p>Automate routine tasks with cutting-edge AI technologies, boosting efficiency and reducing overhead.</p>
+            </div>
+            <div class="service">
+                <h3>Modernization</h3>
+                <p>Update outdated systems or processes.</p>
+            </div>
+            <div class="service">
+                <h3>Mentorship</h3>
+                <p>Support skill development and growth for individuals or teams.</p>
+            </div>
+        </section>
+        <!-- Not in the page, Becauase it is not needed yet. It will be needed when the company grows. 
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <p>"TitanTech Solutions transformed our business with their innovative solutions. We couldn't be happier!" - Happy Client</p>
+            <p>"Their team is knowledgeable, professional, and a pleasure to work with." - Satisfied Customer</p>
+        </section>
+        -->
     </main>
     <footer>
         <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
     </footer>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            if (navLinks.style.display === 'block') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

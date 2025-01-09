@@ -27,33 +27,63 @@ body {
 }
 
 header {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the header */
     text-align: center;
+    padding: 10px;
+    background-color: rgb(67, 67, 67);
+    height: 125px; /* Adjust the height of the header */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 300px solid black; /* Adjust the size of the triangle */
+    border-bottom: 125px solid transparent; /* Adjust the size of the triangle */
+}
+
+header h1 {
+    position: relative;
+    text-align: left;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    color: white; /* Default color for the text */
+    z-index: 2; /* Ensure the text appears above the triangle */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
 }
 
 .one-liner {
-    text-align: center;
     font-size: 1.2em;
-    margin: 10px 0;
+    color: white; /* Default color for the text */
+    margin: 0;
 }
 
 main {
-    text-align: center;
     flex: 1;
     padding: 20px;
 }
 
 .services {
+    padding: 20px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
     border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-size: 1em; /* Smaller font size */
+    color: #444; /* Slightly darker color */
 }
 
 .service {
-    text-align: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 h1 {
@@ -72,10 +102,10 @@ p {
 
 footer {
     margin-top: auto;
-    font-size: 1em; /* Smaller font size */
-    color: #444; /* Slightly darker color */
+    font-size: 0.9em;
+    color: #333;
     padding: 10px 0; /* Adjust the padding as needed */
-    background-color: #f0f0f0; /* Optional: to match the background color */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: to match the background color */
     text-align: center;
 }
 
@@ -137,7 +167,6 @@ textarea::placeholder {
     font-size: 1em; /* Smaller font size */
 }
 
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -160,6 +189,17 @@ button {
     color: #444; /* Slightly darker color */
 }
 
+.welcome {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-size: 1em; /* Smaller font size */
+    color: #444; /* Slightly darker color */
+}
+
 .about-details {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -170,10 +210,77 @@ button {
     color: #444; /* Slightly darker color */
 }
 
+.nav-bar {
+    position: relative;
+    text-align: right;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: #007BFF;
+    border-radius: 2px;
+}
+
+.nav-links {
+    display: none;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(25, 25, 25, 0.9);
+    width: 185px;
+    text-align: left;
+}
+
+.nav-links li {
+    padding: 10px;
+    margin: 5px 0; /* Add margin to separate the boxes */
+    background-color: #007BFF; /* Background color similar to the submit button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    display: block; /* Make the link fill the entire li */
+    padding: 10px 25px; /* Padding similar to the submit button */
+}
+
+.nav-links li a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure text color remains white on hover */
+}
+
 @media (max-width: 600px) {
     form {
         min-width: 100%;
         padding: 10px;
+        align-self: center;
     }
     body {
         padding: 10px;
