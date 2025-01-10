@@ -1,0 +1,53 @@
+/* Ensure all elements use border-box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(67, 67, 67);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 10px 0; /* Adjust the margin as needed */
+    font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+p {
+    text-align: center;
+    color: #ffffff; /* Slightly darker color */
+    margin: 10px 0; /* Adjust the margin as needed */
+    font-size: 1em; /* Smaller font size */
+}
+
+@media (max-width: 600px) {
+    form {
+        min-width: 100%;
+        padding: 10px;
+        align-self: center;
+    }
+    body {
+        padding: 10px;
+        flex-direction: column;
+    }
+    .consultation-button {
+        padding: 15px;
+        width: 100%;
+    }
+}

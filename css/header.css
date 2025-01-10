@@ -1,0 +1,104 @@
+header {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the header */
+    text-align: center;
+    background-color: rgb(67, 67, 67);
+    height: 68px; /* Adjust the height of the header */
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow */
+}
+
+.header-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 300px solid black; /* Adjust the size of the triangle */
+    border-bottom: 68px solid transparent; /* Adjust the size of the triangle */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Apply padding to the content */
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    position: relative;
+    color: white; /* Default color for the text */
+    z-index: 2; /* Ensure the text appears above the triangle */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    display: none;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(25, 25, 25, 0.9);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.nav-links li {
+    padding: 10px;
+    margin: 5px 0; /* Add margin to separate the boxes */
+    background-color: #007BFF; /* Background color similar to the submit button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    max-width: 115px;
+    min-width: 115px;
+    max-height: 45px;
+    min-height: 45px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    display: block; /* Make the link fill the entire li */
+    padding: 5px; /* Padding similar to the submit button */
+    font-size: 0.8em;
+}
+
+.nav-links li a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure text color remains white on hover */
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    max-width: 50px;
+    max-height: 50px;
+    margin-left: auto; /* Push the button to the right */
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: #007BFF;
+    border-radius: 2px;
+}
