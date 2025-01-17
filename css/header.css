@@ -102,3 +102,29 @@ header h1 {
     background-color: #007BFF;
     border-radius: 2px;
 }
+
+@media (max-width: 600px) {
+    header {
+        max-height: 68px; /* Adjust the height of the header */
+        min-height: 68px;
+    }
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-links {
+        display: none;
+        list-style-type: none;
+        padding: 10px;
+        margin: 10px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(25, 25, 25, 0.9);
+        border-radius: 10px;
+        text-align: left;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+}

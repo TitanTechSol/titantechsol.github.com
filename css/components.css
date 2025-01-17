@@ -4,11 +4,6 @@
     margin-top: 10px;
 }
 
-/* About Us Section */
-.about-us {
-    text-align: center;
-}
-
 form.contact-us {
     display: flex;
     flex-direction: column;
@@ -17,8 +12,11 @@ form.contact-us {
     background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 90%;
+    min-width: 90%;
     margin: 20px auto; /* Center the form horizontally */
+    font-size: 1em; /* Smaller font size */
+    color : #ffffff; /* text color */
 }
 
 form.contact-us label {
@@ -32,8 +30,7 @@ form.contact-us input[type="text"],
 form.contact-us input[type="email"],
 form.contact-us textarea {
     width: 100%;
-    max-width: 460px;
-    min-width: 460px;
+    min-width: auto;
     max-height: 400px;
     min-height: 45px;
     padding: 10px;
@@ -75,4 +72,13 @@ form.contact-us textarea::placeholder {
     font-family: Arial, sans-serif; /* Ensure the same font is used */
     color: #666; /* Optional: match the color of the example text */
     font-size: 1em; /* Smaller font size */
+}
+
+@media (max-width: 90%) {
+    form.contact-us input[type="text"],
+    form.contact-us input[type="email"],
+    form.contact-us textarea {
+        max-width: 100%;
+        min-width: 100%;
+    }
 }
