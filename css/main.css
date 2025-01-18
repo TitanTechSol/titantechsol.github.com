@@ -1,3 +1,5 @@
+@import url('./colors.css'); /* Import the colors.css file */
+
 main {
     flex: 1;
     display: flex;
@@ -10,18 +12,16 @@ main {
 .services {
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin: 20px auto;
-    min-width: 75%;
-    max-width: 75%;
+    max-width: 900px;
     font-size: 1em; /* Smaller font size */
-    color: #ffffff; /* Slightly darker color */
+    color: var(--color-text); /* Slightly darker color */
 }
 
-.service {
-    margin-bottom: 20px;
-    text-align: center;
+.service,
+.service * {
+    text-align: left;
 }
 
 .contact-us-p {
@@ -31,21 +31,25 @@ main {
 .about-title {
     font-size: 2.5em;
     text-decoration: underline;
-    color : #ffffff;
+    color : var(--text-color);
 }
 
 .about-details {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 90%;
+    max-width: 900px;
     font-size: 1em; /* Smaller font size */
-    color: #444; /* Slightly darker color */
+    color: var(--color-text); /* Slightly darker color */
 }
 
 .required-feild {
     color: rgb(255, 80, 49);
+}
+
+.clickable-link {
+    color: var(--color-white);
+    text-decoration: none;
 }
 
 @media (max-width: 75%) {

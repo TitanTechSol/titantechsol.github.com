@@ -1,11 +1,13 @@
+@import url('./colors.css'); /* Import the colors.css file */
+
 footer {
     margin-top: auto;
     font-size: 0.9em;
     color: #333;
     padding: 10px 0; /* Adjust the padding as needed */
-    background-color: rgb(67, 67, 67); /* Optional: to match the background color */
+    background-color: var(--color-deep-blue); /* Optional: to match the background color */
     text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow */
+    box-shadow: 0 -4px 8px var(--color-shadow); /* Add a subtle shadow */
 }
 
 @media (max-width: 600px) {

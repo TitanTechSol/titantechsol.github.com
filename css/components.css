@@ -1,3 +1,5 @@
+@import url('./colors.css'); /* Import the colors.css file */
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -9,19 +11,17 @@ form.contact-us {
     flex-direction: column;
     gap: 15px; /* Add vertical space between form elements */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-    min-width: 90%;
+    max-width: 900px;
+    min-width: none;
     margin: 20px auto; /* Center the form horizontally */
     font-size: 1em; /* Smaller font size */
-    color : #ffffff; /* text color */
+    color : var(--color-text); /* text color */
 }
 
 form.contact-us label {
     font-weight: bold;
-    color: #ffffff; /* Slightly darker color */
+    color: var(--color-text); /* Slightly darker color */
     font-size: 1em; /* Smaller font size */
     margin-bottom: 5px; /* Space between label and input */
 }
@@ -35,7 +35,7 @@ form.contact-us textarea {
     min-height: 45px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-text);
     border-radius: 5px;
     font-family: Arial, sans-serif; /* Ensure the same font is used */
     font-size: 1em; /* Smaller font size */
@@ -53,8 +53,8 @@ form.contact-us .button-container {
 }
 
 form.contact-us button[type="submit"] {
-    background-color: #007BFF; /* Blue background color */
-    color: #fff;
+    background-color: var(--color-deep-blue); /* Blue background color */
+    color: var(--color-white);
     padding: 10px 25px; /* Larger padding */
     border: none;
     border-radius: 5px;
@@ -63,7 +63,7 @@ form.contact-us button[type="submit"] {
 }
 
 form.contact-us button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #265b70; /* Darker blue on hover */
 }
 
 /* Style the placeholder text */

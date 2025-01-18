@@ -1,3 +1,5 @@
+@import url('./colors.css'); /* Import the colors.css file */
+
 /* Ensure all elements use border-box sizing */
 *,
 *::before,
@@ -7,7 +9,7 @@
 
 html, body {
     font-family: Arial, sans-serif;
-    background-color: rgb(67, 67, 67);
+    background-image: linear-gradient(to top, var(--color-off-white) var(--color-deep-blue));
     margin: 0;
     padding: 0;
     height: 100%;
@@ -20,18 +22,19 @@ body {
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    background-image: linear-gradient(to top, var(--color-off-white) var(--color-deep-blue));
 }
 
 h1 {
     text-align: center;
-    color: #ffffff;
+    color: var(--color-text);
     margin: 10px 0; /* Adjust the margin as needed */
     font-size: 1.5em; /* Adjust the font size as needed */
 }
 
 p {
     text-align: center;
-    color: #ffffff; /* Slightly darker color */
+    color: var(--color-text); /* Slightly darker color */
     margin: 10px 0; /* Adjust the margin as needed */
     font-size: 1em; /* Smaller font size */
 }

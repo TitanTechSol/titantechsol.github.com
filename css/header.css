@@ -1,11 +1,13 @@
+@import url('colors.css'); /* Import the colors.css file */
+
 header {
     position: relative; /* Ensure the pseudo-element is positioned relative to the header */
     text-align: center;
-    background-color: rgb(67, 67, 67);
+    background-color: var(--color-deep-blue);
     height: 68px; /* Adjust the height of the header */
     box-sizing: border-box;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow */
+    box-shadow: 0 4px 8px var(--color-shadow); /* Add a subtle shadow */
 }
 
 .header-content::before {
@@ -15,7 +17,7 @@ header {
     left: 0;
     width: 0;
     height: 0;
-    border-left: 300px solid black; /* Adjust the size of the triangle */
+    border-left: 300px solid var(--color-dark-navy); /* Adjust the size of the triangle */
     border-bottom: 68px solid transparent; /* Adjust the size of the triangle */
 }
 
