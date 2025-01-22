@@ -14,9 +14,17 @@ main {
     text-align: center;
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 900px;
+    max-width: 525px;
+    max-height: 500px;
+    min-height: 300px;
     font-size: 1em; /* Smaller font size */
     color: var(--color-text); /* Slightly darker color */
+    box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.text-welcome,
+.text-about-us {
+    text-align: left;
 }
 
 .service,
@@ -38,9 +46,11 @@ main {
     padding: 20px;
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 900px;
+    max-width: 525px;
     font-size: 1em; /* Smaller font size */
     color: var(--color-text); /* Slightly darker color */
+    box-shadow: 0 4px 8px var(--color-shadow);
+
 }
 
 .required-feild {
