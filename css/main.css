@@ -20,11 +20,12 @@ main {
     font-size: 1em; /* Smaller font size */
     color: var(--color-text); /* Slightly darker color */
     box-shadow: 0 4px 8px var(--color-shadow);
+    background-color: var(--color-off-white);  
 }
 
-.text-welcome,
 .text-about-us {
     text-align: left;
+    line-height: 1.5;
 }
 
 .service,
@@ -50,7 +51,7 @@ main {
     font-size: 1em; /* Smaller font size */
     color: var(--color-text); /* Slightly darker color */
     box-shadow: 0 4px 8px var(--color-shadow);
-
+    background-color: var(--color-off-white);  
 }
 
 .required-feild {
