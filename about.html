@@ -1,34 +1,5 @@
 <!DOCTYPE html>
 <html>
-<style>
-    @import url('colors.css');
-
-    ul {
-        text-align: left;
-    }
-
-    ul li {
-        margin-bottom: 10px;
-        color: var(--text-color);
-    }
-
-    main p {
-        text-align: left;   
-    }
-
-    h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-    color: var(--text-color);
-    text-decoration: underline;
-}
-</style>
 <head>
     <title>About Us - TitanTech Solutions</title>
     <meta name="description" content="Learn more about TitanTech Solutions, our mission, and our team.">
@@ -36,10 +7,6 @@
     <meta name="author" content="TitanTech Solutions">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/base.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/header.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/footer.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/components.css"></link>
 </head>
 <body>
     <header>
@@ -62,9 +29,8 @@
                 </nav>
         </header>
     <main>
-        <section class="about-details">
-            <h2 class="about-title">About us</h2>
-            <br>
+        <div class = "card-container">
+            <div class = "card">
             <h2>Our Mission</h2>
                 <p>
                     At Titan Tech Solutions, our mission is to empower businesses with innovative, 
@@ -73,17 +39,9 @@
                     goals with precision and confidence. By blending creativity with cutting-edge 
                     technology, we turn challenges into opportunities and ideas into impactful realities.
                 </p>
-            
-            <h2>Our Team</h2>
-                <p>
-                    Titan Tech Solutions is powered by a dynamic team of talented developers. With
-                    experienced senior developers and passionate junior developers eager to grow,
-                    we bring a balance of expertise and fresh perspectives to every project. Our
-                    team thrives on collaboration, leveraging years of front-end, back-end, and 
-                    software development experience to deliver exceptional results. Together, we 
-                    approach every challenge with a commitment to innovation and excellence.
-                </p>
-            
+            </div>
+
+            <div class = "card">
             <h2>Our Values</h2>
                 <p>At Titan Tech Solutions, we uphold a core set of values that define who we are:</p>
                     <ul>
@@ -97,8 +55,20 @@
                     Let Titan Tech Solutions be your partner in turning ideas into reality, one project at a time. 
                     <a style="color: var(--text-color);" href="contact.html">Contact Us</a>
                 </p>
+            </div>
 
-        </section>
+            <div class = "card">
+                <h2>Our Team</h2>
+                <p>
+                    Titan Tech Solutions is powered by a dynamic team of talented developers. With
+                    experienced senior developers and passionate junior developers eager to grow,
+                    we bring a balance of expertise and fresh perspectives to every project. Our
+                    team thrives on collaboration, leveraging years of front-end, back-end, and 
+                    software development experience to deliver exceptional results. Together, we 
+                    approach every challenge with a commitment to innovation and excellence.
+                </p>
+            </div>
+        </div>
     </main>
     <footer>
         <p>

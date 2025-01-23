@@ -1,0 +1,84 @@
+form.contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add vertical space between form elements */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    min-width: 500px;
+    margin: 20px auto; /* Center the form horizontally */
+    font-size: 1em; /* Smaller font size */
+    color : var(--color-text); /* text color */
+    box-shadow: 0 4px 8px var(--color-shadow);
+    background-color: var(--color-off-white);
+}
+
+form.contact-us label {
+    font-weight: bold;
+    color: var(--color-text); /* Slightly darker color */
+    font-size: 1em; /* Smaller font size */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+form.contact-us input[type="text"],
+form.contact-us input[type="email"],
+form.contact-us textarea {
+    width: 100%;
+    min-width: auto;
+    max-height: 400px;
+    min-height: 45px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-text);
+    border-radius: 5px;
+    font-family: Arial, sans-serif; /* Ensure the same font is used */
+    font-size: 1em; /* Smaller font size */
+    color: #444; /* Slightly darker color */
+}
+
+form.contact-us textarea {
+    height: 100px; /* Set a fixed height for the textarea */
+}
+
+form.contact-us .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+form.contact-us button[type="submit"] {
+    background-color: var(--color-deep-blue); /* Blue background color */
+    color: var(--color-white);
+    padding: 10px 25px; /* Larger padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; /* Larger font size */
+}
+
+form.contact-us button[type="submit"]:hover {
+    background-color: #265b70; /* Darker blue on hover */
+}
+
+/* Style the placeholder text */
+form.contact-us input::placeholder,
+form.contact-us textarea::placeholder {
+    font-family: Arial, sans-serif; /* Ensure the same font is used */
+    color: #666; /* Optional: match the color of the example text */
+    font-size: 1em; /* Smaller font size */
+}
+
+@media (max-width: 600px) {
+    form.contact-us {
+        max-width: 90%;
+        min-width: 90%;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    form.contact-us input[type="text"],
+    form.contact-us input[type="email"],
+    form.contact-us textarea {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
