@@ -8,33 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<header>
-    <div class="header-content">
-        <h1>TitanTech Solutions</h1>
-        <nav class="nav-bar">
-            <button class="nav-button" type="button" onclick="toggleMenu()">
-                <div class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="home" onclick="navigate(event, 'home')">Home</a></li>
-                <li><a href="about" onclick="navigate(event, 'about')">About Us</a></li>
-                <li><a href="services" onclick="navigate(event, 'services')">Services</a></li>
-                <li><a href="contact" onclick="navigate(event, 'contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 <body>
+    <header>
+        <div class="header-content">
+            <h1>TitanTech Solutions</h1>
+            <nav class="nav-bar">
+                <button class="nav-button" type="button" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#" onclick="navigate(event, 'home')">Home</a></li>
+                    <li><a href="#" onclick="navigate(event, 'about')">About Us</a></li>
+                    <li><a href="#" onclick="navigate(event, 'contact')">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main id="content">
         <!-- Dynamic content will be loaded here -->
     </main>
     <footer>
-        <p><a class="clickable-link" href="about" onclick="navigate(event, 'about')">About Us</a> <a class="clickable-link">|</a> <a class="clickable-link" href="contact" onclick="navigate(event, 'contact')">Contact Us</a></p>
-        <p><a class="clickable-link" href="home" onclick="navigate(event, 'home')">Back to Home</a></p>
+        <p><a class="clickable-link" href="#" onclick="navigate(event, 'about')">About Us</a> <a class="clickable-link">|</a> <a class="clickable-link" href="#" onclick="navigate(event, 'contact')">Contact Us</a></p>
+        <p><a class="clickable-link" href="#" onclick="navigate(event, 'home')">Back to Home</a></p>
     </footer>
     <script src="script.js"></script>
 </body>

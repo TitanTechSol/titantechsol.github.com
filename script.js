@@ -11,14 +11,20 @@ window.addEventListener('popstate', function(event) {
 
 function navigate(event, page) {
     event.preventDefault(); // Prevent the default link behavior
-    history.pushState(page, null, page); // Update the URL without reloading the page
     loadContent(page); // Load the content dynamically
     toggleMenu(); // Hide the navigation menu
 }
 
 function loadContent(page) {
     const content = document.getElementById('content');
-    fetch(`html/${page}.html`) // Update the path to the html folder
+    const pageMap = {
+        'home': 'html/home.html',
+        'about': 'html/about.html',
+        'contact': 'html/contact.html'
+    };
+    const pagePath = pageMap[page] || 'html/home.html'; // Default to home.html if page not found
+
+    fetch(pagePath)
         .then(response => response.text())
         .then(data => {
             content.innerHTML = data;
