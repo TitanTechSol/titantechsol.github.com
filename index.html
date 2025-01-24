@@ -6,87 +6,36 @@
     <meta name="keywords" content="technology, solutions, AI, automation, modernization, mentorship">
     <meta name="author" content="TitanTech Solutions">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+<header>
+    <div class="header-content">
+        <h1>TitanTech Solutions</h1>
+        <nav class="nav-bar">
+            <button class="nav-button" type="button" onclick="toggleMenu()">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="home" onclick="navigate(event, 'home')">Home</a></li>
+                <li><a href="about" onclick="navigate(event, 'about')">About Us</a></li>
+                <li><a href="services" onclick="navigate(event, 'services')">Services</a></li>
+                <li><a href="contact" onclick="navigate(event, 'contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>TitanTech Solutions</h1>
-            <nav class="nav-bar">
-                <button class="nav-button" type="button" onclick="toggleMenu()">
-                    <div class="hamburger">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <!--<li><a href="services.html">Our Services</a></li>-->
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-    <div class = "about-us">
-        <h2>About Us</h2>
-            <ul class = "text-about-us">
-                <strong>TitanTech Solutions</strong> is a dynamic vendor company specializing in:
-                    <ul>
-                        <li>Software Design</li>
-                        <li>Software Architecture</li>
-                        <li>Software Development</li>
-                        <li>Software Testing</li>
-                    </ul>
-                What makes us unique:
-                    <ul>
-                        <li>We pair junior developers with highly experienced senior mentors.</li>
-                        <li>This approach ensures:
-                            <ul>
-                                <li>Innovative solutions fueled by fresh perspectives.</li>
-                                <li>Guidance and precision from industry veterans.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                Our commitment:
-                    <ul>
-                        <li>Delivering technically sound solutions.</li>
-                        <li>Crafting each project with precision and care.</li>
-                    </ul>
-            </ul>
-        </div>
-        <div class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li class="service">
-                    <h3>Mechanization</h3>
-                    <p>Automate routine tasks with cutting-edge AI technologies, boosting efficiency and reducing overhead.</p>
-                </li>
-                <li class="service">
-                    <h3>Modernization</h3>
-                    <p>Update outdated systems or processes.</p>
-                </li>
-                <li class="service">
-                    <h3>Mentorship</h3>
-                    <p>Support skill development and growth for individuals or teams.</p>
-                </li>
-            </ul>
-        </div>
+    <main id="content">
+        <!-- Dynamic content will be loaded here -->
     </main>
     <footer>
-        <p><a class="clickable-link" href="about.html">About Us</a> <a class="clickable-link" >|</a> <a class="clickable-link" href="contact.html">Contact Us</a></p>
+        <p><a class="clickable-link" href="about" onclick="navigate(event, 'about')">About Us</a> <a class="clickable-link">|</a> <a class="clickable-link" href="contact" onclick="navigate(event, 'contact')">Contact Us</a></p>
+        <p><a class="clickable-link" href="home" onclick="navigate(event, 'home')">Back to Home</a></p>
     </footer>
-    <script>
-        function toggleMenu() {
-            var navLinks = document.getElementById('nav-links');
-            if (navLinks.style.display === 'block') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'block';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>+
+</html>

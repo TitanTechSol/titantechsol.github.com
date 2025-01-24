@@ -6,7 +6,7 @@ form.contact-us {
     border-radius: 10px;
     max-width: 500px;
     min-width: 500px;
-    margin: 20px auto; /* Center the form horizontally */
+    margin: 80px auto 20px auto; /* Center the form horizontally */
     font-size: 1em; /* Smaller font size */
     color : var(--color-text); /* text color */
     box-shadow: 0 4px 8px var(--color-shadow);

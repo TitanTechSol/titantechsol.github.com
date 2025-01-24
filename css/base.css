@@ -22,6 +22,17 @@ html, body {
     background: linear-gradient( var(--color-off-white) 10%, var(--color-deep-blue));
 }
 
+header {
+    position: fixed; /* Ensure the pseudo-element is positioned relative to the header */
+    text-align: center;
+    background-color: var(--color-deep-blue);
+    height: 68px; /* Adjust the height of the header */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px var(--color-shadow); /* Add a subtle shadow */
+    width: 100%;
+    z-index: 1000; /* Ensure the header appears above other elements */
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -50,7 +61,6 @@ p {
         align-self: center;
     }
     body {
-        padding: 10px;
         flex-direction: column;
     }
     .consultation-button {

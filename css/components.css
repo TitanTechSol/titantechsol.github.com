@@ -31,6 +31,10 @@
     background-color: var(--color-off-white);  
 }
 
+.about-us {
+    margin-top: 80px;
+}
+
 .required-feild {
     color: rgb(255, 80, 49);
 }
@@ -38,4 +42,11 @@
 .clickable-link {
     color: var(--color-white);
     text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .about-us,
+    .services {
+        max-width: 90%;
+    }
 }

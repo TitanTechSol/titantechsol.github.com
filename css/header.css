@@ -1,13 +1,3 @@
-header {
-    position: relative; /* Ensure the pseudo-element is positioned relative to the header */
-    text-align: center;
-    background-color: var(--color-deep-blue);
-    height: 68px; /* Adjust the height of the header */
-    box-sizing: border-box;
-    padding: 10px;
-    box-shadow: 0 4px 8px var(--color-shadow); /* Add a subtle shadow */
-}
-
 .header-content::before {
     content: "";
     position: absolute;
