@@ -19,16 +19,16 @@ html, body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient( var(--color-off-white) 10%, var(--color-deep-blue));
+    background: linear-gradient( var(--col-off-white) 10%, var(--col-primary-medium));
 }
 
 header {
     position: fixed; /* Ensure the pseudo-element is positioned relative to the header */
     text-align: center;
-    background-color: var(--color-deep-blue);
+    background-color: var(--col-primary-medium);
     height: 68px; /* Adjust the height of the header */
     box-sizing: border-box;
-    box-shadow: 0 4px 8px var(--color-shadow); /* Add a subtle shadow */
+    box-shadow: 0 4px 8px var(--col-shadow); /* Add a subtle shadow */
     width: 100%;
     z-index: 1000; /* Ensure the header appears above other elements */
 }
@@ -42,14 +42,14 @@ body {
 
 h1 {
     text-align: center;
-    color: var(--color-text);
+    color: var(--col-text);
     margin: 10px 0; /* Adjust the margin as needed */
     font-size: 1.5em; /* Adjust the font size as needed */
 }
 
 p {
     text-align: center;
-    color: var(--color-text); /* Slightly darker color */
+    color: var(--col-text); /* Slightly darker color */
     margin: 10px 0; /* Adjust the margin as needed */
     font-size: 1em; /* Smaller font size */
 }

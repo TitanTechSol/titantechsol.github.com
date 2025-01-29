@@ -5,7 +5,7 @@
     left: 0;
     width: 0;
     height: 0;
-    border-left: 300px solid var(--color-dark-navy); /* Adjust the size of the triangle */
+    border-left: 300px solid var(--col-primary-dark); /* Adjust the size of the triangle */
     border-bottom: 68px solid transparent; /* Adjust the size of the triangle */
 }
 
@@ -20,7 +20,7 @@
 
 header h1 {
     position: relative;
-    color: white; /* Default color for the text */
+    color: var(--col-white); /* Default color for the text */
     z-index: 2; /* Ensure the text appears above the triangle */
     margin: 0; /* Remove default margin */
 }
@@ -39,15 +39,16 @@ header h1 {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--color-dark-navy);
+    background-color: var(--col-primary-dark);
     border-radius: 10px;
     text-align: left;
+    box-shadow: 0 4px 8px var(--col-shadow);
 }
 
 .nav-links li {
     padding: 10px;
     margin: 5px 0; /* Add margin to separate the boxes */
-    background-color: var(--color-sky-blue); /* Background color similar to the submit button */
+    background-color: var(--col-primary-links); /* Background color similar to the submit button */
     border-radius: 5px; /* Rounded corners */
     text-align: center; /* Center the text */
     max-width: 115px;
@@ -58,14 +59,14 @@ header h1 {
 
 .nav-links li a {
     text-decoration: none;
-    color: #fff; /* White text color */
+    color: var(--col-white); /* White text color */
     display: block; /* Make the link fill the entire li */
     padding: 5px; /* Padding similar to the submit button */
     font-size: 0.8em;
 }
 
 .nav-links li:hover {
-    background-color: #307588; /* Darker blue on hover */
+    background-color: var(--col-primary-linksH); /* Darker blue on hover */
 }
 
 .nav-button {
@@ -88,8 +89,9 @@ header h1 {
 .bar {
     height: 4px;
     width: 100%;
-    background-color: #307588;
+    background-color: var(--col-primary-links);
     border-radius: 2px;
+    box-shadow: 0 4px 8px var(--col-shadow);
 }
 
 @media (max-width: 600px) {
@@ -109,7 +111,6 @@ header h1 {
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: rgba(25, 25, 25, 0.9);
         border-radius: 10px;
         text-align: left;
     }

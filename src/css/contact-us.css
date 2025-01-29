@@ -8,14 +8,14 @@ form.contact-us {
     min-width: 500px;
     margin: 80px auto 20px auto; /* Center the form horizontally */
     font-size: 1em; /* Smaller font size */
-    color : var(--color-text); /* text color */
-    box-shadow: 0 4px 8px var(--color-shadow);
-    background-color: var(--color-off-white);
+    color : var(--col-text); /* text color */
+    box-shadow: 0 4px 8px var(--col-shadow);
+    background-color: var(--col-off-white);
 }
 
 form.contact-us label {
     font-weight: bold;
-    color: var(--color-text); /* Slightly darker color */
+    color: var(--col-text); /* Slightly darker color */
     font-size: 1em; /* Smaller font size */
     margin-bottom: 5px; /* Space between label and input */
 }
@@ -29,7 +29,7 @@ form.contact-us textarea {
     min-height: 45px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--col-text);
     border-radius: 5px;
     font-family: Arial, sans-serif; /* Ensure the same font is used */
     font-size: 1em; /* Smaller font size */
@@ -47,8 +47,8 @@ form.contact-us .button-container {
 }
 
 form.contact-us button[type="submit"] {
-    background-color: var(--color-deep-blue); /* Blue background color */
-    color: var(--color-white);
+    background-color: var(--col-primary-links); /* Blue background color */
+    color: var(--col-white);
     padding: 10px 25px; /* Larger padding */
     border: none;
     border-radius: 5px;
@@ -57,14 +57,14 @@ form.contact-us button[type="submit"] {
 }
 
 form.contact-us button[type="submit"]:hover {
-    background-color: #265b70; /* Darker blue on hover */
+    background-color: var(--col-primary-linksH); /* Lighter blue on hover */
 }
 
 /* Style the placeholder text */
 form.contact-us input::placeholder,
 form.contact-us textarea::placeholder {
     font-family: Arial, sans-serif; /* Ensure the same font is used */
-    color: #666; /* Optional: match the color of the example text */
+    color: var(--col-light-gray); /* Optional: match the color of the example text */
     font-size: 1em; /* Smaller font size */
 }
 

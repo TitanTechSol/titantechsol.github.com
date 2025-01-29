@@ -14,24 +14,24 @@
     max-width: 250px;
     min-height: 300px;
     font-size: 1em; /* Smaller font size */
-    color: var(--color-text); /* Slightly darker color */
-    box-shadow: 0 4px 8px var(--color-shadow);
-    background-color: var(--color-off-white);  
+    color: var(--col-text); /* Slightly darker color */
+    box-shadow: 0 4px 8px var(--col-shadow);
+    background-color: var(--col-off-white);  
 }
 
 .card details {
     margin-bottom: 10px;
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--col-text);
     border-radius: 5px;
     padding: 10px;
-    background-color: var(--color-off-white);
-    box-shadow: 0 4px 8px var(--color-shadow);
+    background-color: var(--col-off-white);
+    box-shadow: 0 4px 8px var(--col-shadow);
 }
 
 .card summary {
     cursor: pointer;
     font-weight: bold;
-    color: var(--color-text);
+    color: var(--col-text);
     list-style: none; /* Remove default bullet points */
 }
 
@@ -39,20 +39,16 @@
     content: ''; /* Remove default marker */
 }
 
-.card details[open] summary {
-    color: var(--color-primary); /* Change color when open */
-}
-
 .card details p {
     margin: 10px 0 0 0;
     padding: 0;
-    color: var(--color-text);
+    color: var(--col-text);
 }
 
 .card h2 {
     font-size: 1.5em;
     text-decoration: underline;
-    color: var(--text-color);
+    color: var(--col-text);
 }
 
 .card ul {
