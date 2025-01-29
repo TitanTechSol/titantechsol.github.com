@@ -48,3 +48,20 @@
     padding: 0;
     color: var(--color-text);
 }
+
+.card h2 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    color: var(--text-color);
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card ul li {
+    text-align: left;
+    margin-bottom: 5px;
+}
