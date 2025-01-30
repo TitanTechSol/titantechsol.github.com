@@ -1,17 +1,42 @@
 :root {
-    /* Primary colors */
+    /* Primary colors Blue */
     --col-primary-HL: #5c7c89;
     --col-primary-medium: #1f4959; 
     --col-primary-dark: #021c33;
     --col-primary-links: #2b6777;
     --col-primary-linksH: #347d91;
-
+    
+    /* Primary colors Purple */
+    /*--col-primary-HL: #9e72c3;
+    --col-primary-light: #7338a0;
+    --col-primary-medium: #4a2574; 
+    --col-primary-dark: #1b0b42;
+    --col-primary-links: #924dbf;
+    --col-primary-linksH: #ae5ee3;*/
+    
+    /* Primary colors Green */
+    /*--col-primary-HL: #cad2c5;
+    --col-primary-light: #52796f;
+    --col-primary-medium: #354f52; 
+    --col-primary-dark: #2f3e46;
+    --col-primary-links: #69856f;
+    --col-primary-linksH: #7ba083;
+    
+    /* Primary colors yellow */
+    /*--col-primary-HL: #fff700;
+    --col-primary-light: #ffb300;
+    --col-primary-medium: #ff8300; 
+    --col-primary-dark: #ff4500;
+    --col-primary-links: #ffd300;
+    --col-primary-linksH: #ffe565;*/
+    
     /* Neutral colors */
     --col-light-gray: #abb8c2;
     --col-off-white: #e9e5e5;
 
     /* Text color */
     --col-text: #000000;
+    --col-text-button: #ffffff;
 
     /* Basic colors */
     --col-white: #ffffff;

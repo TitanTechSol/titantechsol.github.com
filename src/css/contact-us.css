@@ -33,7 +33,7 @@ form.contact-us textarea {
     border-radius: 5px;
     font-family: Arial, sans-serif; /* Ensure the same font is used */
     font-size: 1em; /* Smaller font size */
-    color: #444; /* Slightly darker color */
+    color: var(--col-text); /* Slightly darker color */
 }
 
 form.contact-us textarea {
@@ -48,7 +48,7 @@ form.contact-us .button-container {
 
 form.contact-us button[type="submit"] {
     background-color: var(--col-primary-links); /* Blue background color */
-    color: var(--col-white);
+    color: var(--col-text-button);
     padding: 10px 25px; /* Larger padding */
     border: none;
     border-radius: 5px;

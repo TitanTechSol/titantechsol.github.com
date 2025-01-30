@@ -16,19 +16,47 @@
 .about-title {
     font-size: 2.5em;
     text-decoration: underline;
-    color : var(--col-text);
+    color: var(--col-text);
 }
 
-.about-us,
-.services {
+.menu {
+    display: flex;
+    flex-direction: row; /* Arrange blocks in a row */
+    align-items: center; /* Center blocks vertically */
+    justify-content: flex-start; /* Align blocks to the start */
     padding: 20px;
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 525px;
+    max-width: 700px;
+    max-height: 315px;
+    min-width: 700px;
+    min-height: 315px;
     font-size: 1em; /* Smaller font size */
     color: var(--col-text); /* Slightly darker color */
     box-shadow: 0 4px 8px var(--col-shadow);
-    background-color: var(--col-off-white);  
+    background-color: var(--col-off-white);
+    overflow-x: hidden; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    cursor: grab;
+}
+
+.menu:active {
+    cursor: grabbing;
+}
+
+.block {
+    display: inline-block; /* Ensure blocks are displayed inline */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    max-height: 250px;
+    font-size: 1em; /* Smaller font size */
+    color: var(--col-text); /* Slightly darker color */
+    box-shadow: 0 4px 8px var(--col-shadow);
+    background-color: var(--col-off-white);
+    margin: 0 10px; /* Add margin to separate blocks */
 }
 
 .about-us {
@@ -44,9 +72,18 @@
     text-decoration: none;
 }
 
-@media (max-width: 600px) {
-    .about-us,
-    .services {
+.home {
+    padding-top: 250px;
+    transition: padding-top 0.4s ease;
+}
+
+.home.shrink {
+    padding-top: 150px;
+}
+
+@media (max-width: 700px) {
+    .menu {
         max-width: 90%;
+        min-width: 90%;
     }
 }

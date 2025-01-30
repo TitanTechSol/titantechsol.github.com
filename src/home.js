@@ -1,54 +1,89 @@
-// filepath: /c:/Users/George Aaron Kibbie/Documents/GitHub/titantechsol.github.com/src/Header.js
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './css/main.css';
 
-const Home = ({ navigate, toggleMenu, menuOpen }) => (
-<div class="home">
-    <div class="about-us">
-        <h2>About Us</h2>
-        <ul class="text-about-us">
-            <strong>TitanTech Solutions</strong> is a dynamic vendor company specializing in:
-            <ul>
-                <li>Software Design</li>
-                <li>Software Architecture</li>
-                <li>Software Development</li>
-                <li>Software Testing</li>
-            </ul>
-            What makes us unique:
-            <ul>
-                <li>We pair junior developers with highly experienced senior mentors.</li>
-                <li>This approach ensures:
-                    <ul>
-                        <li>Innovative solutions fueled by fresh perspectives.</li>
-                        <li>Guidance and precision from industry veterans.</li>
-                    </ul>
-                </li>
-            </ul>
-            Our commitment:
-            <ul>
-                <li>Delivering technically sound solutions.</li>
-                <li>Crafting each project with precision and care.</li>
-            </ul>
-        </ul>
+const Home = () => {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.home');
+      if (window.scrollY > 20) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const menu = menuRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDown = true;
+      menu.classList.add('active');
+      startX = e.pageX - menu.offsetLeft;
+      scrollLeft = menu.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      menu.classList.remove('active');
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      menu.classList.remove('active');
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - menu.offsetLeft;
+      const walk = (x - startX) * 3; // Scroll-fast
+      menu.scrollLeft = scrollLeft - walk;
+    };
+
+    menu.addEventListener('mousedown', handleMouseDown);
+    menu.addEventListener('mouseleave', handleMouseLeave);
+    menu.addEventListener('mouseup', handleMouseUp);
+    menu.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      menu.removeEventListener('mousedown', handleMouseDown);
+      menu.removeEventListener('mouseleave', handleMouseLeave);
+      menu.removeEventListener('mouseup', handleMouseUp);
+      menu.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return (
+    <div className="home">
+      <div className="menu" ref={menuRef}>
+        <div className="block">
+          <h2>Our Services</h2>
+          <ul>
+            <li>Mechanization</li>
+            <li>Modernization</li>
+            <li>Mentorship</li>
+          </ul>
+        </div>
+        <div className="block">
+        </div>
+        <div className="block">
+        </div>
+        <div className="block">
+        </div>
+      </div>
     </div>
-    <div class="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li class="service">
-                <h3>Mechanization</h3>
-                <p>Automate routine tasks with cutting-edge AI technologies, boosting efficiency and reducing overhead.</p>
-            </li>
-            <li class="service">
-                <h3>Modernization</h3>
-                <p>Update outdated systems or processes.</p>
-            </li>
-            <li class="service">
-                <h3>Mentorship</h3>
-                <p>Support skill development and growth for individuals or teams.</p>
-            </li>
-        </ul>
-    </div>
-</div>
-);
+  );
+};
 
 export default Home;

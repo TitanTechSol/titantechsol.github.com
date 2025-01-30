@@ -1,11 +1,14 @@
 footer {
-    margin-top: auto;
     font-size: 0.9em;
-    color: #333;
     padding: 10px 0; /* Adjust the padding as needed */
     background-color: var(--col-primary-medium); /* Optional: to match the background color */
     text-align: center;
     box-shadow: 0 -4px 8px var(--col-shadow); /* Add a subtle shadow */
+    width: 100%;
+}
+
+.footer-links {
+    padding: 0;
 }
 
 @media (max-width: 600px) {
