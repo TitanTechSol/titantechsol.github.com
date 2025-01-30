@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/' // Ensure this is set correctly for your deployment
   },
   module: {
     rules: [
@@ -36,6 +37,6 @@ module.exports = {
     },
     compress: true,
     port: 9000,
-    historyApiFallback: true
+    historyApiFallback: true // Ensure this is set to true
   }
 };

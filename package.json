@@ -2,6 +2,7 @@
   "name": "titantechsol.github.com",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://titantechsol.github.io/titantechsol.github.com",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
