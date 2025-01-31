@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/' // Ensure this is set correctly for your deployment
+    publicPath: '/' // Ensure all assets are served from the root
   },
   module: {
     rules: [
@@ -37,6 +37,6 @@ module.exports = {
     },
     compress: true,
     port: 9000,
-    historyApiFallback: true // Ensure this is set to true
+    historyApiFallback: true // Ensure index.html is served for all routes
   }
 };
