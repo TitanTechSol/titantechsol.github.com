@@ -17,17 +17,12 @@ const About = () => (
     </div>
     <div className="card">
       <h2>Our Values</h2>
-      <p>At Titan Tech Solutions, we uphold a core set of values that define who we are:</p>
       <ul>
         <li><strong>Integrity:</strong> We are dedicated to honest and transparent practices, building trust with our clients and within our team.</li>
         <li><strong>Innovation:</strong> We constantly seek new ways to improve and adapt, ensuring our solutions remain at the forefront of technology.</li>
         <li><strong>Collaboration:</strong> We believe in the power of teamwork and open communication to drive success.</li>
         <li><strong>Quality:</strong> From the smallest detail to the final delivery, we are committed to exceeding expectations and delivering work we're proud of.</li>
       </ul>
-      <p>
-        Let Titan Tech Solutions be your partner in turning ideas into reality, one project at a time. 
-        <Link style={{ color: 'var(--text-color)' }} to="/contact">Contact Us</Link>
-      </p>
     </div>
     <div className="card">
       <h2>Our Team</h2>

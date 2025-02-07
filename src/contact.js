@@ -9,21 +9,21 @@ const Contact = ({ navigate, toggleMenu, menuOpen }) => (
         <input type="hidden" name="zf_redirect_url" value="" />
         <input type="hidden" name="zc_gad" value="" />
         
-        <h2>Contact us</h2>
+        <h2 style={{ textDecoration: 'underline'}}>Contact us</h2>
 
         <label for="name">Name <em class="required-feild">*</em></label>   
         <input type="text" id="name" name="SingleLine" maxlength="75" placeholder="Jane Doe" required />
         
-        <label for="email">Email <em class="required-feild">*</em></label>
+        <label for="email">Email <em class="required-feild" >*</em></label>
         <input type="email" id="email" name="SingleLine1" maxlength="75" placeholder="Example@g2ad.com" required />
         
-        <label for="message">Message <em class="required-feild">*</em></label>
+        <label for="message">Message <em class="required-feild" >*</em></label>
         <textarea id="message" name="MultiLine" maxlength="1000" placeholder="Hello World" required></textarea>
         
         <div class="button-container">
             <button type="submit"><em>Submit</em></button>
         </div>
-        <p>Contact Email: <a style={{color: 'var(--text-color)'}} href="mailto:contactus@g2ad.com">contactus@g2ad.com</a></p>
+        <p>Email: <a style={{color: 'var(--text-color)'}} href="mailto:contactus@g2ad.com">contactus@g2ad.com</a></p>
     </form>
 </div>
 );

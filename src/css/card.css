@@ -3,7 +3,6 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin: 80px auto;
 }
 
 .card {
@@ -15,7 +14,6 @@
     min-height: 300px;
     font-size: 1em; /* Smaller font size */
     color: var(--col-text); /* Slightly darker color */
-    box-shadow: 0 4px 8px var(--col-shadow);
     background-color: var(--col-off-white);  
 }
 
@@ -25,7 +23,6 @@
     border-radius: 5px;
     padding: 10px;
     background-color: var(--col-off-white);
-    box-shadow: 0 4px 8px var(--col-shadow);
 }
 
 .card summary {
