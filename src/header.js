@@ -36,10 +36,15 @@ const Header = ({ toggleMenu, menuOpen }) => {
     <header>
       <div className="header-content">
         <div className="header-title">
-          <h1 className="title"><Link className="clickable-link" to="/">TitanTech </Link>{windowWidth > 600 && <a>Solutions</a>}</h1>
-          {windowWidth > 600 && <p className="motto">Build. Innovative. Educate.</p>}
+          <h1 className="title"><Link className="clickable-link" to="/">TitanTech </Link>{windowWidth > 700 && <Link className="clickable-link" to="/">Solutions</Link>}</h1>
+          {windowWidth > 700 && <p className="motto">Build. Innovative. Educate.</p>}
         </div>
         <nav className="nav-bar">
+          <div className='popuplinks'>
+            {windowWidth > 700 && <Link className="popLink" to="/">Home</Link>}
+            {windowWidth > 700 && <Link className="popLink" to="/about">About Us</Link>}
+            {windowWidth > 700 && <Link className="popLink" to="/contact">Contact Us</Link>}
+          </div>
           <button className="nav-button" type="button" onClick={toggleMenu}>
             <div className="hamburger">
               <div className="bar"></div>
@@ -47,7 +52,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
               <div className="bar"></div>
             </div>
           </button>
-          <ul className="nav-links" id="nav-links" style={{ display: menuOpen ? 'block' : 'none' }}>
+            <ul className="nav-links" id="nav-links" style={{ display: menuOpen ? 'block' : 'none' }}>
             <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
             <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
             <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>

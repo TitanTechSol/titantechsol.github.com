@@ -1,18 +1,75 @@
 footer {
     font-size: 0.9em;
     padding: 10px 0; /* Adjust the padding as needed */
-    background-color: var(--col-primary-medium); /* Optional: to match the background color */
     text-align: center;
     box-shadow: 0 -4px 8px var(--col-shadow); /* Add a subtle shadow */
     width: 100%;
+    background-image: url('../../photos/Header_image.jpg');
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image */
+    display: flex;
+    align-items: flex-start;
 }
 
-.footer-links {
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Space between links */
     padding: 0;
+    margin: 1em auto 1em 40px;
+    list-style-type: none;
 }
 
-@media (max-width: 600px) {
+.footerLinks ul {
+    list-style-type: none;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinks li,
+.footerLinks h2 {
+    color: var(--col-white);
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.attributions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between links */
+    padding: 0;
+    margin: 1em 40px 1em auto;
+    align-items: flex-end;
+    list-style-type: none;
+    min-width: 300px;
+}
+
+.attributions li,
+.attributions a {
+    color: var(--col-white);
+    text-decoration: none;
+    margin: 0;
+}
+
+.footerLinksTitle {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: var(--col-white);
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
     footer {
         font-size: 0.8em;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
     }
 }

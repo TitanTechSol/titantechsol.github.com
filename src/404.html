@@ -4,14 +4,23 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect all 404 requests to index.html
+      // Redirect based on the 'p' query parameter
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?' +
-        (l.pathname ? 'p=' + l.pathname.replace(/^\//, '') : '') +
-        (l.search ? '&' + l.search.replace(/^\?/, '') : '') +
-        l.hash
-      );
+      var params = new URLSearchParams(l.search);
+      var page = params.get('p');
+
+      if (page) {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/' + page + l.hash
+        );
+      } else {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/' +
+          (l.pathname ? 'p=' + l.pathname.replace(/^\//, '') : '') +
+          (l.search ? '&' + l.search.replace(/^\?/, '') : '') +
+          l.hash
+        );
+      }
     </script>
   </head>
   <body>

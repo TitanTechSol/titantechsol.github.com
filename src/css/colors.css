@@ -1,10 +1,10 @@
 :root {
     /* Primary colors Blue */
     --col-primary-HL: #5c7c89;
-    --col-primary-medium: #1f4959; 
-    --col-primary-dark: #021c33;
-    --col-primary-links: #2b6777;
-    --col-primary-linksH: #347d91;
+    --col-primary-medium: #0764de; 
+    --col-primary-dark: #064BA5;
+    --col-primary-links: #064BA5;
+    --col-primary-linksH: #0856bd;
     
     /* Primary colors Purple */
     /*--col-primary-HL: #9e72c3;

@@ -36,12 +36,26 @@ header {
     z-index: 1000; /* Ensure the header appears above other elements */
 }
 
-h1 {
+h1,
+h2,
+h3 {
     text-align: center;
     color: var(--col-text);
     margin: 10px 0; /* Adjust the margin as needed */
+}
+
+h1 {
     font-size: 1.5em; /* Adjust the font size as needed */
 }
+
+h2 {
+    font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+h3 {
+    font-size: 1.1em; /* Adjust the font size as needed */
+}
+
 
 p {
     text-align: center;
