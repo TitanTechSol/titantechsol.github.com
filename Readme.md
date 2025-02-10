@@ -30,5 +30,5 @@ Titan Tech Solutions specializes in **custom software design, architecture, deve
 
 ## **Get in Touch**
 🚀 **Let’s build something amazing together.**  
-📧 Contact us at **[YourEmail@TitanTech.com](mailto:YourEmail@TitanTech.com)**  
-🌐 Visit us at **[www.TitanTechSolutions.com](https://www.TitanTechSolutions.com)**  
+📧 Contact us at **[contactus@g2ad.com](mailto:contactus@g2ad.com)**  
+🌐 Visit us at **[www.TitanTech.g2ad.com](https://www.TitanTech.g2ad.com)**  x
