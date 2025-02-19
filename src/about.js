@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './css/main.css';
 
 const About = () => (
-<div className="home">
   <div className="card-container">
     <div className="card">
       <h2>Our Mission</h2>
@@ -36,7 +35,6 @@ const About = () => (
       </p>
     </div>
   </div>
-</div>
 );
 
 export default About;

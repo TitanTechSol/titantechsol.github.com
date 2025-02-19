@@ -46,7 +46,6 @@ footer {
     margin: 1em 40px 1em auto;
     align-items: flex-end;
     list-style-type: none;
-    min-width: 300px;
 }
 
 .attributions li,
