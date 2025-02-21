@@ -15,6 +15,7 @@
 /* Styles for the shrunken header */
 .header-content.shrink {
     height: 100px; /* Shrunken height */
+    padding: 20px;
 }
 
 .header-title {
@@ -44,7 +45,7 @@
     align-items: center;
     position: relative;
     justify-content: space-between;
-    min-width: 250px;
+    align-items: flex-end;
 }
 
 .nav-links {
@@ -121,9 +122,6 @@
     .header-content {
         max-height: 100px; /* Adjust the height of the header */
         min-height: 100px;
-    }
-
-    .header-content {
         flex-direction: row;
         justify-content: space-between;
     }
