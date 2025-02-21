@@ -7,7 +7,7 @@
     "watch": "watch 'npm run build' ./src",
     "start": "node server.js",
     "build": "webpack --mode production",
-    "predeploy": "npm run build && copy CNAME dist/CNAME",
+    "predeploy": "npm run build && powershell -Command \"Copy-Item -Path 'CNAME' -Destination 'dist/CNAME'\"",
     "deploy": "gh-pages -d dist --remove \"**/*\" --verbose",
     "dev": "webpack serve --mode development"
   },
