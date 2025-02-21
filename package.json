@@ -8,7 +8,7 @@
     "start": "node server.js",
     "build": "webpack --mode production",
     "predeploy": "npm run build && powershell -Command \"Copy-Item -Path 'CNAME' -Destination 'dist/CNAME'\"",
-    "deploy": "gh-pages -d dist --remove \"**/*\" --verbose",
+    "deploy": "gh-pages -d dist",
     "dev": "webpack serve --mode development"
   },
   "keywords": [],
