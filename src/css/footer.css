@@ -4,11 +4,16 @@ footer {
     text-align: center;
     box-shadow: 0 -4px 8px var(--col-shadow); /* Add a subtle shadow */
     width: 100%;
-    background-image: url('../../photos/Header_image.jpg');
+    background-image: url('../photos/Header_image3.jpg');
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     display: flex;
     align-items: flex-start;
+    /*text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; /* Add text shadow for better readability */
 }
 
 .footerLinks {
