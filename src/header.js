@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './css/header.css';
 
 const Header = ({ toggleMenu, menuOpen }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector('.header-content');
-      if (window.scrollY > 20) {
-        header.classList.add('shrink');
-      } else {
-        header.classList.remove('shrink');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+  const menuRef = useRef(null);
+  
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -31,6 +17,28 @@ const Header = ({ toggleMenu, menuOpen }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  // Handle clicks outside the menu to close it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target) && 
+          !event.target.closest('.nav-button')) {
+        toggleMenu();
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen, toggleMenu]);
+
+  // Close menu and navigate
+  const handleNavLinkClick = () => {
+    if (menuOpen) {
+      toggleMenu();
+    }
+  };
 
   return (
     <header>
@@ -42,8 +50,9 @@ const Header = ({ toggleMenu, menuOpen }) => {
         <nav className="nav-bar">
           <div className='popuplinks'>
             {windowWidth > 700 && <Link className="popLink" to="/">Home</Link>}
-            {windowWidth > 700 && <Link className="popLink" to="/about">About Us</Link>}
-            {windowWidth > 700 && <Link className="popLink" to="/contact">Contact Us</Link>}
+            {windowWidth > 700 && <Link className="popLink" to="/services">Services</Link>}
+            {windowWidth > 700 && <Link className="popLink" to="/team">Team</Link>}
+            {windowWidth > 700 && <Link className="popLink" to="/contact">Contact</Link>}
           </div>
           <button className="nav-button" type="button" onClick={toggleMenu}>
             <div className="hamburger">
@@ -52,11 +61,19 @@ const Header = ({ toggleMenu, menuOpen }) => {
               <div className="bar"></div>
             </div>
           </button>
-            <ul className="nav-links" id="nav-links" style={{ display: menuOpen ? 'block' : 'none' }}>
-            <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-            <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-            <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
-          </ul>
+          <div 
+            ref={menuRef}
+            className={`slide-menu ${menuOpen ? 'open' : ''}`}
+          >
+            <ul className="nav-links">
+              <li><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
+              <li><Link to="/services" onClick={handleNavLinkClick}>Services</Link></li>
+              <li><Link to="/portfolio" onClick={handleNavLinkClick}>Portfolio</Link></li>
+              <li><Link to="/team" onClick={handleNavLinkClick}>Team</Link></li>
+              <li><Link to="/about" onClick={handleNavLinkClick}>About Us</Link></li>
+              <li><Link to="/contact" onClick={handleNavLinkClick}>Contact Us</Link></li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>

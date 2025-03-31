@@ -4,24 +4,14 @@
     align-items: center;
     padding: 20px; /* Apply padding to the content */
     width: 100%;
-    height: 250px; /* Define a height for the header */
-    background-image: url('../photos/Header_image3.jpg'); /* Replace with the path to your image */
-    background-size: cover; /* Ensure the image covers the entire header */
-    background-position: center; /* Center the image */
-    position: relative; /* Ensure the pseudo-element is positioned correctly */
-    transition: height 0.75s ease; /* Smooth transition for height change */
-    /*text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;   /* Add text shadow for better readability */
+    height: 150px; /* Fixed height for the header */
+    background-image: url('../photos/Header_image3.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Styles for the shrunken header */
-.header-content.shrink {
-    height: 100px; /* Shrunken height */
-    padding: 20px;
-}
+/* Removed .header-content.shrink definition */
 
 .header-title {
     text-align: left;
@@ -53,51 +43,78 @@
     align-items: flex-end;
 }
 
-.nav-links {
-    display: none;
-    list-style-type: none;
-    padding: 10px;
-    margin: 10px;
+/* Slide-out menu */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off-screen */
+    width: 250px;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../photos/Header_image3.jpg');
+    background-size: cover;
+    background-position: right;
+    transition: all 0.4s ease-in-out;
+    z-index: 1000;
+    box-shadow: -2px 0 5px var(--col-black-20);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+/* Remove the ::before pseudo-element since we're using a gradient overlay directly */
+/* .slide-menu::before {
+    content: '';
     position: absolute;
-    top: 100%;
+    top: 0;
+    left: 0;
     right: 0;
-    background-color: var(--col-primary-links);
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 4px 8px var(--col-shadow);
+    bottom: 0;
+    background-color: var(--col-black-20);
+    z-index: -1;
+} */
+
+.slide-menu.open {
+    right: 0; /* Slide in when open */
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .nav-links li {
-    padding: 10px;
-    margin: 5px 0; /* Add margin to separate the boxes */
-    background-color: var(--col-primary-links); /* Background color similar to the submit button */
-    border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Center the text */
-    max-width: 115px;
-    min-width: 115px;
-    max-height: 45px;
-    min-height: 45px;
+    padding: 0;
+    margin: 8px 15px;
+    text-align: left;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: var(--col-text-button); /* White text color */
-    display: block; /* Make the link fill the entire li */
-    padding: 5px; /* Padding similar to the submit button */
-    font-size: 0.8em;
+    color: var(--col-text-button);
+    display: block;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
-.nav-links li:hover {
-    background-color: var(--col-primary-linksH); /* Darker blue on hover */
+.nav-links li a:hover {
+    background-color: var(--col-primary-linksH);
 }
 
 .nav-button {
     background: none;
     border: none;
     cursor: pointer;
-    max-width: 50px;
-    max-height: 50px;
-    margin-left: auto; /* Push the button to the right */
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Ensure button is above the slide menu */
 }
 
 .hamburger {
@@ -105,13 +122,14 @@
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
-    height: 30px;
+    height: 25px;
 }
 
 .hamburger .bar {
     width: 100%;
     height: 3px;
     background-color: var(--col-white);
+    transition: all 0.3s ease;
 }
 
 .popLink {
@@ -120,30 +138,16 @@
     padding: 10px;
 }
 
-.popLink Link {
-    max-width: 10px;
-}
+/* Media queries */
 @media (max-width: 700px) {
     .header-content {
-        max-height: 100px; /* Adjust the height of the header */
+        max-height: 100px;
         min-height: 100px;
         flex-direction: row;
         justify-content: space-between;
     }
-
-    .nav-links {
-        display: none;
-        list-style-type: none;
-        padding: 10px;
-        margin: 10px;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        border-radius: 10px;
-        text-align: left;
-    }
-
-    .nav-links li {
-        width: 100%;
+    
+    .slide-menu {
+        width: 220px; /* Slightly narrower on mobile */
     }
 }

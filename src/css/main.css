@@ -1,7 +1,12 @@
 @import url('./colors.css'); /* Import the colors.css file */
 @import url('./base.css'); /* Import the base.css file */
-@import url('./components.css'); /* Import the card.css file */
+@import url('./components.css'); /* Import the components.css file */
 @import url('./footer.css'); /* Import the footer.css file */
 @import url('./header.css'); /* Import the header.css file */
 @import url('./card.css'); /* Import the card.css file */
 @import url('./contact-us.css'); /* Import the contact.css file */
+@import url('./team.css'); /* Import the team.css file */
+@import url('./portfolio.css'); /* Import the portfolio.css file */
+@import url('./services-interactive.css'); /* Import the services-interactive.css file */
+@import url('./testimonials.css'); /* Import the testimonials.css file */
+@import url('./home.css'); /* Import the home.css file */

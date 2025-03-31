@@ -1,40 +1,195 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './css/about.css';
 import './css/main.css';
 
-const About = () => (
-  <div className="card-container">
-    <div className="card">
-      <h2>Our Mission</h2>
-      <p>
-        At Titan Tech Solutions, our mission is to empower businesses with innovative, 
-        scalable, and reliable technology solutions. We strive to deliver excellence in 
-        every line of code and every interaction, ensuring our clients achieve their 
-        goals with precision and confidence. By blending creativity with cutting-edge 
-        technology, we turn challenges into opportunities and ideas into impactful realities.
-      </p>
+const About = () => {
+  const [activeValue, setActiveValue] = useState(null);
+
+  const coreValues = [
+    {
+      id: 'technical-excellence',
+      title: 'Technical Excellence',
+      icon: '🏆',
+      description: 'We pursue mastery in software design, architecture, development, and testing.',
+      examples: [
+        'Continuous learning and skill development',
+        'Staying current with emerging technologies and methodologies',
+        'Rigorous code reviews and quality standards',
+        'Building solutions that stand the test of time'
+      ]
+    },
+    {
+      id: 'innovation',
+      title: 'Innovation',
+      icon: '💡',
+      description: 'We embrace cutting-edge technologies and methodologies to solve complex problems.',
+      examples: [
+        'Creative problem-solving approaches',
+        'Exploring new tools and frameworks',
+        'Challenging conventional thinking',
+        'Finding elegant solutions to difficult challenges'
+      ]
+    },
+    {
+      id: 'integrity',
+      title: 'Integrity',
+      icon: '🤝',
+      description: 'We build relationships based on transparency, honesty, and delivering on our promises.',
+      examples: [
+        'Clear and direct communication',
+        'Setting realistic expectations',
+        'Admitting mistakes and learning from them',
+        'Ethical business practices in all interactions'
+      ]
+    },
+    {
+      id: 'client-focus',
+      title: 'Client Focus',
+      icon: '👥',
+      description: 'We prioritize understanding our clients\' unique needs to create tailored solutions.',
+      examples: [
+        'Deep discovery process for each project',
+        'Regular client feedback integration',
+        'Solutions designed for specific business contexts',
+        'Long-term partnership approach'
+      ]
+    },
+    {
+      id: 'quality',
+      title: 'Quality',
+      icon: '✓',
+      description: 'We maintain rigorous standards throughout every phase of the software development lifecycle.',
+      examples: [
+        'Comprehensive testing at all stages',
+        'Security-first development practices',
+        'Performance optimization',
+        'Well-documented, maintainable code'
+      ]
+    }
+  ];
+
+  return (
+    <div className="about-page">
+      <section className="about-hero">
+        <h1>About Titan Tech Solutions</h1>
+        <p className="about-intro">
+          Founded by industry veterans with decades of combined experience, 
+          Titan Tech Solutions delivers exceptional software solutions designed
+          to transform your business operations and drive growth.
+        </p>
+      </section>
+      
+      <section className="mission-vision">
+        <div className="mission-container">
+          <div className="mission-card">
+            <h2>Our Mission</h2>
+            <p>
+              Our mission at Titan Tech Solutions is to empower businesses through innovative, 
+              secure, and scalable software solutions. We are dedicated to delivering exceptional 
+              value through expert design, end-to-end development, and rigorous testing practices 
+              that transform our clients' digital visions into reliable, high-performance realities.
+            </p>
+          </div>
+          
+          <div className="mission-card">
+            <h2>Our Vision</h2>
+            <p>
+              To be the trusted partner of choice for businesses seeking transformative software 
+              solutions, known for our technical excellence, forward-thinking approach, and 
+              unwavering commitment to client success.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <section className="values-section">
+        <h2>Our Core Values</h2>
+        <p className="values-intro">
+          These values guide every decision we make and every line of code we write.
+        </p>
+        
+        <div className="values-container">
+          <div className="values-nav">
+            {coreValues.map((value) => (
+              <div 
+                key={value.id}
+                className={`value-nav-item ${activeValue === value.id ? 'active' : ''}`}
+                onClick={() => setActiveValue(value.id)}
+              >
+                <span className="value-icon">{value.icon}</span>
+                <span className="value-name">{value.title}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="value-details">
+            {activeValue ? (
+              <div className="value-content animate-in">
+                {coreValues.filter(v => v.id === activeValue).map(value => (
+                  <div key={value.id}>
+                    <h3>{value.title}</h3>
+                    <p className="value-description">{value.description}</p>
+                    
+                    <div className="value-examples">
+                      <h4>What this means in practice:</h4>
+                      <ul>
+                        {value.examples.map((example, idx) => (
+                          <li key={idx}>{example}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="value-placeholder">
+                <p>Select a core value to learn more</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      
+      <section className="team-overview">
+        <h2>Our Expert Team</h2>
+        <p className="team-intro">
+          With decades of combined experience across diverse technology stacks and industries, 
+          our team brings deep expertise to every project.
+        </p>
+        
+        <div className="team-highlights">
+          <div className="team-stat">
+            <span className="stat-number">50+</span>
+            <span className="stat-label">Years Combined Experience</span>
+          </div>
+          
+          <div className="team-stat">
+            <span className="stat-number">3</span>
+            <span className="stat-label">Industry Veterans</span>
+          </div>
+          
+          <div className="team-stat">
+            <span className="stat-number">15+</span>
+            <span className="stat-label">Technology Specializations</span>
+          </div>
+        </div>
+        
+        <div className="team-cta">
+          <Link to="/team" className="team-button">Meet Our Team</Link>
+        </div>
+      </section>
+      
+      <section className="about-cta">
+        <h2>Ready to Build Something Amazing?</h2>
+        <p>Let's discuss how we can help transform your business with custom software solutions.</p>
+        <div className="cta-buttons">
+          <Link to="/services" className="primary-button">Explore Services</Link>
+          <Link to="/contact" className="secondary-button">Contact Us</Link>
+        </div>
+      </section>
     </div>
-    <div className="card">
-      <h2>Our Values</h2>
-      <ul>
-        <li><strong>Integrity:</strong> We are dedicated to honest and transparent practices, building trust with our clients and within our team.</li>
-        <li><strong>Innovation:</strong> We constantly seek new ways to improve and adapt, ensuring our solutions remain at the forefront of technology.</li>
-        <li><strong>Collaboration:</strong> We believe in the power of teamwork and open communication to drive success.</li>
-        <li><strong>Quality:</strong> From the smallest detail to the final delivery, we are committed to exceeding expectations and delivering work we're proud of.</li>
-      </ul>
-    </div>
-    <div className="card">
-      <h2>Our Team</h2>
-      <p>
-        Titan Tech Solutions is powered by a dynamic team of talented developers. With
-        experienced senior developers and passionate junior developers eager to grow,
-        we bring a balance of expertise and fresh perspectives to every project. Our
-        team thrives on collaboration, leveraging years of front-end, back-end, and 
-        software development experience to deliver exceptional results. Together, we 
-        approach every challenge with a commitment to innovation and excellence.
-      </p>
-    </div>
-  </div>
-);
+  );
+};
 
 export default About;

@@ -1,0 +1,218 @@
+.testimonials-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: var(--col-text);
+}
+
+.testimonials-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.testimonials-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+
+.testimonial-card {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.testimonial-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px var(--col-black-10);
+  position: relative;
+  min-height: 200px;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4em;
+  color: var(--col-primary-medium);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+  color: var(--col-text);
+  text-align: left;
+}
+
+.testimonial-author-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+  border: 3px solid var(--col-primary-medium);
+}
+
+.testimonial-author-info {
+  text-align: left;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: var(--col-primary-dark);
+  font-size: 1em;
+}
+
+.testimonial-position,
+.testimonial-company {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--col-text);
+  opacity: 0.8;
+}
+
+.testimonial-nav {
+  background-color: var(--col-primary-medium);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px var(--col-black-20);
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.testimonial-nav:hover {
+  background-color: var(--col-primary-dark);
+}
+
+.testimonial-nav.prev {
+  left: 0;
+}
+
+.testimonial-nav.next {
+  right: 0;
+}
+
+.testimonial-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.testimonial-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--col-light-gray);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-indicator.active {
+  background-color: var(--col-primary-medium);
+  transform: scale(1.2);
+}
+
+/* Empty state styling */
+.testimonials-empty-state {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 5px 15px var(--col-black-10);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.empty-state-icon {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--col-primary-medium);
+}
+
+.testimonials-empty-state h3 {
+  color: var(--col-primary-dark);
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.testimonials-empty-state p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty-state-cta {
+  margin-top: 30px;
+}
+
+.empty-state-cta .primary-button {
+  display: inline-block;
+  background-color: var(--col-primary-links);
+  color: var(--col-text-button);
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.empty-state-cta .primary-button:hover {
+  background-color: var(--col-primary-linksH);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--col-black-10);
+}
+
+@media (max-width: 700px) {
+  .testimonials-carousel {
+    height: 350px;
+  }
+  
+  .testimonial-content {
+    padding: 20px;
+  }
+  
+  .testimonial-nav {
+    width: 30px;
+    height: 30px;
+  }
+}

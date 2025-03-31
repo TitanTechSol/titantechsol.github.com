@@ -6,30 +6,6 @@
     --col-primary-links: #064BA5;
     --col-primary-linksH: #0856bd;
     
-    /* Primary colors Purple */
-    /*--col-primary-HL: #9e72c3;
-    --col-primary-light: #7338a0;
-    --col-primary-medium: #4a2574; 
-    --col-primary-dark: #1b0b42;
-    --col-primary-links: #924dbf;
-    --col-primary-linksH: #ae5ee3;*/
-    
-    /* Primary colors Green */
-    /*--col-primary-HL: #cad2c5;
-    --col-primary-light: #52796f;
-    --col-primary-medium: #354f52; 
-    --col-primary-dark: #2f3e46;
-    --col-primary-links: #69856f;
-    --col-primary-linksH: #7ba083;
-    
-    /* Primary colors yellow */
-    /*--col-primary-HL: #fff700;
-    --col-primary-light: #ffb300;
-    --col-primary-medium: #ff8300; 
-    --col-primary-dark: #ff4500;
-    --col-primary-links: #ffd300;
-    --col-primary-linksH: #ffe565;*/
-    
     /* Neutral colors */
     --col-light-gray: #abb8c2;
     --col-off-white: #e9e5e5;
@@ -44,4 +20,18 @@
     --col-black: #000000;
     --col-red: #ff5031;
     
+    /* Transparency variations */
+    --col-primary-dark-10: rgba(6, 75, 165, 0.1);
+    --col-primary-dark-20: rgba(6, 75, 165, 0.2);
+    --col-primary-dark-40: rgba(6, 75, 165, 0.4);
+    --col-primary-medium-20: rgba(7, 100, 222, 0.2);
+    --col-primary-medium-40: rgba(7, 100, 222, 0.4);
+    --col-white-10: rgba(255, 255, 255, 0.1);
+    --col-white-15: rgba(255, 255, 255, 0.15);
+    --col-white-20: rgba(255, 255, 255, 0.2);
+    --col-white-30: rgba(255, 255, 255, 0.3);
+    --col-white-50: rgba(255, 255, 255, 0.5);
+    --col-black-10: rgba(0, 0, 0, 0.1);
+    --col-black-20: rgba(0, 0, 0, 0.2);
+    --col-black-70: rgba(0, 0, 0, 0.7);
 }

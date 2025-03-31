@@ -1,6 +1,6 @@
 footer {
     font-size: 0.9em;
-    padding: 10px 0; /* Adjust the padding as needed */
+    padding: 30px 40px; /* Adjust the padding as needed */
     text-align: center;
     box-shadow: 0 -4px 8px var(--col-shadow); /* Add a subtle shadow */
     width: 100%;
@@ -9,6 +9,7 @@ footer {
     background-position: center; /* Center the image */
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     /*text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
@@ -22,7 +23,7 @@ footer {
     align-items: flex-start;
     gap: 10px; /* Space between links */
     padding: 0;
-    margin: 1em auto 1em 40px;
+    margin: 0;
     list-style-type: none;
 }
 
@@ -43,12 +44,35 @@ footer {
     text-align: left;
 }
 
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--col-white);
+    margin: 0;
+}
+
+.footer-contact h2 {
+    color: var(--col-white);
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    text-align: left;
+    color: var(--col-white); /* Ensure all text in footer contact is white */
+}
+
+.footer-label {
+    color: var(--col-white); /* Specifically target the labels to be white */
+}
+
 .attributions {
     display: flex;
     flex-direction: column;
     gap: 10px; /* Space between links */
     padding: 0;
-    margin: 1em 40px 1em auto;
+    margin: 0;
     align-items: flex-end;
     list-style-type: none;
 }
@@ -67,13 +91,21 @@ footer {
     font-weight: bold;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     footer {
-        font-size: 0.8em;
-    }
-
-    .footer-container {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .footerLinks, .footer-contact, .attributions {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footerLinks li, .footer-contact p {
+        text-align: center;
     }
 }

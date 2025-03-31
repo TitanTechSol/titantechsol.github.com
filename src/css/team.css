@@ -1,0 +1,203 @@
+.team-page {
+  padding-top: 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.team-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--col-text);
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1em;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 0 20px;
+}
+
+.team-card {
+  position: relative;
+  height: 450px;
+  perspective: 1500px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.team-card-front, .team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.8s ease;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-card-front {
+  background-color: var(--col-off-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-card-back {
+  background-color: var(--col-primary-dark);
+  color: white;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.team-card.active .team-card-front {
+  transform: rotateY(180deg);
+}
+
+.team-card.active .team-card-back {
+  transform: rotateY(0);
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 3px solid var(--col-primary-medium);
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--col-primary-dark-20) 0%, var(--col-primary-medium-40) 100%);
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.4em;
+}
+
+.team-title {
+  font-size: 1em;
+  color: var(--col-primary-dark);
+  margin: 0 0 15px 0;
+}
+
+.team-card-back h3 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.team-card-back h4 {
+  color: white;
+  opacity: 0.9;
+  margin: 15px 0 5px;
+}
+
+.team-bio {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+}
+
+.team-specialties {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.team-specialties li {
+  padding: 3px 0;
+  position: relative;
+  padding-left: 18px;
+}
+
+.team-specialties li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--col-white-50);
+}
+
+/* Add this new style to fix the experience text color */
+.team-card-back p {
+  color: white;
+  text-align: left;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.team-social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: var(--col-white-10);
+  transition: background-color 0.3s ease;
+}
+
+.team-social a:hover {
+  background-color: var(--col-white-20);
+}
+
+.technology-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--col-white-15);
+  border-radius: 15px;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .team-page {
+    padding-top: 75px;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-card {
+    height: auto;
+    min-height: 400px;
+  }
+}

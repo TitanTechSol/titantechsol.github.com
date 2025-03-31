@@ -37,30 +37,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 250px 40px 25px;
-    transition: padding-top 0.75s ease;
+    padding-top: 170px; /* Adjusted from 250px to account for fixed header height */
     width: 100%;
-    max-width: 750px;
-    margin: 0 auto; /* Center horizontally */
-}
-
-.home.shrink {
-    padding-top: 250px;
 }
 
 .greetings {
-    margin-top: 50px;
-    text-align: left; /* Center text */
+    margin: 50px 40px 25px;
+    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Center horizontally */
+    width: 750px; /* Ensure the text fills the container */
+    height: 100%; /* Ensure the text fills the container */
+    margin: 0 auto;
 }
 
 @media (max-width: 700px) {
     .home {
         padding-top: 75px;
         width: 100%;
-    }
-    
-    .home.shrink {
-        padding-top: 75px;
     }
     
     .menu {
