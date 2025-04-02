@@ -1,5 +1,5 @@
 .about-page {
-  padding-top: 150px;
+  padding-top: 20px; /* Reduce padding since main has base padding */
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 50px;
@@ -295,7 +295,9 @@
 
 @media (max-width: 700px) {
   .about-page {
-    padding-top: 75px;
+    padding-top: 0; /* Remove padding since main handles it */
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   .mission-container {
@@ -312,5 +314,73 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+  
+  .values-container {
+    flex-direction: column;
+  }
+  
+  .values-nav {
+    max-width: 100%;
+  }
+  
+  .value-details {
+    padding: 20px;
+  }
+  
+  .about-intro {
+    font-size: 1.1em;
+  }
+  
+  .about-cta .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .about-cta .primary-button,
+  .about-cta .secondary-button {
+    width: 100%;
+    max-width: 250px;
+    padding: 14px 20px; /* Larger touch target */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding-top: 80px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2em;
+  }
+  
+  .about-intro {
+    font-size: 1em;
+  }
+  
+  .mission-card h2 {
+    font-size: 1.6em;
+  }
+  
+  .mission-card p {
+    font-size: 1em;
+  }
+  
+  .value-nav-item {
+    padding: 12px;
+  }
+  
+  .value-icon {
+    font-size: 1.6em;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .value-content h3 {
+    font-size: 1.4em;
+  }
+  
+  .value-description {
+    font-size: 1em;
   }
 }

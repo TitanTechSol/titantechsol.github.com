@@ -1,7 +1,7 @@
 .services-interactive {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 0 20px 30px; /* Remove top padding since main has it */
 }
 
 .services-interactive h2 {
@@ -211,5 +211,73 @@
   
   .service-details {
     padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-interactive {
+    padding: 20px 15px;
+  }
+  
+  .services-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .services-nav {
+    max-width: 100%;
+  }
+  
+  .service-nav-item {
+    padding: 12px;
+  }
+  
+  .service-icon {
+    font-size: 1.4em;
+  }
+  
+  .service-details {
+    padding: 15px;
+    min-height: 400px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.4em;
+  }
+  
+  .service-description {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-interactive h2 {
+    font-size: 1.6em;
+  }
+  
+  .services-intro {
+    font-size: 0.95em;
+  }
+  
+  .service-details {
+    min-height: 350px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.3em;
+  }
+  
+  .service-sections {
+    gap: 15px;
+  }
+  
+  .service-section h4 {
+    font-size: 1.1em;
+  }
+  
+  .service-cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px; /* Larger touch target */
   }
 }

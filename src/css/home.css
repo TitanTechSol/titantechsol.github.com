@@ -41,8 +41,8 @@
 /* Process Section */
 .process-section {
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 40px 20px;
+  margin: 30px auto;
+  padding: 30px 15px;
   text-align: center;
 }
 
@@ -95,7 +95,7 @@
 /* Tech Stack Showcase */
 .tech-showcase {
   background-color: var(--col-off-white);
-  padding: 50px 20px;
+  padding: 40px 15px;
   text-align: center;
 }
 
@@ -173,6 +173,7 @@
   .process-container {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
   
   .process-step {
@@ -183,6 +184,7 @@
   .tech-grid {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
   
   .tech-category {
@@ -193,10 +195,35 @@
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
   
   .primary-button, .secondary-button {
     width: 100%;
     max-width: 250px;
+    padding: 14px 20px; /* Larger touch targets for mobile */
+  }
+  
+  .home-cta {
+    padding: 40px 15px;
+  }
+  
+  .cta-button {
+    padding: 14px 20px; /* Larger touch targets for mobile */
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-step {
+    padding: 20px 15px;
+  }
+  
+  .tech-category {
+    padding: 15px;
   }
 }

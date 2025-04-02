@@ -37,27 +37,52 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 170px; /* Adjusted from 250px to account for fixed header height */
+    padding-top: 20px; /* Adjust this - we're now using padding-top on main element */
     width: 100%;
 }
 
 .greetings {
-    margin: 50px 40px 25px;
-    text-align: left; /* Align text to the left */
-    margin: 0 auto; /* Center horizontally */
-    width: 750px; /* Ensure the text fills the container */
-    height: 100%; /* Ensure the text fills the container */
     margin: 0 auto;
+    text-align: left; /* Align text to the left */
+    max-width: 750px; /* Change from fixed width to max-width */
+    width: 90%; /* Use percentage width to be responsive */
+    height: 100%; /* Ensure the text fills the container */
+}
+
+.greetings h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+}
+
+.greetings h2 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem); /* Responsive font size */
+}
+
+.greetings h3 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem); /* Responsive font size */
+}
+
+.greetings p {
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
 }
 
 @media (max-width: 700px) {
     .home {
-        padding-top: 75px;
+        padding-top: 0; /* Remove duplicate padding since it's handled by main */
         width: 100%;
     }
     
     .menu {
         max-width: 90%;
         min-width: 90%;
+    }
+    
+    .greetings {
+        padding: 15px; /* Add padding for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding-top: 60px;
     }
 }

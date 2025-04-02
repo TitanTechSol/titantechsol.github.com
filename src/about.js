@@ -170,7 +170,7 @@ const About = () => {
           </div>
           
           <div className="team-stat">
-            <span className="stat-number">15+</span>
+            <span className="stat-number">30+</span>
             <span className="stat-label">Technology Specializations</span>
           </div>
         </div>

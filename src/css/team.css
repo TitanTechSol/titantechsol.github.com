@@ -1,5 +1,5 @@
 .team-page {
-  padding-top: 150px;
+  padding-top: 20px; /* Reduce padding since main has base padding */
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 50px;
@@ -189,7 +189,9 @@
 
 @media (max-width: 700px) {
   .team-page {
-    padding-top: 75px;
+    padding-top: 0; /* Remove padding since main handles it */
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   .team-grid {
@@ -199,5 +201,37 @@
   .team-card {
     height: auto;
     min-height: 400px;
+  }
+  
+  .team-card-front, .team-card-back {
+    padding: 15px;
+  }
+  
+  .technology-tags {
+    gap: 5px;
+  }
+  
+  .tech-tag {
+    padding: 4px 8px;
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-page {
+    padding-top: 80px;
+  }
+  
+  .team-intro {
+    font-size: 1em;
+  }
+  
+  .team-card {
+    min-height: 350px;
+  }
+  
+  .team-photo {
+    width: 120px;
+    height: 120px;
   }
 }
