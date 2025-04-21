@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+// Import the images directly
+import aaronImage from './photos/team/GAaronKibbie.jpeg';
+import danielImage from './photos/team/DanielPeckham.jpeg';
+import anthonyImage from './photos/team/AnthonyHart.jpeg';
+import aidenImage from './photos/team/GAidenKibbie.jpeg';
+
 import './css/team.css';
 
 const Team = () => {
-  const [activeTeamMember, setActiveTeamMember] = useState(null);
+  const [activeCard, setActiveCard] = useState(null);
   
   const teamMembers = [
     {
       id: 1,
       name: "G. Aaron Kibbie",
       title: "Principle Engineer, Architect",
-      photo: "/photos/team/aaron.jpg", // Add team photos to this directory
+      // Use the imported image instead of path
+      photo: aaronImage,
       bio: "With expertise in cloud development and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
       specialties: ["Cloud Architecture", "MicroService Design", "Azure DevOps", "Enterprise Software"],
       experience: "25+ years in software engineering with leadership roles as Principal Engineer, Software Architect, and Technical Lead for enterprise applications.",
@@ -21,7 +28,8 @@ const Team = () => {
       id: 2,
       name: "Daniel Peckham",
       title: "Full Stack Developer",
-      photo: "/photos/team/daniel.jpg", // Add team photos to this directory
+      // Use the imported image instead of path
+      photo: danielImage,
       bio: "Daniel brings extensive experience in modern web technologies and .NET development, specializing in creating seamless user experiences with React and Angular.",
       specialties: ["Full Stack Development", "React/TypeScript", ".NET Applications", "Clean Architecture"],
       experience: "6+ years as a Full Stack Developer specializing in .NET, React, and TypeScript. Experience in financial technology, aerospace, and healthcare sectors.",
@@ -33,7 +41,8 @@ const Team = () => {
       id: 3,
       name: "Anthony Hart",
       title: "Senior Software Engineer / Technical Lead",
-      photo: "/photos/team/anthony.jpg", // Add team photos to this directory
+      // Use the imported image instead of path
+      photo: anthonyImage,
       bio: "With 25+ years of experience, Anthony specializes in developing and architecting enterprise-grade solutions, with deep expertise in .NET, Angular, and REST services.",
       specialties: ["Software Architecture", "REST Services", "SQL Server", "Mobile Development"],
       experience: "25+ years as a Senior Software Engineer and Technical Lead, guiding teams in implementing microservice architectures and enterprise solutions.",
@@ -45,7 +54,8 @@ const Team = () => {
       id: 4,
       name: "G. Aiden Kibbie",
       title: "Junior Software Engineer",
-      photo: "/photos/team/megan.jpg", // Add team photos to this directory
+      // Use the imported image instead of path
+      photo: aidenImage,
       bio: "Aiden is a passionate software engineer with a focus on web development and a keen interest in cloud technologies.",
       specialties: ["Web Development", "Cloud Technologies", "Agile Methodologies"],
       experience: "1+ year as a Junior Software Engineer focused on front-end development and cloud-based application development.",
@@ -56,7 +66,7 @@ const Team = () => {
   ];
 
   const handleTeamMemberClick = (id) => {
-    setActiveTeamMember(activeTeamMember === id ? null : id);
+    setActiveCard(activeCard === id ? null : id);
   };
 
   return (
@@ -71,7 +81,7 @@ const Team = () => {
         {teamMembers.map(member => (
           <div 
             key={member.id} 
-            className={`team-card ${activeTeamMember === member.id ? 'active' : ''}`}
+            className={`team-card ${activeCard === member.id ? 'active' : ''}`}
             onClick={() => handleTeamMemberClick(member.id)}
           >
             <div className="team-card-front">
