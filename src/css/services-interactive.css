@@ -1,7 +1,7 @@
 .services-interactive {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 30px; /* Remove top padding since main has it */
+  padding: 0 20px 30px;
 }
 
 .services-interactive h2 {
@@ -21,26 +21,29 @@
 .services-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
 @media (min-width: 768px) {
   .services-container {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .services-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   gap: 10px;
-  flex: 1;
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
 }
 
 @media (min-width: 768px) {
   .services-nav {
+    flex: 1;
     max-width: 300px;
   }
 }
@@ -51,15 +54,16 @@
   gap: 15px;
   padding: 15px;
   border-radius: 8px;
-  background-color: var(--col-off-white);
+  background-color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   border-left: 5px solid transparent;
+  box-shadow: 0 4px 10px var(--col-black-10);
 }
 
 .service-nav-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 10px var(--col-black-10);
+  transform: translateX(3px);
+  box-shadow: 0 4px 10px var(--col-black-20);
 }
 
 .service-nav-item.active {
@@ -89,12 +93,7 @@
   padding: 25px;
   box-shadow: 0 4px 12px var(--col-black-10);
   min-height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-
-.service-content {
-  height: 100%;
+  width: 100%;
 }
 
 .service-content h3 {
@@ -103,6 +102,7 @@
   font-size: 1.6em;
   border-bottom: 2px solid var(--col-light-gray);
   padding-bottom: 10px;
+  text-align: left;
 }
 
 .service-description {
@@ -117,6 +117,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
@@ -129,6 +130,7 @@
   color: var(--col-primary-medium);
   margin-bottom: 15px;
   font-size: 1.2em;
+  text-align: left;
 }
 
 .benefits-list, .process-list {
@@ -157,7 +159,6 @@
 }
 
 .service-cta {
-  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
@@ -169,11 +170,13 @@
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .service-cta-button:hover {
   background-color: var(--col-primary-linksH);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--col-black-10);
 }
 
 .service-placeholder {
@@ -183,6 +186,7 @@
   height: 100%;
   color: var(--col-light-gray);
   font-style: italic;
+  text-align: center;
 }
 
 .animate-in {
@@ -200,32 +204,17 @@
   }
 }
 
-@media (max-width: 700px) {
-  .service-nav-item {
-    padding: 10px;
-  }
-  
-  .service-icon {
-    font-size: 1.4em;
-  }
-  
-  .service-details {
-    padding: 15px;
-  }
-}
-
 @media (max-width: 768px) {
   .services-interactive {
     padding: 20px 15px;
   }
   
   .services-container {
-    flex-direction: column;
-    gap: 15px;
+    align-items: stretch;
   }
   
   .services-nav {
-    max-width: 100%;
+    max-width: none;
   }
   
   .service-nav-item {
@@ -234,10 +223,12 @@
   
   .service-icon {
     font-size: 1.4em;
+    width: 32px;
+    height: 32px;
   }
   
   .service-details {
-    padding: 15px;
+    padding: 20px;
     min-height: 400px;
   }
   
@@ -259,13 +250,33 @@
     font-size: 0.95em;
   }
   
+  .service-nav-item {
+    padding: 10px;
+  }
+  
   .service-details {
+    padding: 15px;
     min-height: 350px;
   }
   
   .service-content h3 {
     font-size: 1.3em;
   }
+  
+  .service-sections {
+    gap: 20px;
+  }
+  
+  .service-section h4 {
+    font-size: 1.1em;
+  }
+  
+  .service-cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
   
   .service-sections {
     gap: 15px;
@@ -280,4 +291,3 @@
     text-align: center;
     padding: 14px 20px; /* Larger touch target */
   }
-}

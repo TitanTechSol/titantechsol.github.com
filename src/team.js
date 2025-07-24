@@ -4,6 +4,7 @@ import aaronImage from './photos/team/GAaronKibbie.jpeg';
 import danielImage from './photos/team/DanielPeckham.jpeg';
 import anthonyImage from './photos/team/AnthonyHart.jpeg';
 import aidenImage from './photos/team/GAidenKibbie.jpeg';
+import corinneImage from './photos/team/ECorinneKibbie.jpg';
 
 import './css/team.css';
 
@@ -20,7 +21,6 @@ const Team = () => {
       bio: "With expertise in cloud development and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
       specialties: ["Cloud Architecture", "MicroService Design", "Azure DevOps", "Enterprise Software"],
       experience: "25+ years in software engineering with leadership roles as Principal Engineer, Software Architect, and Technical Lead for enterprise applications.",
-      github: "https://github.com/yourusername", // Replace with actual links
       linkedin: "https://www.linkedin.com/in/aaron-kibbie-b72a401/",
       technologies: ["Azure", "AWS", "CI/CD", ".NET Core", "Cloud Migration", ".NET Framework", "C#", "microservices", "javascript", "typescript", "tsql", "sql", "vb.net", "vb", "WCF", "WPF", "REST", "SOAP", "agile", "scrum", "kanban", "docker", "kubernetes", "git", "github", "azure devops", "jira", "confluence", "lucid", "and more..."]
     },
@@ -33,8 +33,7 @@ const Team = () => {
       bio: "Daniel brings extensive experience in modern web technologies and .NET development, specializing in creating seamless user experiences with React and Angular.",
       specialties: ["Full Stack Development", "React/TypeScript", ".NET Applications", "Clean Architecture"],
       experience: "6+ years as a Full Stack Developer specializing in .NET, React, and TypeScript. Experience in financial technology, aerospace, and healthcare sectors.",
-      github: "https://github.com/yourusername", // Replace with actual links
-      linkedin: "https://www.linkedin.com/in/daniel-peckham/", // Replace with actual links
+      linkedin: "https://www.linkedin.com/in/daniel-peckham/",
       technologies: [".NET", "React", "TypeScript", "Vue", "Vue.js", "Azure DevOps", "Microservices", "Docker", "entity framework", "sql", "git", "HTML", "CSS", "C#", "and more..."]
     },
     {
@@ -46,7 +45,6 @@ const Team = () => {
       bio: "With 25+ years of experience, Anthony specializes in developing and architecting enterprise-grade solutions, with deep expertise in .NET, Angular, and REST services.",
       specialties: ["Software Architecture", "REST Services", "SQL Server", "Mobile Development"],
       experience: "25+ years as a Senior Software Engineer and Technical Lead, guiding teams in implementing microservice architectures and enterprise solutions.",
-      github: "https://github.com/yourusername", // Replace with actual links
       linkedin: "https://www.linkedin.com/in/anthony-hart-1a69154",
       technologies: ["C#", "ASP.NET", "Angular", "REST Services", "SQL Server", "XML", "SQL", "agile methodologies", "docker", "kubernetes", "jira", "confluence", "lucid", "and more..."]
     },
@@ -58,10 +56,21 @@ const Team = () => {
       photo: aidenImage,
       bio: "Aiden is a passionate software engineer with a focus on web development and a keen interest in cloud technologies.",
       specialties: ["Web Development", "Cloud Technologies", "Agile Methodologies"],
-      experience: "1+ year as a Junior Software Engineer focused on front-end development and cloud-based application development.",
-      github: "https://github.com/yourusername", // Replace with actual links
+      experience: "Junior Software Engineer focused on front-end development and cloud-based application development.",
       linkedin: "https://www.linkedin.com/in/george-kibbie-957b83314/",
       technologies: ["html", "css", "javascript", "react", "node.js", "lua"]
+    },
+    {
+      id: 5,
+      name: "E. Corinne Kibbie",
+      title: "Sales and Marketing Director",
+      // Use the imported image instead of path
+      photo: corinneImage,
+      bio: "Corinne is a results-driven marketing professional with a passion for technology and innovation.",
+      specialties: ["Digital Marketing", "Content Strategy", "SEO", "Social Media Management"],
+      experience: "7+ years in marketing roles, with a focus on technology companies and startups.",
+      linkedin: null,
+      technologies: ["SEO", "Content Marketing", "Social Media", "Email Marketing", "Marketing Automation"]
     }
   ];
 
@@ -109,8 +118,9 @@ const Team = () => {
                 ))}
               </div>
               <div className="team-social">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                {/* <a href={member.github} target="_blank" rel="noopener noreferrer">GitHub</a> */}
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                )}
               </div>
             </div>
           </div>

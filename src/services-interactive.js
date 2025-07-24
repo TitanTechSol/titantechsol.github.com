@@ -153,7 +153,7 @@ const ServicesInteractive = () => {
             </div>
           ) : (
             <div className="service-placeholder">
-              <p>Select a service to learn more</p>
+              <p>Select a service to learn more about our expertise and approach!</p>
             </div>
           )}
         </div>
@@ -161,5 +161,4 @@ const ServicesInteractive = () => {
     </div>
   );
 };
-
 export default ServicesInteractive;

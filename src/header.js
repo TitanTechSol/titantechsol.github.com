@@ -68,7 +68,6 @@ const Header = ({ toggleMenu, menuOpen }) => {
             <ul className="nav-links">
               <li><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
               <li><Link to="/services" onClick={handleNavLinkClick}>Services</Link></li>
-              <li><Link to="/portfolio" onClick={handleNavLinkClick}>Portfolio</Link></li>
               <li><Link to="/team" onClick={handleNavLinkClick}>Team</Link></li>
               <li><Link to="/about" onClick={handleNavLinkClick}>About Us</Link></li>
               <li><Link to="/contact" onClick={handleNavLinkClick}>Contact Us</Link></li>

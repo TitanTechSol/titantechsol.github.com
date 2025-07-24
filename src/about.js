@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './css/about.css';
 import './css/main.css';
 
 const About = () => {

@@ -27,7 +27,8 @@
 
 .team-card {
   position: relative;
-  height: 450px;
+  height: 325px;
+  max-width: 325px;
   perspective: 1500px;
   cursor: pointer;
   border-radius: 10px;

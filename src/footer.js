@@ -9,7 +9,6 @@ const Footer = () => (
       <ul>
         <li><Link className="clickable-link" to="/">Home</Link></li>
         <li><Link className="clickable-link" to="/services">Services</Link></li>
-        <li><Link className="clickable-link" to="/portfolio">Portfolio</Link></li>
         <li><Link className="clickable-link" to="/team">Our Team</Link></li>
         <li><Link className="clickable-link" to="/about">About Us</Link></li>
         <li><Link className="clickable-link" to="/contact">Contact Us</Link></li>
