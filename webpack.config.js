@@ -52,6 +52,8 @@ module.exports = (env, argv) => {
           { from: 'CNAME', to: '', noErrorOnMissing: true },
           // Copy the photos directory to the dist folder
           { from: 'src/photos', to: 'photos', noErrorOnMissing: true },
+          // Copy the React Router-compatible 404.html to override any existing version
+          { from: 'src/404.html', to: '404.html', force: true },
         ],
       }),
     ],

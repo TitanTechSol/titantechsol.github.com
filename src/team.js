@@ -80,7 +80,7 @@ const Team = () => {
 
   return (
     <div className="team-page">
-      <h1>Our Expert Team</h1>
+      <h1>Our Expert Team!</h1>
       <p className="team-intro">
         At Titan Tech Solutions, our team combines decades of experience in software 
         architecture, development, and testing to deliver exceptional results for our clients.
