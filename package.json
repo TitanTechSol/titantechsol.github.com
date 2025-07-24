@@ -2,7 +2,7 @@
   "name": "titantechsol.github.com",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://titantechsol.github.io/titantechsol.github.com",
+  "homepage": "https://titantech.g2ad.com",
   "scripts": {
     "watch": "watch 'npm run build' ./src",
     "start": "node server.js",
