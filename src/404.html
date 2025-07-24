@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Simple redirect to home page
-      window.location.replace('/titantechsol.github.com/');
+      // Store the current path and redirect to the main app
+      // This allows React Router to handle the routing
+      var path = window.location.pathname.slice(1);
+      if (path) {
+        sessionStorage.setItem('redirectPath', path);
+      }
+      window.location.replace('/');
     </script>
   </head>
   <body>
-    <p>Redirecting to home page...</p>
+    <p>Redirecting...</p>
   </body>
 </html>
