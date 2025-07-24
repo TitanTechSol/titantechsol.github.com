@@ -9,8 +9,8 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Change from center to flex-start */
-    padding-top: 150px; /* Add default padding for all pages to account for header */
+    justify-content: flex-start;
+    padding-top: 80px; /* Reduced from 150px to match new header height */
 }
 
 html, body {
@@ -96,6 +96,6 @@ input, textarea, select, button {
 
 @media (max-width: 700px) {
     main {
-        padding-top: 100px; /* Adjust padding for mobile header height */
+        padding-top: 70px; /* Reduced from 100px to match new mobile header height */
     }
 }
