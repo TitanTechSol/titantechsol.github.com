@@ -10,7 +10,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 80px; /* Reduced from 150px to match new header height */
+    padding-top: 150px; /* Restore to match header height */
 }
 
 html, body {
@@ -96,6 +96,6 @@ input, textarea, select, button {
 
 @media (max-width: 700px) {
     main {
-        padding-top: 70px; /* Reduced from 100px to match new mobile header height */
+        padding-top: 100px; /* Match mobile header height */
     }
 }

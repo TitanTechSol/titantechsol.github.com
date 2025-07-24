@@ -4,25 +4,11 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect based on the 'p' query parameter
-      var l = window.location;
-      var params = new URLSearchParams(l.search);
-      var page = params.get('p');
-
-      if (page) {
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/' + page + l.hash
-        );
-      } else {
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/' +
-          (l.pathname ? 'p=' + l.pathname.replace(/^\//, '') : '') +
-          (l.search ? '&' + l.search.replace(/^\?/, '') : '') +
-          l.hash
-        );
-      }
+      // Simple redirect to home page
+      window.location.replace('/');
     </script>
   </head>
   <body>
+    <p>Redirecting to home page...</p>
   </body>
 </html>
