@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Home from './home';
@@ -10,6 +10,7 @@ import ServicesInteractive from './services-interactive';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -20,10 +21,10 @@ const App = () => {
     const redirectPath = sessionStorage.getItem('redirectPath');
     if (redirectPath) {
       sessionStorage.removeItem('redirectPath');
-      // Navigate to the intended path
-      window.history.replaceState(null, '', '/' + redirectPath);
+      // Use React Router's navigate instead of manual history manipulation
+      navigate('/' + redirectPath, { replace: true });
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
