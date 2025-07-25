@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LazyImage from './components/LazyImage';
 // Import the images directly
 import aaronImage from './photos/team/GAaronKibbie.jpeg';
 import danielImage from './photos/team/DanielPeckham.jpeg';
@@ -63,13 +64,13 @@ const Team = () => {
     {
       id: 5,
       name: "E. Corinne Kibbie",
-      title: "Sales and Marketing Director",
+      title: "CGO",
       // Use the imported image instead of path
       photo: corinneImage,
-      bio: "Corinne is a results-driven marketing professional with a passion for technology and innovation.",
+      bio: "Corinne is a growth-focused marketing leader who blends innovation and technology to drive customer engagement and scalable results.",
       specialties: ["Digital Marketing", "Content Strategy", "SEO", "Social Media Management"],
-      experience: "7+ years in marketing roles, with a focus on technology companies and startups.",
-      linkedin: null,
+      experience: "7+ years in marketing roles",
+      linkedin: "https://www.linkedin.com/in/corinne-kibbie-7912a22b2/",
       technologies: ["SEO", "Content Marketing", "Social Media", "Email Marketing", "Marketing Automation"]
     }
   ];
@@ -94,7 +95,13 @@ const Team = () => {
             onClick={() => handleTeamMemberClick(member.id)}
           >
             <div className="team-card-front">
-              <div className="team-photo" style={{ backgroundImage: `url(${member.photo})` }}>
+              <div className="team-photo">
+                <LazyImage
+                  src={member.photo}
+                  alt={`${member.name} - ${member.title}`}
+                  className="team-photo-img"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
                 <div className="team-overlay"></div>
               </div>
               <h3>{member.name}</h3>

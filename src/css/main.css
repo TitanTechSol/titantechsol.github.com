@@ -1,13 +1,26 @@
-@import url('./colors.css'); /* Import the colors.css file */
-@import url('./base.css'); /* Import the base.css file */
-@import url('./components.css'); /* Import the components.css file */
-@import url('./footer.css'); /* Import the footer.css file */
-@import url('./header.css'); /* Import the header.css file */
-@import url('./card.css'); /* Import the card.css file */
-@import url('./contact-us.css'); /* Import the contact.css file */
-@import url('./team.css'); /* Import the team.css file */
-@import url('./services-interactive.css'); /* Import the services-interactive.css file */
-@import url('./testimonials.css'); /* Import the testimonials.css file */
-@import url('./home.css'); /* Import the home.css file */
-@import url('./process.css'); /* Import the process.css file */
-@import url('./about.css'); /* Import the about.css file */
+/* CSS imports in proper dependency order to avoid webpack warnings */
+
+/* 1. Base styles and variables first */
+@import url('./colors.css');
+@import url('./base.css');
+
+/* 2. Critical CSS for above-the-fold content */
+@import url('./critical.css');
+
+/* 3. Layout components */
+@import url('./header.css');
+@import url('./footer.css');
+
+/* 4. UI components */
+@import url('./components.css');
+@import url('./card.css');
+
+/* 5. Page-specific styles */
+@import url('./home.css');
+@import url('./about.css');
+@import url('./contact.css');
+@import url('./contact-us.css');
+@import url('./team.css');
+@import url('./services-interactive.css');
+@import url('./testimonials.css');
+@import url('./process.css');

@@ -2,6 +2,30 @@
 
 This document tracks user stories that have been implemented in the Titan Tech Solutions website project. Stories are considered complete when they meet all or most of their acceptance criteria.
 
+## Epics & Major Work Items
+
+### [E-2025-001 - Website Performance Optimization](./work-items/completed/E-2025-001-COMPLETED.md)
+**Status**: ✅ **COMPLETED** (July 25, 2025)
+**Epic Summary**: Comprehensive website performance optimization delivering significant improvements across all performance metrics.
+
+**Key Achievements**:
+- ✅ **Image Optimization**: 36.6% file size reduction (600KB → 381KB)
+- ✅ **JavaScript Optimization**: Code splitting with 10.5KB main + 170KB vendor bundles
+- ✅ **CSS Optimization**: Critical CSS extraction and 0 webpack warnings
+- ✅ **Caching Strategy**: Service worker implementation with offline capability
+- ✅ **Performance Monitoring**: Web Vitals tracking (LCP, FID, CLS)
+- ✅ **Bundle Analysis**: Tools for ongoing optimization monitoring
+
+**Business Impact**:
+- Sub-3-second page load capability achieved
+- 26% total bundle size reduction
+- Enhanced user experience and SEO readiness
+- Scalable performance monitoring infrastructure
+
+**Tools Added**: `npm run optimize:images`, `npm run build:analyze`, `npm run perf:test`
+
+---
+
 ## Content & Experience
 
 ### [P01-CE-00001.01-team-profiles](./userstories/P01-CE-00001.01-team-profiles.md)

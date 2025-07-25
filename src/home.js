@@ -1,24 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Process from './Process';
 import './css/main.css';
 
 const Home = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector('.home');
+  const handleScroll = useCallback(() => {
+    const header = document.querySelector('.home');
+    if (header) {
       if (window.scrollY > 20) {
         header.classList.add('shrink');
       } else {
         header.classList.remove('shrink');
       }
+    }
+  }, []);
+
+  useEffect(() => {
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <>

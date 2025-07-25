@@ -73,7 +73,7 @@ const About = () => {
       <section className="about-hero">
         <h1>About Titan Tech Solutions</h1>
         <p className="about-intro">
-          Founded by industry veterans with decades of combined experience, 
+          Founded by our experts with decades of combined experience, 
           Titan Tech Solutions delivers exceptional software solutions designed
           to transform your business operations and drive growth.
         </p>
@@ -84,10 +84,10 @@ const About = () => {
           <div className="mission-card">
             <h2>Our Mission</h2>
             <p>
-              Our mission at Titan Tech Solutions is to empower businesses through innovative, 
-              secure, and scalable software solutions. We are dedicated to delivering exceptional 
-              value through expert design, end-to-end development, and rigorous testing practices 
-              that transform our clients' digital visions into reliable, high-performance realities.
+              We deliver robust, scalable, and intelligent software solutions by pairing cost-effective 
+              developers with experts, enhanced by AI tools and practices. Our unique model blends the 
+              innovation of emerging talent with deep technical leadership, ensuring clients receive 
+              high-impact results with long-term value.
             </p>
           </div>
           
