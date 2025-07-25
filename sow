@@ -1,0 +1,809 @@
+#!/bin/bash
+
+# Statement of Work (SOW) - TitanTech Solutions SDLC Management
+# 
+# Unified command interface for AI-assisted software development lifecycle
+# and Statement of Work management using Azure DevOps best practices.
+#
+# Usage: ./sow <command> [options]
+#
+# This script provides a streamlined workflow for:
+# - AI collaboration and behavior-driven development
+# - Work item management with ADO hierarchy
+# - Issue analysis and processing
+# - Testing and validation
+# - Git integration with work item tracking
+
+set -e
+
+# Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+COPILOT_DIR="$SCRIPT_DIR/copilot"
+SCRIPTS_DIR="$COPILOT_DIR/scripts"
+WORK_ITEMS_DIR="$COPILOT_DIR/work-items"
+ISSUES_DIR="$COPILOT_DIR/issues"
+
+# Colors for terminal output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# SOW banner
+show_banner() {
+    echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${NC}"
+    echo -e "${CYAN}║                 ${GREEN}TitanTech Solutions SOW${CYAN}                     ║${NC}"
+    echo -e "${CYAN}║              ${YELLOW}AI-Assisted SDLC Management${CYAN}                  ║${NC}"
+    echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${NC}"
+    echo
+}
+
+# Logging functions
+log_info() {
+    echo -e "${CYAN}ℹ️  $1${NC}"
+}
+
+log_success() {
+    echo -e "${GREEN}✅ $1${NC}"
+}
+
+log_warning() {
+    echo -e "${YELLOW}⚠️  $1${NC}"
+}
+
+log_error() {
+    echo -e "${RED}❌ $1${NC}"
+}
+
+log_command() {
+    echo -e "${BLUE}🔧 $1${NC}"
+}
+
+# Show usage information
+show_usage() {
+    show_banner
+    echo -e "${YELLOW}WORKFLOW COMMANDS:${NC}"
+    echo
+    echo -e "${GREEN}AI & Planning:${NC}"
+    echo -e "  ${CYAN}./sow ai${NC}                    - Get AI collaboration next steps"
+    echo -e "  ${CYAN}./sow plan [--dry-run]${NC}      - Analyze issues and plan work items"
+    echo -e "  ${CYAN}./sow behaviors${NC}             - Show available SOW behaviors"
+    echo
+    echo -e "${GREEN}Work Item Management:${NC}"
+    echo -e "  ${CYAN}./sow work-item <id>${NC}        - Show work item details"
+    echo -e "  ${CYAN}./sow work-items <cmd>${NC}      - Manage work items data architecture"
+    echo -e "  ${CYAN}./sow create [--dry-run]${NC}    - Generate work items from issues"
+    echo -e "  ${CYAN}./sow validate [--dry-run]${NC}  - Validate backlog ADO compliance"
+    echo -e "  ${CYAN}./sow export [--dry-run]${NC}    - Export to Azure DevOps format"
+    echo
+    echo -e "${GREEN}Issue Processing:${NC}"
+    echo -e "  ${CYAN}./sow check-issues${NC}          - Scan for new issues to process"
+    echo -e "  ${CYAN}./sow issue <file>${NC}          - Process specific issue file"
+    echo -e "  ${CYAN}./sow status${NC}                - Show backlog status summary"
+    echo
+    echo -e "${GREEN}Development Workflow:${NC}"
+    echo -e "  ${CYAN}./sow run-tests${NC}             - Execute project test suite"
+    echo -e "  ${CYAN}./sow build${NC}                 - Build project"
+    echo -e "  ${CYAN}./sow commit <id> <msg>${NC}     - Commit with work item reference"
+    echo -e "  ${CYAN}./sow branch <id>${NC}           - Create work item branch"
+    echo
+    echo -e "${GREEN}Reporting & Analysis:${NC}"
+    echo -e "  ${CYAN}./sow report${NC}                - Generate SOW progress report"
+    echo -e "  ${CYAN}./sow metrics${NC}               - Show development metrics"
+    echo -e "  ${CYAN}./sow health${NC}                - Check system health"
+    echo
+    echo -e "${YELLOW}GLOBAL OPTIONS:${NC}"
+    echo -e "  ${CYAN}--dry-run${NC}                   - Preview actions without executing"
+    echo -e "  ${CYAN}--verbose${NC}                   - Show detailed output"
+    echo -e "  ${CYAN}--help${NC}                      - Show command help"
+    echo
+    echo -e "${MAGENTA}💡 Use './sow <command> --help' for command-specific help${NC}"
+    echo -e "${MAGENTA}💡 Use '--dry-run' to preview changes before execution${NC}"
+}
+
+# AI collaboration guidance
+cmd_ai() {
+    show_banner
+    echo -e "${GREEN}🤖 AI Collaboration Next Steps${NC}"
+    echo -e "${YELLOW}═══════════════════════════════${NC}"
+    echo
+    
+    # Check current state
+    local issue_count=0
+    local backlog_items=0
+    
+    if [[ -d "$ISSUES_DIR" ]]; then
+        issue_count=$(find "$ISSUES_DIR" -name "*.md" -o -name "*.txt" 2>/dev/null | wc -l)
+    fi
+    
+    if [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        backlog_items=$(jq '[.epics[], .features[], .userStories[], .tasks[], .bugs[]] | length' "$WORK_ITEMS_DIR/backlog.json" 2>/dev/null || echo 0)
+    fi
+    
+    echo -e "${CYAN}📊 Current State:${NC}"
+    echo -e "   Issues pending: $issue_count"
+    echo -e "   Backlog items: $backlog_items"
+    echo
+    
+    # Recommend next actions
+    if [[ $issue_count -gt 0 ]]; then
+        echo -e "${GREEN}🎯 Recommended Actions:${NC}"
+        echo -e "   1. ${YELLOW}Process pending issues:${NC}    ./sow plan --dry-run"
+        echo -e "   2. ${YELLOW}Generate work items:${NC}       ./sow create --dry-run"
+        echo -e "   3. ${YELLOW}Validate backlog:${NC}          ./sow validate"
+        echo
+    elif [[ $backlog_items -gt 0 ]]; then
+        echo -e "${GREEN}🎯 Recommended Actions:${NC}"
+        echo -e "   1. ${YELLOW}Review backlog status:${NC}     ./sow status"
+        echo -e "   2. ${YELLOW}Export to ADO:${NC}             ./sow export --dry-run"
+        echo -e "   3. ${YELLOW}Start development:${NC}         ./sow branch <work-item-id>"
+        echo
+    else
+        echo -e "${GREEN}🎯 Getting Started:${NC}"
+        echo -e "   1. ${YELLOW}Check system health:${NC}       ./sow health"
+        echo -e "   2. ${YELLOW}Add issues to process:${NC}     Place .md files in $ISSUES_DIR"
+        echo -e "   3. ${YELLOW}Explore behaviors:${NC}         ./sow behaviors"
+        echo
+    fi
+    
+    echo -e "${BLUE}📚 Resources:${NC}"
+    echo -e "   • Best Practices: $COPILOT_DIR/docs/best-practices/"
+    echo -e "   • SOW Behaviors: $COPILOT_DIR/behaviors/"
+    echo -e "   • Templates: $WORK_ITEMS_DIR/templates/"
+    echo
+    
+    echo -e "${MAGENTA}💡 Use '--dry-run' with any command to preview changes safely${NC}"
+}
+
+# Show available SOW behaviors
+cmd_behaviors() {
+    show_banner
+    echo -e "${GREEN}🎭 Available SOW Behaviors${NC}"
+    echo -e "${YELLOW}═══════════════════════════${NC}"
+    echo
+    
+    if [[ -d "$COPILOT_DIR/behaviors" ]]; then
+        for behavior_dir in "$COPILOT_DIR/behaviors"/*; do
+            if [[ -d "$behavior_dir" ]]; then
+                local behavior_name=$(basename "$behavior_dir")
+                local readme_file="$behavior_dir/README.md"
+                
+                echo -e "${CYAN}📋 $behavior_name${NC}"
+                if [[ -f "$readme_file" ]]; then
+                    local description=$(head -n 10 "$readme_file" | grep -E "^#|^-|^\*" | head -n 3 | sed 's/^[#*-] *//' | tr '\n' ' ')
+                    echo -e "   ${description:0:100}..."
+                else
+                    echo -e "   Behavior configuration directory"
+                fi
+                echo
+            fi
+        done
+    else
+        log_warning "Behaviors directory not found"
+    fi
+    
+    echo -e "${BLUE}💡 Behaviors define AI collaboration patterns for different SOW types${NC}"
+}
+
+# Plan work items from issues
+cmd_plan() {
+    local dry_run=""
+    if [[ "$1" == "--dry-run" ]]; then
+        dry_run="--dry-run"
+        log_info "Planning mode - previewing issue analysis"
+    fi
+    
+    log_command "Analyzing issues and planning work item hierarchy..."
+    
+    if [[ ! -d "$ISSUES_DIR" ]]; then
+        log_error "Issues directory not found: $ISSUES_DIR"
+        log_info "Create issues directory and add .md files to begin"
+        return 1
+    fi
+    
+    local issue_count=$(find "$ISSUES_DIR" -name "*.md" -o -name "*.txt" 2>/dev/null | wc -l)
+    if [[ $issue_count -eq 0 ]]; then
+        log_warning "No issues found to process"
+        log_info "Add .md or .txt files to $ISSUES_DIR"
+        return 0
+    fi
+    
+    log_info "Found $issue_count issue(s) for analysis"
+    
+    if [[ -n "$dry_run" ]]; then
+        echo
+        echo -e "${YELLOW}📋 Issues that would be analyzed:${NC}"
+        find "$ISSUES_DIR" -name "*.md" -o -name "*.txt" | while read -r file; do
+            echo -e "   ${CYAN}• $(basename "$file")${NC}"
+        done
+        echo
+        echo -e "${MAGENTA}💡 Run './sow create --dry-run' to preview work item generation${NC}"
+    else
+        log_info "Use './sow create' to generate work items from these issues"
+    fi
+}
+
+# Create work items from issues
+cmd_create() {
+    local args=("$@")
+    log_command "🤖 Generating ADO-compatible work items with AI automation..."
+    
+    # Use the new automated generator
+    if command -v node >/dev/null 2>&1; then
+        cd "$SCRIPTS_DIR" && node generate-work-items-auto.js "${args[@]}"
+    else
+        log_warning "Node.js not found, falling back to bash script"
+        "$SCRIPTS_DIR/generate-work-items.sh" "${args[@]}"
+    fi
+}
+
+# Validate backlog
+cmd_validate() {
+    local args=("$@")
+    log_command "Validating backlog ADO compliance..."
+    "$SCRIPTS_DIR/validate-backlog.sh" "${args[@]}"
+}
+
+# Export to Azure DevOps
+cmd_export() {
+    local args=("$@")
+    log_command "Preparing Azure DevOps export..."
+    "$SCRIPTS_DIR/migrate-to-ado.sh" "${args[@]}"
+}
+
+# Show work item details
+cmd_work_item() {
+    local work_item_id="$1"
+    
+    if [[ -z "$work_item_id" ]]; then
+        log_error "Work item ID required"
+        log_info "Usage: ./sow work-item <id>"
+        return 1
+    fi
+    
+    # Search for work item in backlog
+    if [[ ! -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        log_error "Backlog not found. Run './sow create' first."
+        return 1
+    fi
+    
+    local work_item=$(jq -r "
+        [.epics[], .features[], .userStories[], .tasks[], .bugs[]] | 
+        map(select(.id == \"$work_item_id\")) | 
+        first // empty
+    " "$WORK_ITEMS_DIR/backlog.json")
+    
+    if [[ -z "$work_item" || "$work_item" == "null" ]]; then
+        log_error "Work item not found: $work_item_id"
+        return 1
+    fi
+    
+    echo
+    echo -e "${CYAN}📋 Work Item Details${NC}"
+    echo -e "${YELLOW}══════════════════${NC}"
+    echo "$work_item" | jq -r "
+        \"ID: \" + .id,
+        \"Title: \" + .title,
+        \"Type: \" + .type,
+        \"State: \" + .state,
+        \"Priority: \" + .priority,
+        \"Effort: \" + .effort,
+        \"Parent: \" + (.parentId // \"None\"),
+        \"Created: \" + .created
+    "
+    echo
+}
+
+# Check for issues to process
+cmd_check_issues() {
+    show_banner
+    echo -e "${GREEN}🔍 Issue Scanner${NC}"
+    echo -e "${YELLOW}═══════════════${NC}"
+    echo
+    
+    if [[ ! -d "$ISSUES_DIR" ]]; then
+        log_warning "Issues directory not found"
+        log_info "Creating issues directory: $ISSUES_DIR"
+        mkdir -p "$ISSUES_DIR"
+        echo
+        echo -e "${BLUE}💡 Add .md or .txt files to $ISSUES_DIR to begin${NC}"
+        return 0
+    fi
+    
+    local issue_files=($(find "$ISSUES_DIR" -name "*.md" -o -name "*.txt" 2>/dev/null))
+    
+    if [[ ${#issue_files[@]} -eq 0 ]]; then
+        log_info "No issues found"
+        echo -e "${BLUE}💡 Add .md or .txt files to $ISSUES_DIR to begin${NC}"
+        return 0
+    fi
+    
+    echo -e "${CYAN}📄 Found ${#issue_files[@]} issue(s):${NC}"
+    for file in "${issue_files[@]}"; do
+        local filename=$(basename "$file")
+        local size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null || echo "0")
+        local lines=$(wc -l < "$file" 2>/dev/null || echo "0")
+        echo -e "   ${GREEN}• $filename${NC} (${size} bytes, ${lines} lines)"
+    done
+    echo
+    
+    echo -e "${YELLOW}Next Steps:${NC}"
+    echo -e "   1. Preview: ${CYAN}./sow plan --dry-run${NC}"
+    echo -e "   2. Create: ${CYAN}./sow create --dry-run${NC}"
+    echo -e "   3. Execute: ${CYAN}./sow create${NC}"
+}
+
+# Show backlog status
+cmd_status() {
+    show_banner
+    echo -e "${GREEN}📊 Backlog Status${NC}"
+    echo -e "${YELLOW}═══════════════${NC}"
+    echo
+    
+    # Check for new index-based structure first
+    if [[ -f "$WORK_ITEMS_DIR/index.json" ]]; then
+        echo -e "${CYAN}📈 Work Item Summary:${NC}"
+        jq -r '.summary | to_entries[] | "   \(.key): \(.value)"' "$WORK_ITEMS_DIR/index.json"
+        
+        local last_updated=$(jq -r '.summary.lastUpdated' "$WORK_ITEMS_DIR/index.json")
+        echo -e "   Last Updated: $last_updated"
+        echo
+        
+        echo -e "${YELLOW}🔄 Active Work Items:${NC}"
+        local active_count=$(jq -r '.activeItems | length' "$WORK_ITEMS_DIR/index.json")
+        if [[ "$active_count" -gt 0 ]]; then
+            jq -r '.activeItems[] | "   • \(.id): \(.title)"' "$WORK_ITEMS_DIR/index.json"
+        else
+            echo -e "   ${GREEN}No active work items${NC}"
+        fi
+        echo
+        
+    elif [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        log_info "Using legacy backlog.json format"
+        local epics=$(jq '.epics | length' "$WORK_ITEMS_DIR/backlog.json")
+        local features=$(jq '.features | length' "$WORK_ITEMS_DIR/backlog.json")
+        local stories=$(jq '.userStories | length' "$WORK_ITEMS_DIR/backlog.json")
+        local tasks=$(jq '.tasks | length' "$WORK_ITEMS_DIR/backlog.json")
+        local bugs=$(jq '.bugs | length' "$WORK_ITEMS_DIR/backlog.json")
+        local total=$((epics + features + stories + tasks + bugs))
+        
+        echo -e "${CYAN}📈 Work Item Summary:${NC}"
+        echo -e "   Epics: $epics"
+        echo -e "   Features: $features"
+        echo -e "   User Stories: $stories"
+        echo -e "   Tasks: $tasks"
+        echo -e "   Bugs: $bugs"
+        echo -e "   ${GREEN}Total: $total${NC}"
+        echo
+        
+        log_warning "Consider migrating to individual work item files: ./sow work-items split"
+        echo
+    else
+        log_warning "No work items found"
+        log_info "Run './sow create' to generate work items"
+        return 0
+    fi
+    
+    echo -e "${YELLOW}Available Actions:${NC}"
+    echo -e "   • Validate: ${CYAN}./sow validate${NC}"
+    echo -e "   • Export: ${CYAN}./sow export --dry-run${NC}"
+    echo -e "   • Work Items Manager: ${CYAN}./sow work-items${NC}"
+}
+
+# Run tests
+cmd_run_tests() {
+    log_command "Running project test suite..."
+    
+    # Check for package.json and npm scripts
+    if [[ -f "$SCRIPT_DIR/package.json" ]]; then
+        if jq -e '.scripts.test' "$SCRIPT_DIR/package.json" >/dev/null 2>&1; then
+            log_info "Running npm test..."
+            cd "$SCRIPT_DIR" && npm test
+        else
+            log_warning "No test script found in package.json"
+        fi
+    else
+        log_info "No package.json found - checking for other test configurations..."
+    fi
+    
+    # Check for other test frameworks
+    if [[ -f "$SCRIPT_DIR/pytest.ini" ]] || [[ -d "$SCRIPT_DIR/tests" ]]; then
+        log_info "Running Python tests..."
+        cd "$SCRIPT_DIR" && python -m pytest
+    elif [[ -f "$SCRIPT_DIR/test" ]] && [[ -x "$SCRIPT_DIR/test" ]]; then
+        log_info "Running custom test script..."
+        cd "$SCRIPT_DIR" && ./test
+    else
+        log_warning "No test configuration found"
+        log_info "Add test scripts to package.json or create a test runner"
+    fi
+}
+
+# Build project
+cmd_build() {
+    log_command "Building project..."
+    
+    if [[ -f "$SCRIPT_DIR/package.json" ]]; then
+        if jq -e '.scripts.build' "$SCRIPT_DIR/package.json" >/dev/null 2>&1; then
+            log_info "Running npm build..."
+            cd "$SCRIPT_DIR" && npm run build
+        else
+            log_warning "No build script found in package.json"
+        fi
+    else
+        log_info "No package.json found - checking for other build configurations..."
+        if [[ -f "$SCRIPT_DIR/Makefile" ]]; then
+            log_info "Running make..."
+            cd "$SCRIPT_DIR" && make
+        else
+            log_warning "No build configuration found"
+        fi
+    fi
+}
+
+# Commit with work item reference
+cmd_commit() {
+    local work_item_id="$1"
+    local message="$2"
+    
+    if [[ -z "$work_item_id" ]] || [[ -z "$message" ]]; then
+        log_error "Work item ID and message required"
+        log_info "Usage: ./sow commit <work-item-id> <description>"
+        return 1
+    fi
+    
+    # Verify work item exists
+    if [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        local exists=$(jq -r "
+            [.epics[], .features[], .userStories[], .tasks[], .bugs[]] | 
+            map(select(.id == \"$work_item_id\")) | 
+            length > 0
+        " "$WORK_ITEMS_DIR/backlog.json")
+        
+        if [[ "$exists" != "true" ]]; then
+            log_warning "Work item not found in backlog: $work_item_id"
+            log_info "Proceeding with commit anyway..."
+        fi
+    fi
+    
+    local commit_message="$work_item_id: $message"
+    
+    log_info "Committing changes with work item reference..."
+    log_command "git add -A"
+    git add -A
+    
+    log_command "git commit -m \"$commit_message\""
+    git commit -m "$commit_message"
+    
+    log_success "Committed with work item reference: $work_item_id"
+}
+
+# Create work item branch
+cmd_branch() {
+    local work_item_id="$1"
+    
+    if [[ -z "$work_item_id" ]]; then
+        log_error "Work item ID required"
+        log_info "Usage: ./sow branch <work-item-id>"
+        return 1
+    fi
+    
+    # Get work item details
+    local work_item_title=""
+    if [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        work_item_title=$(jq -r "
+            [.epics[], .features[], .userStories[], .tasks[], .bugs[]] | 
+            map(select(.id == \"$work_item_id\")) | 
+            first.title // \"\"
+        " "$WORK_ITEMS_DIR/backlog.json")
+    fi
+    
+    # Create branch name
+    local branch_name="$work_item_id"
+    if [[ -n "$work_item_title" ]]; then
+        local safe_title=$(echo "$work_item_title" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+        branch_name="$work_item_id-${safe_title:0:30}"
+    fi
+    
+    log_info "Creating branch for work item: $work_item_id"
+    log_command "git checkout -b $branch_name"
+    git checkout -b "$branch_name"
+    
+    log_success "Created and switched to branch: $branch_name"
+    
+    if [[ -n "$work_item_title" ]]; then
+        log_info "Work item: $work_item_title"
+    fi
+}
+
+# Generate SOW report
+cmd_report() {
+    show_banner
+    echo -e "${GREEN}📋 SOW Progress Report${NC}"
+    echo -e "${YELLOW}═══════════════════${NC}"
+    echo
+    
+    # Project info
+    echo -e "${CYAN}📁 Project: TitanTech Solutions${NC}"
+    echo -e "${CYAN}📅 Generated: $(date)${NC}"
+    echo
+    
+    # Git status
+    echo -e "${BLUE}🔄 Git Status:${NC}"
+    local current_branch=$(git branch --show-current 2>/dev/null || echo "unknown")
+    local commit_count=$(git rev-list --count HEAD 2>/dev/null || echo "0")
+    echo -e "   Branch: $current_branch"
+    echo -e "   Commits: $commit_count"
+    echo
+    
+    # Work item summary (reuse status logic)
+    cmd_status
+    
+    # Recent activity
+    echo -e "${BLUE}📈 Recent Activity:${NC}"
+    if [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        local last_updated=$(jq -r '.metadata.lastUpdated // "Never"' "$WORK_ITEMS_DIR/backlog.json")
+        echo -e "   Last backlog update: $last_updated"
+    fi
+    
+    local recent_commits=$(git log --oneline -5 2>/dev/null || echo "No recent commits")
+    echo -e "   Recent commits:"
+    if [[ "$recent_commits" != "No recent commits" ]]; then
+        git log --oneline -5 | sed 's/^/     /'
+    else
+        echo -e "     None"
+    fi
+    echo
+    
+    echo -e "${MAGENTA}💡 Use './sow ai' for next recommended actions${NC}"
+}
+
+# Show development metrics
+cmd_metrics() {
+    show_banner
+    echo -e "${GREEN}📊 Development Metrics${NC}"
+    echo -e "${YELLOW}═════════════════${NC}"
+    echo
+    
+    # File counts
+    local total_files=$(find "$SCRIPT_DIR" -type f | wc -l)
+    local code_files=$(find "$SCRIPT_DIR" -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.sh" | wc -l)
+    local doc_files=$(find "$SCRIPT_DIR" -name "*.md" -o -name "*.txt" | wc -l)
+    
+    echo -e "${CYAN}📁 File Metrics:${NC}"
+    echo -e "   Total files: $total_files"
+    echo -e "   Code files: $code_files"
+    echo -e "   Documentation: $doc_files"
+    echo
+    
+    # Git metrics
+    echo -e "${CYAN}📈 Git Metrics:${NC}"
+    local total_commits=$(git rev-list --count HEAD 2>/dev/null || echo "0")
+    local contributors=$(git log --format='%ae' | sort -u | wc -l 2>/dev/null || echo "0")
+    echo -e "   Total commits: $total_commits"
+    echo -e "   Contributors: $contributors"
+    echo
+    
+    # Backlog metrics
+    if [[ -f "$WORK_ITEMS_DIR/backlog.json" ]]; then
+        echo -e "${CYAN}📋 Backlog Metrics:${NC}"
+        local total_items=$(jq '[.epics[], .features[], .userStories[], .tasks[], .bugs[]] | length' "$WORK_ITEMS_DIR/backlog.json")
+        local new_items=$(jq '[.epics[], .features[], .userStories[], .tasks[], .bugs[]] | map(select(.state == "New")) | length' "$WORK_ITEMS_DIR/backlog.json")
+        local active_items=$(jq '[.epics[], .features[], .userStories[], .tasks[], .bugs[]] | map(select(.state == "Active")) | length' "$WORK_ITEMS_DIR/backlog.json")
+        local resolved_items=$(jq '[.epics[], .features[], .userStories[], .tasks[], .bugs[]] | map(select(.state == "Resolved")) | length' "$WORK_ITEMS_DIR/backlog.json")
+        
+        echo -e "   Total work items: $total_items"
+        echo -e "   New: $new_items"
+        echo -e "   Active: $active_items"
+        echo -e "   Resolved: $resolved_items"
+        
+        if [[ $total_items -gt 0 ]]; then
+            local completion_rate=$((resolved_items * 100 / total_items))
+            echo -e "   Completion rate: ${completion_rate}%"
+        fi
+        echo
+    fi
+    
+    echo -e "${BLUE}💡 Use './sow report' for detailed SOW status${NC}"
+}
+
+# Check system health
+cmd_health() {
+    show_banner
+    echo -e "${GREEN}🏥 System Health Check${NC}"
+    echo -e "${YELLOW}════════════════════${NC}"
+    echo
+    
+    local issues=0
+    
+    # Check dependencies
+    echo -e "${CYAN}🔧 Dependencies:${NC}"
+    
+    if command -v jq &> /dev/null; then
+        log_success "jq is installed"
+    else
+        log_error "jq is required but not installed"
+        ((issues++))
+    fi
+    
+    if command -v git &> /dev/null; then
+        log_success "git is available"
+    else
+        log_error "git is required but not available"
+        ((issues++))
+    fi
+    
+    echo
+    
+    # Check directory structure
+    echo -e "${CYAN}📁 Directory Structure:${NC}"
+    
+    if [[ -d "$COPILOT_DIR" ]]; then
+        log_success "Copilot directory exists"
+    else
+        log_error "Copilot directory missing: $COPILOT_DIR"
+        ((issues++))
+    fi
+    
+    if [[ -d "$SCRIPTS_DIR" ]]; then
+        log_success "Scripts directory exists"
+    else
+        log_error "Scripts directory missing: $SCRIPTS_DIR"
+        ((issues++))
+    fi
+    
+    if [[ -d "$WORK_ITEMS_DIR" ]]; then
+        log_success "Work items directory exists"
+    else
+        log_warning "Work items directory missing (will be created)"
+    fi
+    
+    echo
+    
+    # Check scripts
+    echo -e "${CYAN}📜 Scripts:${NC}"
+    
+    local scripts=("generate-work-items.sh" "validate-backlog.sh" "migrate-to-ado.sh")
+    for script in "${scripts[@]}"; do
+        if [[ -x "$SCRIPTS_DIR/$script" ]]; then
+            log_success "$script is executable"
+        elif [[ -f "$SCRIPTS_DIR/$script" ]]; then
+            log_warning "$script exists but not executable"
+            chmod +x "$SCRIPTS_DIR/$script"
+            log_info "Made $script executable"
+        else
+            log_error "$script missing"
+            ((issues++))
+        fi
+    done
+    
+    echo
+    
+    # Summary
+    if [[ $issues -eq 0 ]]; then
+        log_success "System health check passed!"
+        echo -e "${GREEN}🎉 Ready for SOW workflow${NC}"
+    else
+        log_warning "Found $issues issue(s)"
+        echo -e "${YELLOW}⚠️  Some components need attention${NC}"
+    fi
+    
+    echo
+    echo -e "${BLUE}💡 Use './sow ai' to get started with AI collaboration${NC}"
+}
+
+# Work items data architecture management
+cmd_work_items() {
+    shift  # Remove 'work-items' from arguments
+    local subcommand="${1:-help}"
+    
+    case "$subcommand" in
+        "split")
+            log_info "Splitting monolithic backlog into individual files..."
+            "$SCRIPT_DIR/copilot/scripts/work-items-manager.sh" split
+            ;;
+        "index")
+            log_info "Generating work items index..."
+            "$SCRIPT_DIR/copilot/scripts/work-items-manager.sh" index
+            ;;
+        "validate")
+            log_info "Validating work item relationships..."
+            "$SCRIPT_DIR/copilot/scripts/work-items-manager.sh" validate
+            ;;
+        "status")
+            "$SCRIPT_DIR/copilot/scripts/work-items-manager.sh" status
+            ;;
+        "help"|*)
+            echo -e "${GREEN}Work Items Data Architecture Management${NC}"
+            echo -e "${YELLOW}======================================${NC}"
+            echo
+            echo -e "${CYAN}Available Commands:${NC}"
+            echo -e "  ${YELLOW}split${NC}      - Split monolithic backlog.json into individual files"
+            echo -e "  ${YELLOW}index${NC}      - Generate lightweight index from individual files"  
+            echo -e "  ${YELLOW}validate${NC}   - Validate work item relationships"
+            echo -e "  ${YELLOW}status${NC}     - Show work items status summary"
+            echo
+            echo -e "${CYAN}Benefits of Individual Files:${NC}"
+            echo -e "  • Scalable to enterprise-level backlogs (1000+ items)"
+            echo -e "  • Git-friendly (small, focused diffs)"
+            echo -e "  • ADO compatible (individual import)"
+            echo -e "  • Parallel development (no merge conflicts)"
+            echo -e "  • Easy automation (directory-based processing)"
+            ;;
+    esac
+}
+
+# Main command dispatcher
+main() {
+    local command="$1"
+    shift || true
+    
+    case "$command" in
+        "ai")
+            cmd_ai "$@"
+            ;;
+        "behaviors")
+            cmd_behaviors "$@"
+            ;;
+        "plan")
+            cmd_plan "$@"
+            ;;
+        "create")
+            cmd_create "$@"
+            ;;
+        "validate")
+            cmd_validate "$@"
+            ;;
+        "export")
+            cmd_export "$@"
+            ;;
+        "work-item")
+            cmd_work_item "$@"
+            ;;
+        "work-items")
+            cmd_work_items "$@"
+            ;;
+        "check-issues")
+            cmd_check_issues "$@"
+            ;;
+        "status")
+            cmd_status "$@"
+            ;;
+        "run-tests"|"test")
+            cmd_run_tests "$@"
+            ;;
+        "build")
+            cmd_build "$@"
+            ;;
+        "commit")
+            cmd_commit "$@"
+            ;;
+        "branch")
+            cmd_branch "$@"
+            ;;
+        "report")
+            cmd_report "$@"
+            ;;
+        "metrics")
+            cmd_metrics "$@"
+            ;;
+        "health")
+            cmd_health "$@"
+            ;;
+        "help"|"--help"|"-h"|"")
+            show_usage
+            ;;
+        *)
+            log_error "Unknown command: $command"
+            echo
+            show_usage
+            exit 1
+            ;;
+    esac
+}
+
+# Execute main function
+main "$@"

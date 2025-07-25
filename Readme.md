@@ -1,9 +1,31 @@
-# TitanTech Solutions home
+# TitanTech Solutions
 
 ## **Software Design, Architecture, Development, and Testing**
 
 ### **Innovative, Secure, and Scalable Solutions**
 Titan Tech Solutions specializes in **custom software design, architecture, development, and testing** to help businesses build robust and efficient digital products.
+
+## **AI-Assisted SDLC Management**
+
+🤖 **NEW: Statement of Work (SOW) Command Interface**
+
+We've implemented a comprehensive AI-assisted Software Development Lifecycle management system with a unified command interface:
+
+```bash
+./sow ai                    # Get AI collaboration guidance
+./sow create --dry-run      # Preview work item generation
+./sow validate              # Check ADO compliance
+./sow health                # System health check
+```
+
+### **Key Features:**
+- **Dry-Run Mode**: Preview all changes before execution
+- **ADO Integration**: Azure DevOps compatible work item management
+- **AI Behaviors**: Context-driven SOW development patterns
+- **Automated Workflows**: Issue analysis to work item generation
+- **Git Integration**: Work item tracking with commit references
+
+📋 [View Complete SOW Workflow Guide](./copilot/docs/DRY-RUN-WORKFLOW.md)
 
 ## **Why Choose Us?**
 ✅ **Expert Software Design** – Tailored solutions that align with your business needs.  
