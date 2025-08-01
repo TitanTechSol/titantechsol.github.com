@@ -1,0 +1,32 @@
+{
+  "id": 3004,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "User Story",
+    "System.State": "Closed",
+    "System.Title": "P01-CO-00001.01.01: Contact Form Optimization",
+    "System.Description": "As a potential client, I want an intuitive and reliable contact form with clear validation, so I can easily reach out without frustration",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.StoryPoints": 3,
+    "Microsoft.VSTS.Common.Priority": 3,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Contact; Forms; Conversion; UX",
+    "Custom.WorkItemCode": "P01-CO-00001.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 2004
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./user-stories/P01-CO-00001.01.01.md"
+    }
+  }
+}

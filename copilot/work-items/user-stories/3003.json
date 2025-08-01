@@ -1,0 +1,32 @@
+{
+  "id": 3003,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "User Story",
+    "System.State": "Closed",
+    "System.Title": "P01-VD-00001.02.01: Responsive Design Optimization",
+    "System.Description": "As a user on any device, I want the website to display perfectly and be fully functional, so I can access all features regardless of my screen size",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.StoryPoints": 5,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Responsive; Mobile; Cross-Device; UX",
+    "Custom.WorkItemCode": "P01-VD-00001.02.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 2003
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./user-stories/P01-VD-00001.02.01.md"
+    }
+  }
+}

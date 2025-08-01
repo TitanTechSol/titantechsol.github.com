@@ -1,0 +1,33 @@
+{
+  "id": 4003,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Task",
+    "System.State": "Active",
+    "System.Title": "P01-PO-00001.01.01.01: Implement WebP format support",
+    "System.Description": "Add WebP image format support with fallbacks",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.RemainingWork": 8,
+    "Microsoft.VSTS.Scheduling.OriginalEstimate": 8,
+    "Microsoft.VSTS.Common.Priority": 1,
+    "Microsoft.VSTS.Common.Activity": "Development",
+    "System.Tags": "Images; WebP; Performance",
+    "Custom.WorkItemCode": "P01-PO-00001.01.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 3005
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./tasks/P01-PO-00001.01.01.01.md"
+    }
+  }
+}

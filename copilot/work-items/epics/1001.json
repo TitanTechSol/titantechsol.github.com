@@ -1,0 +1,23 @@
+{
+  "id": 1001,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Epic",
+    "System.State": "Resolved",
+    "System.Title": "P01-CE-00001: Website Content & Experience Enhancement",
+    "System.Description": "Comprehensive enhancement of website content and user experience to build trust and showcase team expertise",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 21,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Content; Experience; Team; Migration",
+    "Custom.WorkItemCode": "P01-CE-00001"
+  },
+  "relations": [],
+  "_links": {
+    "self": {
+      "href": "./epics/P01-CE-00001.md"
+    }
+  }
+}

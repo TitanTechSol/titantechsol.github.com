@@ -1,0 +1,32 @@
+{
+  "id": 2004,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Feature",
+    "System.State": "Resolved",
+    "System.Title": "P01-CO-00001.01: Contact Form Optimization",
+    "System.Description": "Enhanced contact form with validation, user feedback, and conversion optimization",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 3,
+    "Microsoft.VSTS.Common.Priority": 3,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Contact; Forms; Conversion",
+    "Custom.WorkItemCode": "P01-CO-00001.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 1001
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./features/P01-CO-00001.01.md"
+    }
+  }
+}

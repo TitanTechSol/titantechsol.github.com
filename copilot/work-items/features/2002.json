@@ -1,0 +1,32 @@
+{
+  "id": 2002,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Feature",
+    "System.State": "Resolved",
+    "System.Title": "P01-VD-00001.01: UI Component Standardization",
+    "System.Description": "Standardized UI component library with consistent styling and interaction patterns",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 5,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "UI; Components; Design System",
+    "Custom.WorkItemCode": "P01-VD-00001.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 1002
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./features/P01-VD-00001.01.md"
+    }
+  }
+}

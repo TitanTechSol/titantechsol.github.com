@@ -1,0 +1,32 @@
+{
+  "id": 3002,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "User Story",
+    "System.State": "Closed",
+    "System.Title": "P01-VD-00001.01.01: UI Component Standardization",
+    "System.Description": "As a website visitor, I want to interact with consistent UI components throughout my journey, so I can easily understand how to navigate and engage without cognitive friction",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.StoryPoints": 3,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "UI; Components; Consistency; UX",
+    "Custom.WorkItemCode": "P01-VD-00001.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 2002
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./user-stories/P01-VD-00001.01.01.md"
+    }
+  }
+}

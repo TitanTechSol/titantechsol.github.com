@@ -1,0 +1,23 @@
+{
+  "id": 1002,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Epic",
+    "System.State": "Resolved",
+    "System.Title": "P01-VD-00001: Visual Design System & UI Standardization",
+    "System.Description": "Establish comprehensive design system with standardized UI components and responsive design patterns",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 13,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Design; UI; Components; Migration",
+    "Custom.WorkItemCode": "P01-VD-00001"
+  },
+  "relations": [],
+  "_links": {
+    "self": {
+      "href": "./epics/P01-VD-00001.md"
+    }
+  }
+}

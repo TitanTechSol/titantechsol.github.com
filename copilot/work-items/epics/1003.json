@@ -1,0 +1,23 @@
+{
+  "id": 1003,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Epic",
+    "System.State": "Active",
+    "System.Title": "P01-PO-00001: Performance Optimization & Technical Excellence",
+    "System.Description": "Comprehensive performance optimization covering images, code splitting, and critical rendering paths",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 21,
+    "Microsoft.VSTS.Common.Priority": 1,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Performance; Optimization; Critical; Migration",
+    "Custom.WorkItemCode": "P01-PO-00001"
+  },
+  "relations": [],
+  "_links": {
+    "self": {
+      "href": "./epics/P01-PO-00001.md"
+    }
+  }
+}

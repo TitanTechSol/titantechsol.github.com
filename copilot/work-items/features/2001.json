@@ -1,0 +1,32 @@
+{
+  "id": 2001,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Feature",
+    "System.State": "Resolved",
+    "System.Title": "P01-CE-00001.01: Team Profile Management & Display",
+    "System.Description": "Complete team profile system with professional photos, credentials, and expertise showcasing",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.Effort": 8,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Team; Profiles; Content",
+    "Custom.WorkItemCode": "P01-CE-00001.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 1001
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./features/P01-CE-00001.01.md"
+    }
+  }
+}

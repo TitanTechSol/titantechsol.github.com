@@ -3,26 +3,15 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import PerformanceMonitor from './components/PerformanceMonitor';
+import { PageSkeleton, TeamSkeleton, ServicesSkeleton } from './components/LoadingStates';
+import CodeSplitErrorBoundary from './components/CodeSplitErrorBoundary';
 
-// Lazy load components for better performance
+// CAUSAI Enhanced: Lazy load components for optimal performance with proper loading states
 const Home = React.lazy(() => import('./home'));
 const About = React.lazy(() => import('./about'));
 const Contact = React.lazy(() => import('./contact'));
 const Team = React.lazy(() => import('./team'));
 const ServicesInteractive = React.lazy(() => import('./services-interactive'));
-
-// Loading component
-const LoadingSpinner = () => (
-  <div style={{ 
-    display: 'flex', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    height: '200px',
-    fontSize: '18px'
-  }}>
-    Loading...
-  </div>
-);
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,15 +36,35 @@ const App = () => {
       <PerformanceMonitor />
       <Header toggleMenu={toggleMenu} menuOpen={menuOpen} />
       <main id="content" style={{ flex: '1' }}>
-        <Suspense fallback={<LoadingSpinner />}>
+        <CodeSplitErrorBoundary>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/services" element={<ServicesInteractive />} />
+            <Route path="/" element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Home />
+              </Suspense>
+            } />
+            <Route path="/about" element={
+              <Suspense fallback={<PageSkeleton />}>
+                <About />
+              </Suspense>
+            } />
+            <Route path="/contact" element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Contact />
+              </Suspense>
+            } />
+            <Route path="/team" element={
+              <Suspense fallback={<TeamSkeleton />}>
+                <Team />
+              </Suspense>
+            } />
+            <Route path="/services" element={
+              <Suspense fallback={<ServicesSkeleton />}>
+                <ServicesInteractive />
+              </Suspense>
+            } />
           </Routes>
-        </Suspense>
+        </CodeSplitErrorBoundary>
       </main>
       <Footer />
     </div>

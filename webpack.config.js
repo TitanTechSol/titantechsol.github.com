@@ -34,18 +34,36 @@ module.exports = (env, argv) => {
       ],
       splitChunks: {
         chunks: 'all',
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
+          // CAUSAI Enhanced: Optimized vendor splitting
+          reactVendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom|react-router)[\\/]/,
+            name: 'react-vendor',
+            chunks: 'all',
+            priority: 40,
+          },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 20,
+          },
+          // CAUSAI Enhanced: Split common components
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
           },
           styles: {
             name: 'styles',
             test: /\.css$/,
             chunks: 'all',
             enforce: true,
-            priority: 10,
+            priority: 50,
           },
         },
       },

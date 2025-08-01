@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "epics": 3,
+    "features": 5,
+    "userStories": 5,
+    "tasks": 3,
+    "lastUpdated": "2025-07-25T01:40:59.000Z"
+  },
+  "activeItems": [
+    {
+      "id": 1003,
+      "title": "P01-PO-00001: Performance Optimization & Technical Excellence",
+      "file": "1003.json"
+    }    ,
+    {
+      "id": 2005,
+      "title": "P01-PO-00001.01: Image Optimization System",
+      "file": "2005.json"
+    }    ,
+    {
+      "id": 4003,
+      "title": "P01-PO-00001.01.01.01: Implement WebP format support",
+      "file": "4003.json"
+    }    ,
+    {
+      "id": 3005,
+      "title": "P01-PO-00001.01.01: Image Optimization Implementation",
+      "file": "3005.json"
+    }
+  ]
+}

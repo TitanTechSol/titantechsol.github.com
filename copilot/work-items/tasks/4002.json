@@ -1,0 +1,33 @@
+{
+  "id": 4002,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Task",
+    "System.State": "Closed",
+    "System.Title": "P01-VD-00001.01.01.01: Standardize button components",
+    "System.Description": "Create consistent button styling across all pages",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.RemainingWork": 0,
+    "Microsoft.VSTS.Scheduling.OriginalEstimate": 6,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.Activity": "Development",
+    "System.Tags": "UI; Buttons; Consistency",
+    "Custom.WorkItemCode": "P01-VD-00001.01.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 3002
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./tasks/P01-VD-00001.01.01.01.md"
+    }
+  }
+}

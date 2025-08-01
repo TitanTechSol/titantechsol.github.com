@@ -1,0 +1,94 @@
+{
+  "epics": [
+    {
+      "id": "E-2025-001",
+      "title": "website performance optimization",
+      "type": "Epic",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 8,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "E-2025-002",
+      "title": "website completion analysis",
+      "type": "Epic",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 8,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "E-2025-002",
+      "title": "website performance optimization",
+      "type": "Epic",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 8,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    }
+  ],
+  "features": [
+    {
+      "id": "F-2025-001",
+      "title": "urgent image performance optimization",
+      "type": "Feature",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 8,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "F-2025-002",
+      "title": "github profile integration",
+      "type": "Feature",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 1,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "F-2025-002",
+      "title": "lazy loading implementation",
+      "type": "Feature",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 1,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "F-2025-002",
+      "title": "team photo optimization",
+      "type": "Feature",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 5,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    },
+    {
+      "id": "F-2025-002",
+      "title": "urgent image performance optimization",
+      "type": "Feature",
+      "state": "New",
+      "priority": "1-Critical",
+      "effort": 8,
+      "created": "2025-07-25",
+      "description": "Automatically generated from issue content."
+    }
+  ],
+  "userStories": [],
+  "tasks": [],
+  "bugs": [],
+  "metadata": {
+    "lastUpdated": "2025-07-25T19:26:12.171Z",
+    "version": "1.0",
+    "adoCompliant": true
+  }
+}

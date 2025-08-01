@@ -1,0 +1,32 @@
+{
+  "id": 3005,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "User Story",
+    "System.State": "Active",
+    "System.Title": "P01-PO-00001.01.01: Image Optimization Implementation",
+    "System.Description": "As a website visitor, I want images to load quickly and efficiently, so I can browse the site without delays or data waste",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.StoryPoints": 5,
+    "Microsoft.VSTS.Common.Priority": 1,
+    "Microsoft.VSTS.Common.ValueArea": "Business",
+    "System.Tags": "Performance; Images; Loading; Optimization",
+    "Custom.WorkItemCode": "P01-PO-00001.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 2005
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./user-stories/P01-PO-00001.01.01.md"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": 4001,
+  "url": null,
+  "fields": {
+    "System.WorkItemType": "Task",
+    "System.State": "Closed",
+    "System.Title": "P01-CE-00001.01.01.01: Update team member photos",
+    "System.Description": "Update all team member profile photos with professional headshots",
+    "System.CreatedDate": "2025-07-24T00:00:00.000Z",
+    "System.ChangedDate": "2025-07-24T00:00:00.000Z",
+    "Microsoft.VSTS.Scheduling.RemainingWork": 0,
+    "Microsoft.VSTS.Scheduling.OriginalEstimate": 4,
+    "Microsoft.VSTS.Common.Priority": 2,
+    "Microsoft.VSTS.Common.Activity": "Development",
+    "System.Tags": "Photos; Team; Updates",
+    "Custom.WorkItemCode": "P01-CE-00001.01.01.01"
+  },
+  "relations": [
+    {
+      "rel": "System.LinkTypes.Hierarchy-Reverse",
+      "url": null,
+      "attributes": {
+        "name": "Parent"
+      },
+      "targetId": 3001
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "./tasks/P01-CE-00001.01.01.01.md"
+    }
+  }
+}

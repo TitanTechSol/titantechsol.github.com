@@ -5,6 +5,8 @@ import App from './app';
 import './css/main.css';
 // CAUSAI Enhanced: Import image performance monitoring
 import './components/ImagePerformanceMonitor';
+// CAUSAI Enhanced: Import code split performance monitoring
+import './components/CodeSplitPerformanceMonitor';
 
 ReactDOM.render(
   <BrowserRouter>
