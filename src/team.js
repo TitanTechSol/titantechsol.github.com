@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import LazyImage from './components/LazyImage';
-// Import the images directly
-import aaronImage from './photos/team/GAaronKibbie.jpeg';
-import danielImage from './photos/team/DanielPeckham.jpeg';
-import anthonyImage from './photos/team/AnthonyHart.jpeg';
-import aidenImage from './photos/team/GAidenKibbie.jpeg';
-import corinneImage from './photos/team/ECorinneKibbie.jpg';
+// CAUSAI Enhanced: Import responsive lazy loading component
+import LazyImage from './components/LazyImageEnhanced';
 
 import './css/team.css';
 
@@ -17,8 +12,8 @@ const Team = () => {
       id: 1,
       name: "G. Aaron Kibbie",
       title: "Principle Engineer, Architect",
-      // Use the imported image instead of path
-      photo: aaronImage,
+      // CAUSAI: Use direct paths to optimized WebP images
+      photo: "/photos/optimized/team/GAaronKibbie.webp",
       bio: "With expertise in cloud development and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
       specialties: ["Cloud Architecture", "MicroService Design", "Azure DevOps", "Enterprise Software"],
       experience: "25+ years in software engineering with leadership roles as Principal Engineer, Software Architect, and Technical Lead for enterprise applications.",
@@ -29,8 +24,8 @@ const Team = () => {
       id: 2,
       name: "Daniel Peckham",
       title: "Full Stack Developer",
-      // Use the imported image instead of path
-      photo: danielImage,
+      // CAUSAI: Use direct paths to optimized WebP images
+      photo: "/photos/optimized/team/DanielPeckham.webp",
       bio: "Daniel brings extensive experience in modern web technologies and .NET development, specializing in creating seamless user experiences with React and Angular.",
       specialties: ["Full Stack Development", "React/TypeScript", ".NET Applications", "Clean Architecture"],
       experience: "6+ years as a Full Stack Developer specializing in .NET, React, and TypeScript. Experience in financial technology, aerospace, and healthcare sectors.",
@@ -41,8 +36,8 @@ const Team = () => {
       id: 3,
       name: "Anthony Hart",
       title: "Senior Software Engineer / Technical Lead",
-      // Use the imported image instead of path
-      photo: anthonyImage,
+      // CAUSAI: Use direct paths to optimized WebP images
+      photo: "/photos/optimized/team/AnthonyHart.webp",
       bio: "With 25+ years of experience, Anthony specializes in developing and architecting enterprise-grade solutions, with deep expertise in .NET, Angular, and REST services.",
       specialties: ["Software Architecture", "REST Services", "SQL Server", "Mobile Development"],
       experience: "25+ years as a Senior Software Engineer and Technical Lead, guiding teams in implementing microservice architectures and enterprise solutions.",
@@ -53,8 +48,8 @@ const Team = () => {
       id: 4,
       name: "G. Aiden Kibbie",
       title: "Junior Software Engineer",
-      // Use the imported image instead of path
-      photo: aidenImage,
+      // CAUSAI: Use direct paths to optimized WebP images
+      photo: "/photos/optimized/team/GAidenKibbie.webp",
       bio: "Aiden is a passionate software engineer with a focus on web development and a keen interest in cloud technologies.",
       specialties: ["Web Development", "Cloud Technologies", "Agile Methodologies"],
       experience: "Junior Software Engineer focused on front-end development and cloud-based application development.",
@@ -65,8 +60,8 @@ const Team = () => {
       id: 5,
       name: "E. Corinne Kibbie",
       title: "CGO",
-      // Use the imported image instead of path
-      photo: corinneImage,
+      // CAUSAI: Use direct paths to optimized WebP images
+      photo: "/photos/optimized/team/ECorinnekibbie.webp",
       bio: "Corinne is a growth-focused marketing leader who blends innovation and technology to drive customer engagement and scalable results.",
       specialties: ["Digital Marketing", "Content Strategy", "SEO", "Social Media Management"],
       experience: "7+ years in marketing roles",
@@ -101,6 +96,10 @@ const Team = () => {
                   alt={`${member.name} - ${member.title}`}
                   className="team-photo-img"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  isBackground={false}
+                  sizes="(min-width: 768px) 300px, 200px"
+                  width="300"
+                  height="300"
                 />
                 <div className="team-overlay"></div>
               </div>

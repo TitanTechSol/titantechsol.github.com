@@ -1,21 +1,40 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+// CAUSAI Enhanced LazyImage Component
+// Desktop-first responsive WebP images with progressive loading
+
 const LazyImage = ({ 
   src, 
-  webpSrc, 
+  webpSrc,
   alt, 
-  className, 
-  style,
+  className = '', 
+  style = {},
   width,
   height,
   loading = 'lazy',
   onLoad,
-  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iIGZpbGw9IiNhYWEiPkxvYWRpbmcuLi48L3RleHQ+PC9zdmc+'
+  isBackground = false,
+  sizes = "(min-width: 1024px) 1024px, (min-width: 768px) 768px, 100vw"
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [isBlurred, setIsBlurred] = useState(true);
   const imgRef = useRef();
+
+  // Generate responsive WebP srcset
+  const generateSrcSet = (basePath) => {
+    if (!basePath) return '';
+    
+    const baseName = basePath.split('/').pop().split('.')[0];
+    const pathPrefix = basePath.substring(0, basePath.lastIndexOf('/'));
+    
+    if (isBackground) {
+      return `${pathPrefix}/optimized/${baseName}.webp 1024w, ${pathPrefix}/optimized/${baseName}@1.5x.webp 1440w, ${pathPrefix}/optimized/${baseName}@2x.webp 1920w`;
+    } else {
+      return `${pathPrefix}/optimized/team/${baseName}.webp 200w, ${pathPrefix}/optimized/team/${baseName}@1.5x.webp 300w, ${pathPrefix}/optimized/team/${baseName}@2x.webp 400w`;
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +46,7 @@ const LazyImage = ({
       },
       { 
         threshold: 0.1,
-        rootMargin: '50px' // Start loading 50px before the image comes into view
+        rootMargin: '100px' // Start loading earlier for better UX
       }
     );
 
@@ -40,14 +59,25 @@ const LazyImage = ({
 
   const handleLoad = () => {
     setIsLoaded(true);
+    setIsBlurred(false);
     if (onLoad) onLoad();
   };
 
   const handleError = () => {
     setHasError(true);
+    setIsBlurred(false);
   };
 
   const imageStyle = {
+    ...style,
+    transition: 'all 0.3s ease-in-out',
+    filter: isBlurred && !hasError ? 'blur(5px)' : 'none',
+    opacity: isLoaded || hasError ? 1 : 0.7,
+    backgroundColor: '#f0f0f0',
+    display: 'block',
+    width: width || '100%',
+    height: height || 'auto'
+  };
     transition: 'opacity 0.3s ease-in-out',
     opacity: isLoaded ? 1 : 0,
     ...style

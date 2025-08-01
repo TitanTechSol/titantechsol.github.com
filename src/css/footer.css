@@ -4,7 +4,8 @@ footer {
     text-align: center;
     box-shadow: 0 -4px 8px var(--col-shadow); /* Add a subtle shadow */
     width: 100%;
-    background-image: url('../photos/Header_image3.jpg');
+    /* CAUSAI Enhanced: Responsive WebP background */
+    background-image: url('../photos/optimized/Header_image3.webp');
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     display: flex;
@@ -15,6 +16,19 @@ footer {
     2px -2px 0 #000,
     -2px 2px 0 #000,
     2px 2px 0 #000; /* Add text shadow for better readability */
+}
+
+/* CAUSAI: Responsive footer background images */
+@media (min-width: 1440px) {
+    footer {
+        background-image: url('../photos/optimized/Header_image3@2x.webp');
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    footer {
+        background-image: url('../photos/optimized/Header_image3@1.5x.webp');
+    }
 }
 
 .footerLinks {

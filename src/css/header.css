@@ -5,10 +5,24 @@
     padding: 15px 20px; /* Reduced padding */
     width: 100%;
     height: 80px; /* Reduced from 150px */
-    background-image: url('../photos/Header_image3.jpg');
+    /* CAUSAI Enhanced: Responsive WebP background with fallback */
+    background-image: url('../photos/optimized/Header_image3.webp');
     background-size: cover;
     background-position: center;
     position: relative;
+}
+
+/* CAUSAI: Media queries for responsive background images */
+@media (min-width: 1440px) {
+    .header-content {
+        background-image: url('../photos/optimized/Header_image3@2x.webp');
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .header-content {
+        background-image: url('../photos/optimized/Header_image3@1.5x.webp');
+    }
 }
 
 /* Removed .header-content.shrink definition */
@@ -51,7 +65,8 @@
     right: -300px; /* Start off-screen */
     width: 250px;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../photos/Header_image3.jpg');
+    /* CAUSAI Enhanced: Responsive WebP background for slide menu */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../photos/optimized/Header_image3.webp');
     background-size: cover;
     background-position: right;
     transition: all 0.4s ease-in-out;

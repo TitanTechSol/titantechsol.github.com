@@ -66,17 +66,24 @@ module.exports = (env, argv) => {
             'css-loader',
           ],
         },
-        // Optimized image loading with WebP support
+        // CAUSAI Enhanced: Optimized image loading with WebP support and responsive sizing
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
           type: 'asset',
           parser: {
             dataUrlCondition: {
-              maxSize: 8 * 1024, // 8kb
+              maxSize: 8 * 1024, // 8kb - keep small images inline
             },
           },
           generator: {
-            filename: 'images/[name].[contenthash][ext]'
+            filename: (pathData) => {
+              // Preserve directory structure for optimized images
+              const filePath = pathData.module.userRequest;
+              if (filePath.includes('/optimized/')) {
+                return 'images/optimized/[name].[contenthash][ext]';
+              }
+              return 'images/[name].[contenthash][ext]';
+            }
           }
         },
       ],
@@ -95,7 +102,7 @@ module.exports = (env, argv) => {
         patterns: [
           { from: 'public', to: '', noErrorOnMissing: true },
           { from: 'CNAME', to: '', noErrorOnMissing: true },
-          // Copy the photos directory to the dist folder
+          // CAUSAI Enhanced: Copy both original and optimized photos
           { from: 'src/photos', to: 'photos', noErrorOnMissing: true },
           // Copy the React Router-compatible 404.html to override any existing version
           { from: 'src/404.html', to: '404.html', force: true },

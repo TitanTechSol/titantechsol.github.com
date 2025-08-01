@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 import './css/main.css';
+// CAUSAI Enhanced: Import image performance monitoring
+import './components/ImagePerformanceMonitor';
 
 ReactDOM.render(
   <BrowserRouter>

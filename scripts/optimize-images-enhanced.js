@@ -52,12 +52,9 @@ async function generateWebPVariants(inputPath, outputDir, filename, isBackground
   }
 }
 
-async function optimizeImage(inputPath, outputPath, quality = 75, isBackground = false) {
+async function optimizeImage(inputPath, outputDir, isBackground = false) {
   try {
-    // Generate WebP variants in the same directory
-    const outputDir = path.dirname(outputPath);
     const filename = path.basename(inputPath);
-    
     const variants = await generateWebPVariants(inputPath, outputDir, filename, isBackground);
     
     const inputSize = fs.statSync(inputPath).size;
@@ -95,29 +92,24 @@ async function optimizeAllImages() {
     fs.mkdirSync(optimizedTeamDir, { recursive: true });
   }
   
-  let totalSavings = 0;
   let totalOriginalSize = 0;
   let totalOptimizedSize = 0;
   
   // Background images (high resolution)
   console.log('🌄 Optimizing background images (high-res)...');
   const backgroundImages = [
-    {
-      input: path.join(photosDir, 'Header_image3.jpg'),
-      outputDir: optimizedDir,
-      isBackground: true
-    }
+    path.join(photosDir, 'Header_image3.jpg')
   ];
   
-  for (const img of backgroundImages) {
-    if (fs.existsSync(img.input)) {
-      const result = await optimizeImage(img.input, img.outputDir, 85, img.isBackground);
+  for (const imagePath of backgroundImages) {
+    if (fs.existsSync(imagePath)) {
+      const result = await optimizeImage(imagePath, optimizedDir, true);
       if (result) {
         totalOriginalSize += result.inputSize;
-        totalOptimizedSize += result.totalOutputSize / result.variants.length; // Average
+        totalOptimizedSize += result.totalOutputSize / result.variants.length;
       }
     } else {
-      console.log(`⚠️  Background image not found: ${img.input}`);
+      console.log(`⚠️  Background image not found: ${imagePath}`);
     }
   }
   
@@ -135,10 +127,10 @@ async function optimizeAllImages() {
   for (const teamImage of teamImages) {
     const inputPath = path.join(teamDir, teamImage);
     if (fs.existsSync(inputPath)) {
-      const result = await optimizeImage(inputPath, optimizedTeamDir, 75, false);
+      const result = await optimizeImage(inputPath, optimizedTeamDir, false);
       if (result) {
         totalOriginalSize += result.inputSize;
-        totalOptimizedSize += result.totalOutputSize / result.variants.length; // Average
+        totalOptimizedSize += result.totalOutputSize / result.variants.length;
       }
     } else {
       console.log(`⚠️  Team image not found: ${inputPath}`);
@@ -146,9 +138,9 @@ async function optimizeAllImages() {
   }
   
   // Calculate total savings
-  if (totalOriginalSize > 0) {
-    totalSavings = ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1);
-  }
+  const totalSavings = totalOriginalSize > 0 
+    ? ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1) 
+    : 0;
   
   console.log('\n📊 CAUSAI Optimization Summary:');
   console.log(`   📁 Original total size: ${(totalOriginalSize/1024/1024).toFixed(2)}MB`);
