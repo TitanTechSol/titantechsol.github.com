@@ -122,6 +122,8 @@ module.exports = (env, argv) => {
           { from: 'CNAME', to: '', noErrorOnMissing: true },
           // CAUSAI Enhanced: Copy both original and optimized photos
           { from: 'src/photos', to: 'photos', noErrorOnMissing: true },
+          // Copy design system files
+          { from: 'src/design-system', to: 'design-system', noErrorOnMissing: true },
           // Copy the React Router-compatible 404.html to override any existing version
           { from: 'src/404.html', to: '404.html', force: true },
           // Copy service worker
