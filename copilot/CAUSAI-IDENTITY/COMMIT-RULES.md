@@ -8,9 +8,10 @@
 - Human must verify both visual and code changes
 
 ### Commit Frequency Guidelines
-- **Trigger**: When 10+ files changed AND website works → commit immediately
+- **Primary Trigger**: When 10+ files changed AND website works → commit immediately
+- **Project Transition Trigger**: When switching projects AND changes work → commit regardless of file count
 - **Purpose**: Keep changes manageable and reviewable
-- **Avoid**: Accumulating massive changesets
+- **Avoid**: Accumulating massive changesets or losing working changes during project switches
 
 ### Mass Commit Prevention
 - **Never commit 60+ files** in a single commit
@@ -96,6 +97,13 @@ This commit delivers enhanced user experience with better mobile responsiveness.
 - Create feature branches when possible
 - Clear communication about experimental nature
 - Easy rollback plan documented
+
+### Project Transition Protocol
+- **Rule**: When switching to another project AND there are changes → COMMIT if they work
+- **Quality Check**: Verify all changes function properly before committing
+- **Failure Protocol**: If changes don't work → revert to last working commit
+- **Purpose**: Prevent losing functional work during project context switching
+- **Applies to**: Any file count under 10 when transitioning between work areas
 
 ---
 
