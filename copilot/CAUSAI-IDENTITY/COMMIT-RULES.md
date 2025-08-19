@@ -81,6 +81,33 @@ This commit delivers enhanced user experience with better mobile responsiveness.
 
 ---
 
+## DEPLOYMENT SEQUENCE RULES
+
+### CRITICAL DEPLOYMENT PROCESS
+**MANDATORY SEQUENCE**: Commit → Build → Deploy
+
+#### Required Steps:
+1. **COMMIT FIRST**: `git add . && git commit -m "message"`
+2. **BUILD EXPLICITLY**: `npm run build` (verify build success)
+3. **DEPLOY LAST**: `npm run deploy`
+
+#### Why This Sequence Matters:
+- Ensures latest code changes are in the build
+- Prevents deployment of stale/cached versions
+- Guarantees production matches committed code
+- Provides clear failure points for debugging
+
+#### Common Mistake:
+- ❌ **WRONG**: Direct `npm run deploy` without explicit build
+- ✅ **CORRECT**: Commit → `npm run build` → `npm run deploy`
+
+#### Exception Handling:
+- If build fails → fix issues → commit → build → deploy
+- If deploy fails → investigate → rebuild → deploy
+- Never skip the build step even if predeploy scripts exist
+
+---
+
 ## SPECIAL CIRCUMSTANCES
 
 ### Emergency Fixes
