@@ -1,12 +1,75 @@
-<!DOCTYPE html>
+<!DOC    <title>TitanTech Design System Playground</title>
+    
+    <!-- Design system specific styles -->
+    <link rel="stylesheet" href="design-system.css">
+    
+    <style>
+        /* Essential CSS variables from main site */
+        :root {
+            /* Primary colors Blue */
+            --col-primary-HL: #5c7c89;
+            --col-primary-medium: #0764de; 
+            --col-primary-dark: #064BA5;
+            --col-primary-links: #064BA5;
+            --col-primary-linksH: #0856bd;
+            
+            /* Neutral colors */
+            --col-light-gray: #abb8c2;
+            --col-off-white: #e9e5e5;
+
+            /* Text color */
+            --col-text: #000000;
+            --col-text-button: #ffffff;
+
+            /* Basic colors */
+            --col-white: #ffffff;
+            --col-shadow: #000000bb;
+            --col-black: #000000;
+            --col-red: #ff5031;
+            
+            /* Transparency variations */
+            --col-primary-dark-10: rgba(6, 75, 165, 0.1);
+            --col-primary-dark-20: rgba(6, 75, 165, 0.2);
+            --col-primary-dark-40: rgba(6, 75, 165, 0.4);
+            --col-primary-dark-50: rgba(6, 75, 165, 0.5);
+            --col-primary-dark-70: rgba(6, 75, 165, 0.7);
+            --col-primary-medium-20: rgba(7, 100, 222, 0.2);
+            --col-primary-medium-40: rgba(7, 100, 222, 0.4);
+            --col-white-10: rgba(255, 255, 255, 0.1);
+            --col-white-15: rgba(255, 255, 255, 0.15);
+            --col-white-20: rgba(255, 255, 255, 0.2);
+            --col-white-30: rgba(255, 255, 255, 0.3);
+            --col-white-50: rgba(255, 255, 255, 0.5);
+            --col-black-10: rgba(0, 0, 0, 0.1);
+            --col-black-20: rgba(0, 0, 0, 0.2);
+            --col-black-70: rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Base body styling to match main site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--col-white);
+            color: var(--col-text);
+            line-height: 1.6;
+        }
+        
+        /* Responsive typography from main site */
+        h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.3; margin: 1em 0 0.5em 0; }
+        h2 { font-size: clamp(1.3rem, 4vw, 1.8rem); line-height: 1.3; margin: 1em 0 0.5em 0; }
+        h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); line-height: 1.3; margin: 1em 0 0.5em 0; }
+        p { font-size: clamp(0.95rem, 2vw, 1.1rem); line-height: 1.6; margin: 0 0 1em 0; }
+        
+        /* Temporary authentication overlay */
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TitanTech Design System Playground</title>
     
-    <!-- Import main website styles for reference -->
-    <link rel="stylesheet" href="../src/css/main.css">
+    <!-- Import main website styles via webpack dev server -->
+    <link rel="stylesheet" href="/main.css">
     
     <!-- Design system specific styles -->
     <link rel="stylesheet" href="design-system.css">
