@@ -78,10 +78,9 @@ const LazyImage = ({
     width: width || '100%',
     height: height || 'auto'
   };
-    transition: 'opacity 0.3s ease-in-out',
-    opacity: isLoaded ? 1 : 0,
-    ...style
-  };
+
+  // Simple placeholder - 1x1 transparent pixel
+  const placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=';
 
   return (
     <div ref={imgRef} className={className} style={{ position: 'relative', ...style }}>

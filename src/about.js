@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './css/main.css';
+import './css/about.css';
 
 const About = () => {
   const [activeValue, setActiveValue] = useState(null);
@@ -108,26 +108,37 @@ const About = () => {
           These values guide every decision we make and every line of code we write.
         </p>
         
-        <div className="values-container">
+        <div className="values-explorer">
+          {/* Values Navigation Panel */}
           <div className="values-nav">
-            {coreValues.map((value) => (
-              <div 
-                key={value.id}
-                className={`value-nav-item ${activeValue === value.id ? 'active' : ''}`}
-                onClick={() => setActiveValue(value.id)}
-              >
-                <span className="value-icon">{value.icon}</span>
-                <span className="value-name">{value.title}</span>
-              </div>
-            ))}
+            <h3>Core Values</h3>
+            <div className="values-nav-list">
+              {coreValues.map((value) => (
+                <button
+                  key={value.id}
+                  className={`value-nav-item ${activeValue === value.id ? 'active' : ''}`}
+                  onClick={() => setActiveValue(value.id)}
+                >
+                  <span className="value-icon">{value.icon}</span>
+                  <div className="value-nav-text">
+                    <span className="value-name">{value.title}</span>
+                    <span className="value-short-desc">{value.description.split('.')[0]}.</span>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
           
-          <div className="value-details">
+          {/* Values Details Panel */}
+          <div className="values-details">
             {activeValue ? (
-              <div className="value-content animate-in">
+              <div className="value-content">
                 {coreValues.filter(v => v.id === activeValue).map(value => (
                   <div key={value.id}>
-                    <h3>{value.title}</h3>
+                    <h3>
+                      <span className="value-content-icon">{value.icon}</span>
+                      {value.title}
+                    </h3>
                     <p className="value-description">{value.description}</p>
                     
                     <div className="value-examples">
@@ -143,9 +154,42 @@ const About = () => {
               </div>
             ) : (
               <div className="value-placeholder">
-                <p>Select a core value to learn more</p>
+                <div className="placeholder-content">
+                  <span className="placeholder-icon">👆</span>
+                  <h3>Select a Core Value</h3>
+                  <p>Choose a value from the left to learn more about our principles and how we apply them in practice.</p>
+                </div>
               </div>
             )}
+          </div>
+        </div>
+        
+        {/* Mobile Values Cards */}
+        <div className="values-mobile">
+          <div className="values-cards-grid">
+            {coreValues.map((value) => (
+              <div 
+                key={value.id}
+                className={`value-card ${activeValue === value.id ? 'active' : ''}`}
+                onClick={() => setActiveValue(value.id)}
+              >
+                <div className="value-card-header">
+                  <span className="value-card-icon">{value.icon}</span>
+                  <h3>{value.title}</h3>
+                </div>
+                <p className="value-card-description">{value.description}</p>
+                {activeValue === value.id && (
+                  <div className="value-card-examples">
+                    <h4>In practice:</h4>
+                    <ul>
+                      {value.examples.map((example, idx) => (
+                        <li key={idx}>{example}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -11,6 +11,18 @@
 - **CANNOT commit changes without human confirmation**
 - Must always show visual changes AND code changes before committing
 - Wait for explicit human approval before any commits
+- **CRITICAL DEPLOYMENT REQUIREMENT**: If ANY changes are made to these core files, you MUST build and deploy BEFORE committing:
+  - src/ (any files in source directory)
+  - .babelrc
+  - .gitignore
+  - CNAME
+  - package-lock.json
+  - package-scripts.json
+  - package.json
+  - quick-site-test.sh
+  - Readme.md
+  - server.js
+  - webpack.config.js
 
 ### 2. **Human Input Minimization**
 - Ideal workflow: Human says "start on user story P01-AF-00001" → CAUSAI completes it → Shows changes → Waits for confirmation
@@ -46,6 +58,29 @@
 - **NEVER remove features without explicit confirmation**: Always clarify with user before removing existing functionality, even during optimization
 - Learn from mistakes and feedback to improve future work quality
 - Document process improvements and best practices as they emerge
+
+### 8. **File Organization Requirements**
+- **MANDATORY**: All generated .md files MUST go to proper copilot subdirectories
+- **Documentation Files**: 
+  - Completion Summaries → `.\copilot\completed\summaries\`
+  - Planning & Analysis → `.\copilot\docs\planning\`
+  - Deployment Guides → `.\copilot\docs\deployment\`
+  - User Stories → `.\copilot\user-stories\`
+  - Work Items → `.\copilot\work-items\`
+- **Test Files**: All test scripts → `.\copilot\scripts\testing\`
+- **NEVER create files in project root** (except Readme.md)
+- **ALWAYS determine proper folder BEFORE creating any file**
+
+### 9. **Commit Management Rules**
+- **Commit Frequency**: When 10+ files are changed/created/deleted AND website works, commit immediately
+- **Commit Descriptions**: Must be detailed and descriptive, explaining what changed and why
+- **No Mass Commits**: Never commit 60+ file changes in a single commit - break into logical chunks
+- **Test Before Commit**: Always verify website functionality before committing changes
+
+### 10. **Content Standards**
+- **No Icons Policy**: Never use icons, emojis, or special characters in any files, commits, or code
+- **Text Only**: All content must be plain text - no decorative symbols
+- **Clean Format**: Use clear, professional formatting without visual embellishments
 
 ## Capabilities & Workflow
 

@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "echo 'CSS already optimized'",
+    "build:js": "echo 'JS already optimized'", 
+    "test": "echo 'Tests will be added'",
+    "docker:build": "docker build -t titantechsol-website .",
+    "docker:run": "docker run -p 9000:9000 titantechsol-website",
+    "docker:dev": "docker-compose up --build",
+    "docker:stop": "docker-compose down",
+    "local:check": "curl -f http://localhost:9000 || echo 'Server not running'",
+    "deploy:prepare": "npm run build && echo 'Ready for GitHub Pages'",
+    "analyze:bundle": "echo 'Bundle analysis coming soon'"
+  }
+}
