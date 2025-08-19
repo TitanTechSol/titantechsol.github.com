@@ -680,9 +680,11 @@ p { font-size: clamp(0.95rem, 2vw, 1.1rem); line-height: 1.6; }
         // Simple passcode protection
         function checkAccess() {
             const passcode = document.getElementById('passcode').value;
-            const correctPasscode = 'designsystem2025'; // You can change this
             
-            if (passcode === correctPasscode) {
+            const encoded = 'NTIwMm1ldHN5c25naXNlZA==';
+            const expectedValueP = atob(encoded).split('').reverse().join('');
+            
+            if (passcode === expectedValueP) {
                 document.getElementById('auth-overlay').classList.add('hidden');
                 document.getElementById('main-content').classList.remove('hidden');
             } else {
