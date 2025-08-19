@@ -120,6 +120,35 @@
 }
 
 /* =================================================================
+   COLOR UTILITY CLASSES
+   ================================================================= */
+
+/* Primary color utilities */
+.ds-text--primary { color: var(--col-primary-dark); }
+.ds-text--primary-medium { color: var(--col-primary-medium); }
+.ds-text--primary-highlight { color: var(--col-primary-HL); }
+
+.ds-bg--primary { background-color: var(--col-primary-dark); }
+.ds-bg--primary-medium { background-color: var(--col-primary-medium); }
+
+/* Neutral color utilities */
+.ds-text--secondary { color: var(--col-light-gray); }
+.ds-text--error { color: var(--col-red); }
+.ds-text--success { color: #28a745; }
+.ds-text--warning { color: #ffc107; }
+
+.ds-bg--light { background-color: var(--col-off-white); }
+.ds-bg--gray { background-color: var(--col-light-gray); }
+
+/* Alpha variant utilities */
+.ds-overlay--light { background: var(--col-primary-dark-20); }
+.ds-overlay--medium { background: var(--col-primary-dark-40); }
+.ds-overlay--strong { background: var(--col-primary-dark-70); }
+
+/* Perfect for hover states, overlays, and subtle backgrounds */
+.ds-hover-overlay:hover { background: var(--col-primary-dark-10); }
+
+/* =================================================================
    TYPOGRAPHY UTILITIES (Foundation)
    ================================================================= */
 

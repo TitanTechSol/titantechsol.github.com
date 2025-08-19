@@ -99,58 +99,284 @@
             <!-- Overview Section -->
             <section id="overview">
                 <h2>Design System Overview</h2>
-                <p><strong>Status:</strong> Foundation Phase - Component Analysis Complete</p>
+                <p><strong>Status:</strong> Typography & Color System Implementation In Progress</p>
                 <p><strong>Purpose:</strong> Standardize UI components across TitanTech website for consistency and efficiency</p>
                 
-                <h3>Current State Analysis</h3>
+                <h3>Current Implementation Progress</h3>
                 <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <h4>✅ Components Identified:</h4>
+                    <h4>✅ WI-P01-0001: Foundation Complete</h4>
                     <ul>
-                        <li><strong>Navigation:</strong> Header with slide-out mobile menu, responsive navigation</li>
-                        <li><strong>Typography:</strong> Responsive heading system (H1-H3), body text with clamp functions</li>
-                        <li><strong>Buttons:</strong> Primary, secondary, CTA variants with hover effects</li>
-                        <li><strong>Forms:</strong> Input fields, textareas, focus states, validation styling</li>
-                        <li><strong>Cards:</strong> Info cards, team member cards with flip effects</li>
-                        <li><strong>Layout:</strong> Responsive containers, flexible sections</li>
+                        <li><strong>Component Audit:</strong> Comprehensive analysis of existing website components</li>
+                        <li><strong>Design System Structure:</strong> BEM methodology, utility classes, responsive grid</li>
+                        <li><strong>CSS Architecture:</strong> Consistent spacing system, component showcase utilities</li>
+                        <li><strong>Development Environment:</strong> Interactive playground with authentication</li>
                     </ul>
                     
-                    <h4>🎨 Current Color System:</h4>
+                    <h4>🔄 WI-P01-0002: Typography & Color System (Current)</h4>
+                    <ul>
+                        <li>✅ <strong>Color Documentation:</strong> Interactive color palette with copy-paste utilities</li>
+                        <li>✅ <strong>Typography Utilities:</strong> Alignment, weight, and color utility classes</li>
+                        <li>✅ <strong>Copy Functionality:</strong> One-click code copying for all examples</li>
+                        <li>✅ <strong>Best Practices:</strong> Content hierarchy examples and recommendations</li>
+                    </ul>
+                    
+                    <h4>📋 Next: WI-P01-0003: Button System</h4>
+                    <ul>
+                        <li><strong>Button Consolidation:</strong> Standardize primary, secondary, tertiary variants</li>
+                        <li><strong>Complete States:</strong> Hover, focus, active, disabled, loading</li>
+                        <li><strong>Accessibility:</strong> ARIA labels, keyboard navigation, focus indicators</li>
+                    </ul>
+                </div>
+                
+                <h3>Current Website Analysis</h3>
+                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <h4>🎨 Excellent Color System (CSS Custom Properties)</h4>
                     <ul>
                         <li>Primary Blue: #064BA5 (links), #0764de (medium), #5c7c89 (highlight)</li>
                         <li>Neutrals: #abb8c2 (light gray), #e9e5e5 (off-white)</li>
                         <li>Text: #000000 (main), #ffffff (buttons)</li>
-                        <li>Accent: #ff5031 (red for required fields)</li>
+                        <li>Alpha variants: 10%, 20%, 40%, 50%, 70% for all primary colors</li>
                     </ul>
                     
-                    <h4>📝 Typography System:</h4>
+                    <h4>📝 Responsive Typography System (clamp() functions)</h4>
                     <ul>
                         <li>Font Family: Arial, sans-serif (consistent across site)</li>
-                        <li>Responsive sizing with clamp() functions</li>
-                        <li>H1: clamp(1.8rem, 5vw, 2.5rem)</li>
-                        <li>H2: clamp(1.3rem, 4vw, 1.8rem)</li>
-                        <li>H3: clamp(1.1rem, 3vw, 1.5rem)</li>
-                        <li>Body: clamp(0.95rem, 2vw, 1.1rem)</li>
+                        <li>H1: clamp(1.8rem, 5vw, 2.5rem) - scales 28.8px → 40px</li>
+                        <li>H2: clamp(1.3rem, 4vw, 1.8rem) - scales 20.8px → 28.8px</li>
+                        <li>H3: clamp(1.1rem, 3vw, 1.5rem) - scales 17.6px → 24px</li>
+                        <li>Body: clamp(0.95rem, 2vw, 1.1rem) - scales 15.2px → 17.6px</li>
                     </ul>
                 </div>
                 
-                <h3>Next Development Phases</h3>
+                <h3>Upcoming Development Phases</h3>
                 <ol>
-                    <li><strong>Typography & Color Standardization</strong> (WI-P01-0002)</li>
-                    <li><strong>Button System Implementation</strong> (WI-P01-0003)</li>
-                    <li><strong>Form Elements Standardization</strong> (Future)</li>
-                    <li><strong>Lucide Icons Integration</strong> (WI-P02-0001)</li>
+                    <li><strong>WI-P01-0003: Button System Implementation</strong> - Consolidate and enhance all button variants</li>
+                    <li><strong>WI-P01-0004: Form Elements Standardization</strong> - Input fields, validation states</li>
+                    <li><strong>WI-P01-0005: Spacing & Layout Utilities</strong> - Systematic margin/padding classes</li>
+                    <li><strong>WI-P02-0001: Lucide Icons Integration</strong> - Professional iconography system</li>
                 </ol>
             </section>
 
-            <!-- Placeholder sections for future development -->
+            <!-- Interactive Color System Section -->
             <section id="colors" style="margin-top: 60px;">
                 <h2>Color System</h2>
-                <p><em>Will be implemented in WI-P01-0002: Typography & Color System</em></p>
+                <p><strong>Status:</strong> ✅ Well-organized existing system | 🔄 Now adding standardized utilities</p>
+                
+                <!-- Primary Colors -->
+                <h3>Primary Colors</h3>
+                <div class="ds-grid ds-grid--2">
+                    <div class="ds-example">
+                        <h4>Brand Blues</h4>
+                        <div class="ds-example__preview">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div style="background: var(--col-primary-dark); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Primary Dark</strong><br>
+                                    #064BA5<br>
+                                    --col-primary-dark
+                                </div>
+                                <div style="background: var(--col-primary-medium); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Primary Medium</strong><br>
+                                    #0764DE<br>
+                                    --col-primary-medium
+                                </div>
+                                <div style="background: var(--col-primary-HL); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Primary Highlight</strong><br>
+                                    #5C7C89<br>
+                                    --col-primary-HL
+                                </div>
+                                <div style="background: var(--col-primary-links); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Link Color</strong><br>
+                                    #064BA5<br>
+                                    --col-primary-links
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ds-example__code">
+                            <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '.ds-text--primary { color: var(--col-primary-dark); }')">Copy</button>
+/* Primary color utilities */
+.ds-text--primary { color: var(--col-primary-dark); }
+.ds-text--primary-medium { color: var(--col-primary-medium); }
+.ds-text--primary-highlight { color: var(--col-primary-HL); }
+
+.ds-bg--primary { background-color: var(--col-primary-dark); }
+.ds-bg--primary-medium { background-color: var(--col-primary-medium); }
+                        </div>
+                    </div>
+                    
+                    <div class="ds-example">
+                        <h4>Neutral Colors</h4>
+                        <div class="ds-example__preview">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div style="background: var(--col-light-gray); color: var(--col-text); padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Light Gray</strong><br>
+                                    #ABB8C2<br>
+                                    --col-light-gray
+                                </div>
+                                <div style="background: var(--col-off-white); color: var(--col-text); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #ddd;">
+                                    <strong>Off White</strong><br>
+                                    #E9E5E5<br>
+                                    --col-off-white
+                                </div>
+                                <div style="background: var(--col-text); color: var(--col-text-button); padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Text Color</strong><br>
+                                    #000000<br>
+                                    --col-text
+                                </div>
+                                <div style="background: var(--col-red); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                    <strong>Error Red</strong><br>
+                                    #FF5031<br>
+                                    --col-red
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ds-example__code">
+                            <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '.ds-text--secondary { color: var(--col-light-gray); }')">Copy</button>
+/* Neutral color utilities */
+.ds-text--secondary { color: var(--col-light-gray); }
+.ds-text--error { color: var(--col-red); }
+
+.ds-bg--light { background-color: var(--col-off-white); }
+.ds-bg--gray { background-color: var(--col-light-gray); }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpha Variants -->
+                <h3>Transparency Variants</h3>
+                <div class="ds-example">
+                    <h4>Primary Blue with Alpha</h4>
+                    <div class="ds-example__preview">
+                        <div style="background: white; padding: 20px; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #f0f0f0 10px, #f0f0f0 20px);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px;">
+                                <div style="background: var(--col-primary-dark-10); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ddd;">
+                                    <strong>10%</strong><br>
+                                    rgba(6, 75, 165, 0.1)
+                                </div>
+                                <div style="background: var(--col-primary-dark-20); padding: 15px; border-radius: 8px; text-align: center;">
+                                    <strong>20%</strong><br>
+                                    rgba(6, 75, 165, 0.2)
+                                </div>
+                                <div style="background: var(--col-primary-dark-40); color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <strong>40%</strong><br>
+                                    rgba(6, 75, 165, 0.4)
+                                </div>
+                                <div style="background: var(--col-primary-dark-50); color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <strong>50%</strong><br>
+                                    rgba(6, 75, 165, 0.5)
+                                </div>
+                                <div style="background: var(--col-primary-dark-70); color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <strong>70%</strong><br>
+                                    rgba(6, 75, 165, 0.7)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ds-example__code">
+                        <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '.ds-overlay--light { background: var(--col-primary-dark-20); }')">Copy</button>
+/* Alpha variant utilities */
+.ds-overlay--light { background: var(--col-primary-dark-20); }
+.ds-overlay--medium { background: var(--col-primary-dark-40); }
+.ds-overlay--strong { background: var(--col-primary-dark-70); }
+
+/* Perfect for hover states, overlays, and subtle backgrounds */
+.ds-hover-overlay:hover { background: var(--col-primary-dark-10); }
+                    </div>
+                </div>
             </section>
 
+            <!-- Interactive Typography Section -->
             <section id="typography" style="margin-top: 60px;">
-                <h2>Typography</h2>
-                <p><em>Will be implemented in WI-P01-0002: Typography & Color System</em></p>
+                <h2>Typography System</h2>
+                <p><strong>Status:</strong> ✅ Excellent responsive foundation | 🔄 Now adding utility classes and flexibility</p>
+                
+                <!-- Typography Hierarchy -->
+                <h3>Typography Hierarchy</h3>
+                <div class="ds-example">
+                    <h4>Current Responsive System</h4>
+                    <div class="ds-example__preview">
+                        <div style="padding: 20px;">
+                            <h1 style="margin: 16px 0;">Heading 1 - Main Page Titles</h1>
+                            <p style="color: var(--col-light-gray); font-size: 0.9em; margin: 8px 0;">clamp(1.8rem, 5vw, 2.5rem) | Scales 28.8px → 40px</p>
+                            
+                            <h2 style="margin: 16px 0;">Heading 2 - Section Headings</h2>
+                            <p style="color: var(--col-light-gray); font-size: 0.9em; margin: 8px 0;">clamp(1.3rem, 4vw, 1.8rem) | Scales 20.8px → 28.8px</p>
+                            
+                            <h3 style="margin: 16px 0;">Heading 3 - Subsection Headings</h3>
+                            <p style="color: var(--col-light-gray); font-size: 0.9em; margin: 8px 0;">clamp(1.1rem, 3vw, 1.5rem) | Scales 17.6px → 24px</p>
+                            
+                            <p style="margin: 16px 0;">Body text paragraph with good readability and responsive sizing that adapts to different screen sizes automatically.</p>
+                            <p style="color: var(--col-light-gray); font-size: 0.9em; margin: 8px 0;">clamp(0.95rem, 2vw, 1.1rem) | Scales 15.2px → 17.6px</p>
+                        </div>
+                    </div>
+                    <div class="ds-example__code">
+                        <button class="ds-example__copy-btn" onclick="copyToClipboard(this, 'h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }')">Copy</button>
+/* Current responsive typography (already implemented) */
+h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.3; }
+h2 { font-size: clamp(1.3rem, 4vw, 1.8rem); line-height: 1.3; }  
+h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); line-height: 1.3; }
+p { font-size: clamp(0.95rem, 2vw, 1.1rem); line-height: 1.6; }
+                    </div>
+                </div>
+
+                <!-- Typography Utilities -->
+                <h3>Typography Utility Classes</h3>
+                <div class="ds-grid ds-grid--2">
+                    <div class="ds-example">
+                        <h4>Text Alignment</h4>
+                        <div class="ds-example__preview">
+                            <p class="ds-text--left" style="border: 1px dashed #ccc; padding: 10px; margin: 8px 0;">Left aligned text (default for readability)</p>
+                            <p class="ds-text--center" style="border: 1px dashed #ccc; padding: 10px; margin: 8px 0;">Center aligned text (for headers and callouts)</p>
+                            <p class="ds-text--right" style="border: 1px dashed #ccc; padding: 10px; margin: 8px 0;">Right aligned text (for metadata and dates)</p>
+                        </div>
+                        <div class="ds-example__code">
+                            <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '.ds-text--center { text-align: center; }')">Copy</button>
+.ds-text--left { text-align: left; }
+.ds-text--center { text-align: center; }  
+.ds-text--right { text-align: right; }
+                        </div>
+                    </div>
+
+                    <div class="ds-example">
+                        <h4>Font Weight & Color</h4>
+                        <div class="ds-example__preview">
+                            <p class="ds-text--bold" style="margin: 8px 0;">Bold text for emphasis and callouts</p>
+                            <p class="ds-text--normal" style="margin: 8px 0;">Normal weight text for body content</p>
+                            <p class="ds-text--primary" style="margin: 8px 0;">Primary brand color text</p>
+                            <p class="ds-text--secondary" style="margin: 8px 0;">Secondary gray color for metadata</p>
+                            <p class="ds-text--error" style="margin: 8px 0;">Error state text for validation messages</p>
+                        </div>
+                        <div class="ds-example__code">
+                            <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '.ds-text--bold { font-weight: bold; }')">Copy</button>
+.ds-text--bold { font-weight: bold; }
+.ds-text--normal { font-weight: normal; }
+
+.ds-text--primary { color: var(--col-primary-dark); }
+.ds-text--secondary { color: var(--col-light-gray); }
+.ds-text--error { color: var(--col-red); }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography Best Practices -->
+                <h3>Typography Best Practices</h3>
+                <div class="ds-example">
+                    <h4>Content Hierarchy Examples</h4>
+                    <div class="ds-example__preview">
+                        <div style="padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                            <h2 class="ds-text--center">Service Page Section</h2>
+                            <h3 class="ds-text--left">Web Development Solutions</h3>
+                            <p class="ds-text--left" style="margin-bottom: 16px;">We provide comprehensive web development services using modern technologies and best practices. Our team specializes in creating responsive, fast-loading websites that deliver excellent user experiences across all devices.</p>
+                            <p class="ds-text--secondary ds-text--right" style="font-size: 0.9em;">Updated: August 2025</p>
+                        </div>
+                    </div>
+                    <div class="ds-example__code">
+                        <button class="ds-example__copy-btn" onclick="copyToClipboard(this, '&lt;h2 class=&quot;ds-text--center&quot;&gt;Service Page Section&lt;/h2&gt;')">Copy</button>
+&lt;h2 class="ds-text--center"&gt;Service Page Section&lt;/h2&gt;
+&lt;h3 class="ds-text--left"&gt;Web Development Solutions&lt;/h3&gt;
+&lt;p class="ds-text--left"&gt;Body content...&lt;/p&gt;
+&lt;p class="ds-text--secondary ds-text--right"&gt;Updated: August 2025&lt;/p&gt;
+                    </div>
+                </div>
             </section>
 
             <section id="buttons" style="margin-top: 60px;">
@@ -171,9 +397,9 @@
 
         <footer style="background: var(--col-off-white); padding: 30px; text-align: center; margin-top: 60px;">
             <p><strong>TitanTech Design System Playground</strong></p>
-            <p>Foundation Phase Complete | Next: Typography & Color Standardization</p>
+            <p>WI-P01-0002: Typography & Color System Implementation Complete | Next: Button System</p>
             <p style="font-size: 0.9em; color: var(--col-light-gray);">
-                Internal development tool - Not for public access
+                Internal development tool - Not for public access | Access code: designsystem2025
             </p>
         </footer>
     </div>
@@ -203,6 +429,62 @@
         
         // Focus on passcode input when page loads
         document.getElementById('passcode').focus();
+        
+        // Copy to clipboard functionality
+        function copyToClipboard(button, text) {
+            // Use the Clipboard API if available
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showCopySuccess(button);
+                }).catch(function(err) {
+                    console.error('Failed to copy text: ', err);
+                    fallbackCopyTextToClipboard(text, button);
+                });
+            } else {
+                // Fallback for older browsers or non-HTTPS contexts
+                fallbackCopyTextToClipboard(text, button);
+            }
+        }
+        
+        // Fallback copy method for older browsers
+        function fallbackCopyTextToClipboard(text, button) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(button);
+                } else {
+                    console.error('Fallback: Unable to copy');
+                }
+            } catch (err) {
+                console.error('Fallback: Unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // Show visual feedback when copy is successful
+        function showCopySuccess(button) {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = '#28a745';
+            
+            setTimeout(function() {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
     </script>
 </body>
 </html>
