@@ -1,31 +1,33 @@
 # CONTENT STANDARDS & FORMATTING
 
-## NO ICONS POLICY - ABSOLUTE RULE
+## ICON & VISUAL CONTENT POLICY
 
-### Prohibited Content
-- **NO icons, emojis, or special characters** in ANY files, commits, or code
-- **NO decorative symbols** (arrows, bullets, stars, etc.)
-- **NO visual embellishments** of any kind
+### Professional Icons - APPROVED
+- **Lucide Icons**: Professional, purposeful iconography for UI/UX enhancement
+- **SVG icons**: Clean, scalable icons for navigation, buttons, and interface elements
+- **Functional icons**: Icons that serve a clear user interface or communication purpose
 
-### Examples of Prohibited Content
+### Prohibited Content - NO EXCEPTIONS
+- **NO emojis or decorative symbols** in ANY files, commits, or code
+- **NO unprofessional visual embellishments** (emoji arrows, stars, etc.)
+- **NO unicode characters** used for decoration rather than function
+
+### Examples of Content Standards
 ```
-❌ WRONG:
-- 🔥 Critical Priority
-- ⚡ High Priority  
-- 📋 Medium Priority
-- ✅ Completed
-- 🚀 Deployment
-- → Next step
-- ★ Important
+WRONG - Unprofessional/Decorative:
+- 🔥 Critical Priority (emoji)
+- → Next step (unicode arrow)
+- ★ Important (decorative star)
 
-✓ CORRECT:
-- Critical Priority
-- High Priority
-- Medium Priority  
-- Completed
-- Deployment
-- Next step
-- Important
+CORRECT - Professional:
+- Critical Priority (plain text)
+- Next step (clear language)
+- Important (emphasis with formatting)
+
+APPROVED - Functional Icons:
+- <lucide-icon name="home"> Home (Lucide icon for navigation)
+- <lucide-icon name="search"> Search (functional UI icon)
+- <lucide-icon name="check"> Completed (status indicator)
 ```
 
 ---

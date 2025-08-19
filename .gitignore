@@ -1,1 +1,23 @@
 node_modules
+
+# Learning Notes (Private Development Documentation)
+copilot/learning-notes/
+*.learning-notes.md
+.learning-notes/
+development-journal/
+study-notes/
+
+# Development Environment
+.vscode/settings.json
+.env.local
+.env.development
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
