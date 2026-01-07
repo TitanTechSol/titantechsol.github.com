@@ -8,7 +8,6 @@ import CodeSplitErrorBoundary from './components/CodeSplitErrorBoundary';
 
 // CAUSAI Enhanced: Lazy load components for optimal performance with proper loading states
 const Home = React.lazy(() => import('./home'));
-const About = React.lazy(() => import('./about'));
 const Contact = React.lazy(() => import('./contact'));
 const Team = React.lazy(() => import('./team'));
 const ServicesInteractive = React.lazy(() => import('./services-interactive'));
@@ -41,11 +40,6 @@ const App = () => {
             <Route path="/" element={
               <Suspense fallback={<PageSkeleton />}>
                 <Home />
-              </Suspense>
-            } />
-            <Route path="/about" element={
-              <Suspense fallback={<PageSkeleton />}>
-                <About />
               </Suspense>
             } />
             <Route path="/contact" element={

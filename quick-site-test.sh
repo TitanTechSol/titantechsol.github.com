@@ -18,7 +18,7 @@ fi
 # Test main pages
 echo ""
 echo "📄 Testing page responses..."
-pages=("/" "/about" "/services" "/portfolio" "/team" "/contact")
+pages=("/" "/services" "/portfolio" "/team" "/contact")
 
 for page in "${pages[@]}"; do
     status=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:9000$page")

@@ -17,7 +17,6 @@
 
 /* 5. Page-specific styles */
 @import url('./home.css');
-@import url('./about.css');
 @import url('./contact.css');
 @import url('./contact-us.css');
 @import url('./team.css');
