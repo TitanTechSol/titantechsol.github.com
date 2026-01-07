@@ -1,63 +1,88 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Process from './Process';
 import './css/main.css';
 
 const Home = () => {
-  const handleScroll = useCallback(() => {
-    const header = document.querySelector('.home');
-    if (header) {
-      if (window.scrollY > 20) {
-        header.classList.add('shrink');
-      } else {
-        header.classList.remove('shrink');
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    // Throttle scroll events for better performance
-    let ticking = false;
-    const throttledScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', throttledScroll);
-    };
-  }, [handleScroll]);
-
   return (
-    <>
-      <div className="home">
-        <div className="greetings">
-          <h1>TitanTech Solutions</h1>
-          <h2>Software Design, Architecture, Development, and Testing</h2>
-          <h3>Innovative, Secure, and Scalable Solutions</h3>
-          <p>
-            Titan Tech Solutions specializes in <strong>custom software design, architecture, development, and testing</strong> to help businesses build robust and efficient digital products.
+    <div className="home">
+      {/* Animated Bubbles Background */}
+      <div className="bubbles">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            We Build Scalable, Secure Software<br />
+            That Grows With Your Business
+          </h1>
+          
+          <p className="hero-subtitle">
+            Custom Software • Architecture • Development • QA & Testing
           </p>
-          <div className="cta-buttons">
-            <Link to="/contact" className="secondary-button">Get in Touch</Link>
+          
+          <p className="hero-description">
+            Engineering production-ready software for startups, SMBs, and growing enterprises.
+          </p>
+          
+          <p className="hero-mission">
+            TitanTech Solutions delivers custom software built for performance, security, and 
+            long-term scalability. We partner with businesses to design, develop, and test reliable 
+            products that solve real problems.
+          </p>
+          
+          <div className="hero-buttons">
+            <Link to="/contact" className="btn-primary">Request a Free Consultation</Link>
+            <Link to="/services" className="btn-secondary">View Our Services</Link>
           </div>
         </div>
-      </div>
-      
-      <Process />
+      </section>
 
-      <div className="home-cta">
-        <h2>Ready to Transform Your Software?</h2>
-        <p>Let's discuss how we can help you achieve your technology goals.</p>
-        <Link to="/contact" className="cta-button">Contact Us Today</Link>
-      </div>
-    </>
+      {/* Features Section */}
+      <section className="features-section">
+        <h2 className="features-title">Trusted, Performance-Driven Applications</h2>
+        
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Secure & Scalable Solutions</h3>
+          </div>
+          
+          <div className="feature-card">
+            <div className="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Senior Development Team</h3>
+          </div>
+          
+          <div className="feature-card">
+            <div className="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Security-First Approach</h3>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

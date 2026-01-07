@@ -33,15 +33,21 @@
 }
 
 .home {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--col-off-white) 0%, var(--col-white) 40%, var(--col-primary-dark-40) 100%);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px; /* Adjust this - we're now using padding-top on main element */
+    padding: 40px 20px;
     width: 100%;
 }
 
 .greetings {
+    position: relative;
+    z-index: 1;
     margin: 0 auto;
     text-align: left; /* Align text to the left */
     max-width: 750px; /* Change from fixed width to max-width */
@@ -67,7 +73,7 @@
 
 @media (max-width: 700px) {
     .home {
-        padding-top: 0; /* Remove duplicate padding since it's handled by main */
+        padding: 20px; /* Remove duplicate padding since it's handled by main */
         width: 100%;
     }
     
@@ -83,6 +89,6 @@
 
 @media (max-width: 480px) {
     .home {
-        padding-top: 60px;
+        padding: 60px 15px 40px;
     }
 }
