@@ -1,5 +1,8 @@
 node_modules
 
+# Project Management & Development Documentation
+copilot/
+
 # Learning Notes (Private Development Documentation)
 copilot/learning-notes/
 *.learning-notes.md
