@@ -10,6 +10,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    background: linear-gradient(135deg, var(--col-white) 15%, var(--col-off-white) 40%, var(--col-primary-medium-40) 100%);
+    padding-top: 100px;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding-top: 100px;
+    }
 }
 
 html, body {

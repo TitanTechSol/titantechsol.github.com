@@ -1,0 +1,129 @@
+/* ===========================
+   SHARED BUBBLE BACKGROUND
+   =========================== */
+
+.page-with-bubbles {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8ecf3 0%, #d4dce8 100%);
+}
+
+.bubbles {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(21, 101, 192, 0.15);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: rise 15s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 65%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  left: 75%;
+  animation-duration: 13s;
+  animation-delay: 5s;
+}
+
+.bubble:nth-child(7) {
+  width: 25px;
+  height: 25px;
+  left: 85%;
+  animation-duration: 16s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(8) {
+  width: 60px;
+  height: 60px;
+  left: 90%;
+  animation-duration: 15s;
+  animation-delay: 6s;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 110vh;
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Ensure content appears above bubbles */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all cards and content are above bubbles */
+.contact-page > *:not(.bubbles),
+.team-page > *:not(.bubbles),
+.services-interactive > *:not(.bubbles),
+.home > *:not(.bubbles) {
+  position: relative;
+  z-index: 1;
+}

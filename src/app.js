@@ -34,7 +34,18 @@ const App = () => {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <PerformanceMonitor />
       <Header toggleMenu={toggleMenu} menuOpen={menuOpen} />
-      <main id="content" style={{ flex: '1' }}>
+      <main id="content" style={{ flex: '1', position: 'relative' }}>
+        {/* Global animated bubbles background */}
+        <div className="bubbles">
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+        </div>
         <CodeSplitErrorBoundary>
           <Routes>
             <Route path="/" element={

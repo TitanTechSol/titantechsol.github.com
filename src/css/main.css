@@ -10,6 +10,7 @@
 /* 3. Layout components */
 @import url('./header.css');
 @import url('./footer.css');
+@import url('./bubble-background.css');
 
 /* 4. UI components */
 @import url('./components.css');

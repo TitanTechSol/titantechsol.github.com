@@ -5,18 +5,6 @@ import './css/main.css';
 const Home = () => {
   return (
     <div className="home">
-      {/* Animated Bubbles Background */}
-      <div className="bubbles">
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-      </div>
-
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">

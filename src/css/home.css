@@ -5,9 +5,7 @@
 .home {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e8ecf3 0%, #d4dce8 100%);
   position: relative;
-  overflow: hidden;
 }
 
 /* ===========================
