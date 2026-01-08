@@ -14,7 +14,7 @@ const Team = () => {
       title: "Principal AI Engineer",
       // CAUSAI: Use direct paths to optimized WebP images
       photo: "/photos/optimized/team/GAaronKibbie.webp",
-      bio: "With expertise in cloud development and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
+      bio: "With expertise in cloud development, AI-driven solutions, and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
       specialties: ["Cloud Architecture", "MicroService Design", "Azure DevOps", "Enterprise Software"],
       experience: "25+ years in software engineering with leadership roles as Principal Engineer, Software Architect, and Technical Lead for enterprise applications.",
       linkedin: "https://www.linkedin.com/in/aaron-kibbie-b72a401/",
