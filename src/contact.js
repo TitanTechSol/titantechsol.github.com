@@ -2,6 +2,7 @@ import React from 'react';
 import './css/main.css';
 import './css/contact.css';
 import './css/contact-us.css';
+import { getContactIcon } from './components/ContactIcons';
 
 const Contact = () => (
   <div className="contact-page">
@@ -16,21 +17,14 @@ const Contact = () => (
     <div className="contact-container">
       <div className="contact-info">
         <div className="info-card">
-          <div className="info-icon">📧</div>
+          <div className="info-icon">{getContactIcon('email')}</div>
           <h3>Email Us</h3>
           <p><a href="mailto:contactus@g2ad.com">contactus@g2ad.com</a></p>
           <p className="info-description">We typically respond within 24 business hours.</p>
         </div>
         
         <div className="info-card">
-          <div className="info-icon">🌐</div>
-          <h3>Connect</h3>
-          <p><a href="https://www.TitanTech.g2ad.com">www.TitanTech.g2ad.com</a></p>
-          <p className="info-description">Learn more about our services and expertise.</p>
-        </div>
-        
-        <div className="info-card">
-          <div className="info-icon">🏢</div>
+          <div className="info-icon">{getContactIcon('location')}</div>
           <h3>Location</h3>
           <p>Draper, Utah</p>
           <p className="info-description">Serving clients remotely worldwide.</p>

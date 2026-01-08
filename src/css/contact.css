@@ -7,7 +7,7 @@
 
 .contact-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .contact-header h1 {
@@ -26,7 +26,7 @@
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 48px;
   justify-content: center;
   margin-bottom: 60px;
 }
@@ -35,7 +35,7 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
   flex: 1;
   min-width: 250px;
   max-width: 350px;
@@ -44,7 +44,7 @@
 .info-card {
   background-color: white;
   border-radius: 10px;
-  padding: 25px;
+  padding: 32px 28px;
   box-shadow: 0 5px 15px var(--col-black-10);
   text-align: center;
   transition: transform 0.3s ease;
@@ -55,8 +55,18 @@
 }
 
 .info-icon {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  color: #1565c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon svg {
+  width: 48px;
+  height: 48px;
 }
 
 .info-card h3 {
@@ -86,11 +96,13 @@
 .contact-form {
   background-color: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 32px;
   box-shadow: 0 5px 15px var(--col-black-10);
   flex: 2;
   min-width: 300px;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form h2 {
@@ -101,7 +113,7 @@
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .form-group label {
@@ -118,7 +130,7 @@
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid var(--col-light-gray);
   border-radius: 5px;
   font-size: 1em;
@@ -135,6 +147,13 @@
 .contact-form textarea {
   min-height: 150px;
   resize: vertical;
+  flex-grow: 1;
+}
+
+/* Ensure last form group (submit button) stays at bottom */
+.form-group:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .submit-button {
