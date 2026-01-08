@@ -1,25 +1,251 @@
-/* CAUSAI Enhanced: Interactive Services Explorer with Restored Navigation */
+/* CAUSAI Enhanced: Flip Card Services Grid - Matching Home Page Style */
 .services-interactive {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 30px;
+  padding: 60px 20px;
 }
 
 .services-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .services-header h2 {
-  margin-bottom: 15px;
-  font-size: 2em;
-  color: var(--col-text);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
 }
 
 .services-intro {
   max-width: 700px;
   margin: 0 auto;
-  color: var(--col-text);
+  color: #666;
+  font-size: 1.125rem;
+}
+
+/* Services Grid - Matching Home Page Features Grid */
+.services-grid-container {
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Flip Card Container */
+.service-flip-card {
+  perspective: 1000px;
+  height: 400px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.service-flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Shared Styles */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-flip-card:hover .flip-card-front,
+.service-flip-card:hover .flip-card-back {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Front of Card */
+.flip-card-front {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  color: #1565c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.flip-card-front h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+}
+
+.service-tagline {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Back of Card */
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flip-card-back h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin: 0 0 12px 0;
+}
+
+.service-description {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.service-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-highlights li {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.4;
+  padding: 5px 0 5px 20px;
+  position: relative;
+}
+
+.service-highlights li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #1565c0;
+  font-weight: bold;
+}
+
+/* Services CTA Below Grid */
+.services-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #1565c0;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #0d47a1;
+  text-decoration: none;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-interactive {
+    padding: 40px 20px;
+  }
+  
+  .services-header {
+    margin-bottom: 36px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-flip-card {
+    height: 380px;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-interactive {
+    padding: 30px 16px;
+  }
+  
+  .service-flip-card {
+    height: 360px;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    padding: 24px 18px;
+  }
+  
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+  }
+  
+  .service-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .flip-card-front h3 {
+    font-size: 1.125rem;
+  }
+  
+  .service-tagline {
+    font-size: 0.875rem;
+  }
 }
 
 /* Interactive Services Explorer Layout - RESTORED */

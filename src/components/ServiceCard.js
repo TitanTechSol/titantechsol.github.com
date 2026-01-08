@@ -1,64 +1,40 @@
-// CAUSAI Enhanced: Service Card Component - Split for Code Optimization
-import React from 'react';
+// CAUSAI Enhanced: Flip Card Service Component
+import React, { useState } from 'react';
+import { getServiceIcon } from './ServiceIcons';
 
-const ServiceCard = ({ 
-  service, 
-  isActive, 
-  onClick, 
-  onGetStarted 
-}) => {
+const ServiceCard = ({ service }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <div 
-      className={`service-card ${isActive ? 'active' : ''}`}
-      onClick={() => onClick && onClick(service)}
+      className={`service-flip-card ${isFlipped ? 'flipped' : ''}`}
+      onClick={handleCardClick}
     >
-      <div className="service-header">
-        <span className="service-icon">{service.icon}</span>
-        <h3>{service.name}</h3>
-      </div>
-      
-      <p className="service-description">{service.description}</p>
-      
-      {isActive && (
-        <div className="service-details">
-          <div className="service-section">
-            <h4>Benefits</h4>
-            <ul>
-              {service.benefits.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
-              ))}
-            </ul>
+      <div className="flip-card-inner">
+        {/* Front of Card */}
+        <div className="flip-card-front">
+          <div className="service-icon">
+            {getServiceIcon(service.id)}
           </div>
-          
-          <div className="service-section">
-            <h4>Our Process</h4>
-            <ol>
-              {service.process.map((step, index) => (
-                <li key={index}>{step}</li>
-              ))}
-            </ol>
-          </div>
-          
-          <div className="service-section">
-            <h4>Technologies</h4>
-            <div className="technology-tags">
-              {service.technologies.map((tech, index) => (
-                <span key={index} className="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </div>
-          
-          <button 
-            className="get-started-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              onGetStarted(service);
-            }}
-          >
-            Get Started with {service.name}
-          </button>
+          <h3>{service.name}</h3>
+          <p className="service-tagline">{service.tagline}</p>
         </div>
-      )}
+        
+        {/* Back of Card */}
+        <div className="flip-card-back">
+          <h3>{service.name}</h3>
+          <p className="service-description">{service.shortDescription}</p>
+          <ul className="service-highlights">
+            {service.highlights.map((highlight, index) => (
+              <li key={index}>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

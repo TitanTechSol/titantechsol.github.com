@@ -1,80 +1,40 @@
-// CAUSAI Enhanced: Split Services Data from Interactive Component
+// CAUSAI Enhanced: Consolidated Services Data for Flip Card Design
 export const servicesData = [
   {
-    id: 'architecture',
-    name: 'Software Architecture & Design',
-    icon: '🏗️',
-    description: 'We create robust, scalable software architectures tailored to your business needs.',
-    benefits: [
-      'Future-proof systems that scale with your business',
-      'Clean, maintainable code structure',
-      'Optimized performance and resource usage',
-      'Technology stack recommendations aligned with your goals'
-    ],
-    process: [
-      'Requirements analysis',
-      'System modeling and design',
-      'Architecture documentation',
-      'Technical specification development'
-    ],
-    technologies: ['Microservices', 'Serverless', 'Domain-Driven Design', 'Event-Sourcing', 'CQRS']
-  },
-  {
     id: 'development',
-    name: 'Full-Stack Development',
-    icon: '💻',
-    description: 'From frontend to backend, we build complete web applications using modern technologies.',
-    benefits: [
-      'End-to-end development expertise',
-      'Modern JavaScript frameworks (React, Vue, Angular)',
-      'Responsive, mobile-first design',
-      'API development and integration'
+    name: 'Custom Software Development',
+    tagline: 'End-to-end development from architecture to deployment',
+    shortDescription: 'We build scalable, production-ready software from architecture to deployment.',
+    highlights: [
+      'Modern, scalable architectures tailored to your business',
+      'Full-stack development with React, Node.js, and TypeScript',
+      'Clean, maintainable code with comprehensive documentation'
     ],
-    process: [
-      'Project planning and scope definition',
-      'UI/UX design and prototyping',
-      'Agile development with regular demos',
-      'Testing, deployment, and maintenance'
-    ],
-    technologies: ['React', 'Node.js', 'TypeScript', 'REST APIs', 'GraphQL', 'MongoDB', 'PostgreSQL']
+    color: '#1565c0'
   },
   {
     id: 'testing',
     name: 'Quality Assurance & Testing',
-    icon: '🧪',
-    description: 'Comprehensive testing strategies to ensure your software is reliable and bug-free.',
-    benefits: [
-      'Automated testing pipelines',
-      'Comprehensive test coverage',
-      'Performance and load testing',
-      'Cross-browser and device compatibility'
+    tagline: 'Comprehensive testing for reliable, bug-free software',
+    shortDescription: 'Rigorous testing strategies that catch bugs before your users do.',
+    highlights: [
+      'Automated testing pipelines with complete coverage',
+      'Performance, security, and load testing',
+      'Cross-browser and device compatibility assurance'
     ],
-    process: [
-      'Test strategy development',
-      'Automated test suite creation',
-      'Manual testing for edge cases',
-      'Continuous integration testing'
-    ],
-    technologies: ['Jest', 'Cypress', 'Selenium', 'Playwright', 'JMeter', 'Postman']
+    color: '#1565c0'
   },
   {
     id: 'devops',
     name: 'DevOps & Cloud Solutions',
-    icon: '☁️',
-    description: 'Streamlined deployment pipelines and cloud infrastructure management.',
-    benefits: [
-      'Automated CI/CD pipelines',
-      'Scalable cloud infrastructure',
-      'Monitoring and alerting systems',
-      'Infrastructure as Code (IaC)'
+    tagline: 'Automated pipelines and scalable cloud infrastructure',
+    shortDescription: 'Streamlined deployment and cloud infrastructure with automated CI/CD pipelines.',
+    highlights: [
+      'Automated CI/CD with GitHub Actions, Jenkins, or Azure DevOps',
+      'Scalable cloud infrastructure on AWS, Azure, or GCP',
+      'Monitoring, alerting, and Infrastructure as Code (Terraform)'
     ],
-    process: [
-      'Infrastructure assessment',
-      'Pipeline design and implementation',
-      'Monitoring setup',
-      'Documentation and training'
-    ],
-    technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins']
+    color: '#1565c0'
   }
 ];
 
