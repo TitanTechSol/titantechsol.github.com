@@ -1,8 +1,12 @@
 .team-page {
-  padding-top: 20px; /* Reduce padding since main has base padding */
+  padding-top: 20px;
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 50px;
+  width: 100%;
+  max-width: 900px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .team-page h1 {
@@ -22,13 +26,24 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin: 0 20px;
+  margin: 0 auto;
+  justify-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 }
 
 .team-card {
   position: relative;
   height: 325px;
   max-width: 325px;
+  width: 100%;
   perspective: 1500px;
   cursor: pointer;
   border-radius: 10px;
@@ -47,9 +62,9 @@
   height: 100%;
   backface-visibility: hidden;
   transition: transform 0.8s ease;
-  padding: 20px;
+  padding: 25px 20px;
   border-radius: 10px;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .team-card-front {
@@ -57,6 +72,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .team-card-back {
@@ -64,6 +81,9 @@
   color: white;
   transform: rotateY(180deg);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25px;
 }
 
 .team-card.active .team-card-front {
@@ -78,30 +98,18 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-bottom: 15px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
   border: 3px solid var(--col-primary-medium);
-  overflow: hidden; /* Ensure image stays within the circle */
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
 }
 
-/* Additional fix to ensure images display properly */
 .team-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-}
-
-.team-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--col-primary-dark-20) 0%, var(--col-primary-medium-40) 100%);
 }
 
 .team-card h3 {
@@ -112,7 +120,6 @@
 .team-title {
   font-size: 1em;
   color: var(--col-primary-dark);
-  margin: 0 0 15px 0;
 }
 
 .team-card-back h3 {
@@ -123,11 +130,12 @@
 .team-card-back h4 {
   color: white;
   opacity: 0.9;
-  margin: 15px 0 5px;
+  margin: 15px 0 8px;
+  font-size: 1em;
 }
 
 .team-bio {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 0.9em;
   line-height: 1.5;
   color: white;
@@ -137,14 +145,16 @@
 .team-specialties {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 .team-specialties li {
-  padding: 3px 0;
+  padding: 4px 0;
   position: relative;
   padding-left: 18px;
+  color: white;
+  font-size: 0.9em;
 }
 
 .team-specialties li:before {
@@ -154,86 +164,99 @@
   color: var(--col-white-50);
 }
 
-/* Add this new style to fix the experience text color */
-.team-card-back p {
-  color: white;
-  text-align: left;
-}
-
-.team-social {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.team-social a {
+.linkedin-button {
   display: inline-block;
-  margin: 0 10px;
+  padding: 10px 20px;
+  margin-bottom: 8px;
+  background-color: var(--col-primary-medium);
   color: white;
-  text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 20px;
-  background-color: var(--col-white-10);
-  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
-.team-social a:hover {
-  background-color: var(--col-white-20);
+.linkedin-button:hover {
+  background-color: var(--col-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.technology-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.tech-tag {
-  display: inline-block;
-  padding: 5px 10px;
+.linkedin-button-back {
+  margin-top: auto;
+  margin-bottom: 0;
   background-color: var(--col-white-15);
-  border-radius: 15px;
-  font-size: 0.8em;
-  white-space: nowrap;
+  align-self: center;
 }
 
-@media (max-width: 700px) {
+.linkedin-button-back:hover {
+  background-color: var(--col-white-25);
+}
+
+@media (max-width: 768px) {
   .team-page {
-    padding-top: 0; /* Remove padding since main handles it */
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+  }
+
+  .team-intro {
+    font-size: 1em;
+    margin-bottom: 30px;
   }
   
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .team-card {
+    max-width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 380px;
   }
   
   .team-card-front, .team-card-back {
-    padding: 15px;
+    padding: 20px 15px;
   }
-  
-  .technology-tags {
-    gap: 5px;
+
+  .team-photo {
+    width: 130px;
+    height: 130px;
   }
-  
-  .tech-tag {
-    padding: 4px 8px;
-    font-size: 0.75em;
+
+  .team-card h3 {
+    font-size: 1.3em;
+  }
+
+  .team-title {
+    font-size: 0.95em;
+  }
+
+  .linkedin-button {
+    padding: 8px 16px;
+    font-size: 0.85em;
   }
 }
 
 @media (max-width: 480px) {
   .team-page {
-    padding-top: 80px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .team-page h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
   }
   
   .team-intro {
-    font-size: 1em;
+    font-size: 0.95em;
+    margin-bottom: 25px;
   }
   
   .team-card {
@@ -243,5 +266,33 @@
   .team-photo {
     width: 120px;
     height: 120px;
+    border-width: 2px;
+  }
+
+  .team-card h3 {
+    font-size: 1.2em;
+    margin: 8px 0 3px;
+  }
+
+  .team-title {
+    font-size: 0.9em;
+  }
+
+  .linkedin-button {
+    padding: 8px 14px;
+    font-size: 0.8em;
+  }
+
+  .team-card-back {
+    padding: 15px 12px 20px;
+  }
+
+  .team-bio {
+    font-size: 0.85em;
+  }
+
+  .team-specialties li {
+    font-size: 0.85em;
+    padding: 3px 0;
   }
 }

@@ -11,7 +11,7 @@ const Team = () => {
     {
       id: 1,
       name: "G. Aaron Kibbie",
-      title: "Principle Engineer, Architect",
+      title: "Principal AI Engineer",
       // CAUSAI: Use direct paths to optimized WebP images
       photo: "/photos/optimized/team/GAaronKibbie.webp",
       bio: "With expertise in cloud development and microservice architecture, Aaron leads TitanTech's architectural vision and implementation. His experience spans .NET, Azure, AWS, and modern development practices.",
@@ -35,10 +35,10 @@ const Team = () => {
     {
       id: 3,
       name: "Anthony Hart",
-      title: "Senior Software Engineer / Technical Lead",
+      title: "Senior Software Engineer",
       // CAUSAI: Use direct paths to optimized WebP images
       photo: "/photos/optimized/team/AnthonyHart.webp",
-      bio: "With 25+ years of experience, Anthony specializes in developing and architecting enterprise-grade solutions, with deep expertise in .NET, Angular, and REST services.",
+      bio: "Anthony specializes in developing and architecting enterprise-grade solutions, with deep expertise in .NET, Angular, and REST services.",
       specialties: ["Software Architecture", "REST Services", "SQL Server", "Mobile Development"],
       experience: "25+ years as a Senior Software Engineer and Technical Lead, guiding teams in implementing microservice architectures and enterprise solutions.",
       linkedin: "https://www.linkedin.com/in/anthony-hart-1a69154",
@@ -70,7 +70,7 @@ const Team = () => {
     }
   ];
 
-  const handleTeamMemberClick = (id) => {
+  const handleCardClick = (id) => {
     setActiveCard(activeCard === id ? null : id);
   };
 
@@ -87,7 +87,7 @@ const Team = () => {
           <div 
             key={member.id} 
             className={`team-card ${activeCard === member.id ? 'active' : ''}`}
-            onClick={() => handleTeamMemberClick(member.id)}
+            onClick={() => handleCardClick(member.id)}
           >
             <div className="team-card-front">
               <div className="team-photo">
@@ -101,12 +101,11 @@ const Team = () => {
                   width="300"
                   height="300"
                 />
-                <div className="team-overlay"></div>
               </div>
               <h3>{member.name}</h3>
               <p className="team-title">{member.title}</p>
             </div>
-            
+
             <div className="team-card-back">
               <h3>{member.name}</h3>
               <p className="team-bio">{member.bio}</p>
@@ -116,18 +115,17 @@ const Team = () => {
                   <li key={index}>{specialty}</li>
                 ))}
               </ul>
-              <h4>Experience</h4>
-              <p>{member.experience}</p>
-              <div className="technology-tags">
-                {member.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-              <div className="team-social">
-                {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                )}
-              </div>
+              {member.linkedin && (
+                <a 
+                  href={member.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="linkedin-button"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View LinkedIn Profile
+                </a>
+              )}
             </div>
           </div>
         ))}
