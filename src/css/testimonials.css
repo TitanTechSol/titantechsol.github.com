@@ -113,6 +113,11 @@
   box-shadow: 0 2px 5px var(--col-black-20);
   transition: background-color 0.3s ease;
   z-index: 2;
+  font-size: 1rem;
+}
+
+.testimonial-nav i {
+  display: block;
 }
 
 .testimonial-nav:hover {
@@ -161,9 +166,13 @@
 }
 
 .empty-state-icon {
-  font-size: 3em;
+  font-size: 4em;
   margin-bottom: 20px;
   color: var(--col-primary-medium);
+}
+
+.empty-state-icon i {
+  display: block;
 }
 
 .testimonials-empty-state h3 {

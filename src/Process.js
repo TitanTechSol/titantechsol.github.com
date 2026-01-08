@@ -75,7 +75,7 @@ const Process = () => {
         
         <div className="deck-navigation">
           <button className="nav-btn prev" onClick={handlePrevious}>
-            &#8249;
+            <i className="fas fa-chevron-left"></i>
           </button>
           <div className="card-indicators">
             {processSteps.map((_, index) => (
@@ -87,7 +87,7 @@ const Process = () => {
             ))}
           </div>
           <button className="nav-btn next" onClick={handleNext}>
-            &#8250;
+            <i className="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>

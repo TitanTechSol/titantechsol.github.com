@@ -37,7 +37,9 @@ const Testimonials = () => {
       <div className="testimonials-section">
         <h2>Client Testimonials</h2>
         <div className="testimonials-empty-state">
-          <div className="empty-state-icon">⭐</div>
+          <div className="empty-state-icon">
+            <i className="fas fa-star"></i>
+          </div>
           <h3>Be Our First Success Story!</h3>
           <p>
             We're ready to help turn your software vision into reality. 
@@ -56,7 +58,7 @@ const Testimonials = () => {
       <h2>Client Testimonials</h2>
       <div className="testimonials-container">
         <button className="testimonial-nav prev" onClick={handlePrevClick}>
-          &#10094;
+          <i className="fas fa-chevron-left"></i>
         </button>
         
         <div className="testimonials-carousel">
@@ -86,7 +88,7 @@ const Testimonials = () => {
         </div>
         
         <button className="testimonial-nav next" onClick={handleNextClick}>
-          &#10095;
+          <i className="fas fa-chevron-right"></i>
         </button>
       </div>
       

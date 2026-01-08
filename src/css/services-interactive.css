@@ -92,11 +92,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 48px;
 }
 
-.service-icon svg {
-  width: 48px;
-  height: 48px;
+.service-icon i {
+  display: block;
 }
 
 .flip-card-front h3 {
