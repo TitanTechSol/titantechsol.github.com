@@ -6,6 +6,9 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  margin-top: -100px;
+  padding-top: 100px;
+  background: linear-gradient(135deg, var(--col-white) 15%, var(--col-off-white) 40%, var(--col-primary-medium-40) 100%);
 }
 
 /* ===========================
@@ -227,8 +230,8 @@
   text-align: center;
 }
 
-.featurfamily: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-es-title {
+.features-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   color: #333;
@@ -272,13 +275,14 @@
   display: block;
 }
 
-.featurfamily: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-e-card h3 {
+.feature-card h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
   color: #333;
   line-height: 1.4;
   margin: 0;
+}
 
 /* ===========================
    RESPONSIVE DESIGN
@@ -319,4 +323,3 @@
     padding: 24px 20px;
   }
 }
-  }
