@@ -32,19 +32,6 @@
     text-decoration: none;
 }
 
-.home {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--col-off-white) 0%, var(--col-white) 40%, var(--col-primary-dark-40) 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    width: 100%;
-}
-
 .greetings {
     position: relative;
     z-index: 1;
