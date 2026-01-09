@@ -68,7 +68,7 @@
 }
 
 .team-card-front {
-  background-color: var(--col-off-white);
+  background-color: var(--col-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,8 +77,7 @@
 }
 
 .team-card-back {
-  background-color: var(--col-primary-dark);
-  color: white;
+  background-color: var(--col-white);
   transform: rotateY(180deg);
   overflow-y: auto;
   display: flex;
@@ -124,11 +123,11 @@
 
 .team-card-back h3 {
   margin-bottom: 15px;
-  color: white;
+  color: var(--col-text);
 }
 
 .team-card-back h4 {
-  color: white;
+  color: var(--col-text);
   opacity: 0.9;
   margin: 15px 0 8px;
   font-size: 1em;
@@ -138,7 +137,7 @@
   margin-bottom: 10px;
   font-size: 0.9em;
   line-height: 1.5;
-  color: white;
+  color: var(--col-text);
   text-align: left;
 }
 
@@ -153,7 +152,7 @@
   padding: 4px 0;
   position: relative;
   padding-left: 18px;
-  color: white;
+  color: var(--col-text);
   font-size: 0.9em;
 }
 
@@ -161,7 +160,7 @@
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--col-white-50);
+  color: var(--col-text);
 }
 
 .linkedin-button {
@@ -176,6 +175,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   flex-shrink: 0;
+  text-align: center;
 }
 
 .linkedin-button:hover {
@@ -189,6 +189,7 @@
   margin-bottom: 0;
   background-color: var(--col-white-15);
   align-self: center;
+  text-align: center;
 }
 
 .linkedin-button-back:hover {
