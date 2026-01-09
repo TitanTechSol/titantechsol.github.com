@@ -120,7 +120,7 @@
 .hero-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 20px 60px;
+  padding: 10px 20px 20px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -223,7 +223,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding: 40px 20px 80px;
+  padding: 10px 20px 40px;
   text-align: center;
 }
 
@@ -241,6 +241,7 @@
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 .feature-card {
@@ -278,7 +279,6 @@
   color: #333;
   line-height: 1.4;
   margin: 0;
-}
 
 /* ===========================
    RESPONSIVE DESIGN
@@ -286,7 +286,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 60px 20px 40px;
+    padding: 60px 20px 20px;
   }
   
   .hero-buttons {
@@ -319,3 +319,4 @@
     padding: 24px 20px;
   }
 }
+  }
