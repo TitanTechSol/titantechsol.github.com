@@ -19,7 +19,7 @@ const Contact = () => (
         <div className="info-card">
           <div className="info-icon">{getContactIcon('email')}</div>
           <h3>Email Us</h3>
-          <p><a href="mailto:contactus@g2ad.com">contact.us@g2ad.com</a></p>
+          <p><a href="mailto:contact.us@g2ad.com">contact.us@g2ad.com</a></p>
           <p className="info-description">We typically respond within 24 business hours.</p>
         </div>
         

@@ -16,7 +16,7 @@ const Footer = () => (
     
     <div className="footer-contact">
       <h2>Get in Touch</h2>
-      <p><span className="footer-label">Email:</span> <a className="clickable-link" href="mailto:contactus@g2ad.com">contactus@g2ad.com</a></p>
+      <p><span className="footer-label">Email:</span> <a className="clickable-link" href="mailto:contact.us@g2ad.com">contact.us@g2ad.com</a></p>
       <p><span className="footer-label">Website:</span> <a className="clickable-link" href="https://www.TitanTech.g2ad.com">www.TitanTech.g2ad.com</a></p>
     </div>
     
