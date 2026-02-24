@@ -4,7 +4,7 @@ import './css/header.css';
 
 const Header = ({ toggleMenu, menuOpen }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const menuRef = useRef(null);
+  // const menuRef = useRef(null); // HAMBURGER MENU - commented out
   
   // Handle window resize
   useEffect(() => {
@@ -19,6 +19,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
   }, []);
   
   // Handle clicks outside the menu to close it
+  /* HAMBURGER MENU - commented out, not currently in use
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuOpen && menuRef.current && !menuRef.current.contains(event.target) && 
@@ -39,6 +40,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
       toggleMenu();
     }
   };
+  */
 
   return (
     <header>
@@ -54,6 +56,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
             {windowWidth > 700 && <Link className="popLink" to="/team">Team</Link>}
             {windowWidth > 700 && <Link className="popLink" to="/contact">Contact</Link>}
           </div>
+          {/* HAMBURGER MENU - commented out, not currently in use
           <button className="nav-button" type="button" onClick={toggleMenu}>
             <div className="hamburger">
               <div className="bar"></div>
@@ -72,6 +75,7 @@ const Header = ({ toggleMenu, menuOpen }) => {
               <li><Link to="/contact" onClick={handleNavLinkClick}>Contact Us</Link></li>
             </ul>
           </div>
+          */}
         </nav>
       </div>
     </header>

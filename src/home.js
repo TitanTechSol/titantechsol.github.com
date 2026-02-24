@@ -39,26 +39,26 @@ const Home = () => {
         <h2 className="features-title">Trusted, Performance-Driven Applications</h2>
         
         <div className="features-grid">
-          <div className="feature-card">
+          <Link to="/services" className="feature-card">
             <div className="feature-icon">
               <i className="fas fa-shield-alt"></i>
             </div>
             <h3>Secure & Scalable Solutions</h3>
-          </div>
+          </Link>
           
-          <div className="feature-card">
+          <Link to="/team" className="feature-card">
             <div className="feature-icon">
               <i className="fas fa-users"></i>
             </div>
             <h3>Senior Development Team</h3>
-          </div>
+          </Link>
           
-          <div className="feature-card">
+          <Link to="/services" className="feature-card">
             <div className="feature-icon">
               <i className="fas fa-lock"></i>
             </div>
             <h3>Security-First Approach</h3>
-          </div>
+          </Link>
         </div>
       </section>
     </div>
